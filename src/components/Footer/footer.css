@@ -42,6 +42,10 @@
     transform: scale(1.2);
 }
 
+.footer-email{
+    word-break: break-word;
+}
+
 .icon-box {
     margin-right: 16px;
 }
