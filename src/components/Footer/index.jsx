@@ -52,7 +52,7 @@ export default function Footer() {
               <span className="icon-box">
                 <TbMailForward size={28} style={{ color: "inherit" }} />
               </span>
-              <p>thecollaborativeaucklandco@gmail.com</p>
+              <p className="footer-email">thecollaborativeaucklandco@gmail.com</p>
             </div>
           </a>
 
