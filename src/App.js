@@ -2,16 +2,27 @@ import "./App.css";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Header from "./components/Header";
+ import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <div className="sticky-header">
-        <Header />
+    <Router>
+      <div className="App">
+        <div className="sticky-header">
+          <Header/>
+        </div>
+
+        <Routes>
+          <Route exact path="/" element={<Home/>} />
+          <Route path="/about" element={<h3>ABOUT</h3>}/>
+        </Routes>
+        <Footer/>
       </div>
-      <Home />
-      <Footer />
-    </div>
+    </Router>
   );
 }
 

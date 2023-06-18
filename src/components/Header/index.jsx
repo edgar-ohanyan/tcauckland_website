@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import Popup from "reactjs-popup";
 import "./header.css";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Modal from "@mui/material/Modal";
