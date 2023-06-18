@@ -1,0 +1,31 @@
+.main-picture-box {
+    width: 100vw;
+    height: 50vh;
+    position: relative;
+}
+
+.main-picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Change the last value (0.5) to adjust the transparency */
+}
+
+.submit-text {
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700 !important;
+    font-size: 48px;
+    color: #fff;
+    line-height: 1.2;
+}
