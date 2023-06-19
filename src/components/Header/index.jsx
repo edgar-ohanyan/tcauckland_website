@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
-import Popup from "reactjs-popup";
-import "./header.css";
+import { Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Modal from "@mui/material/Modal";
 
 import logo from "../../assets/icons/thecollaborative-02.png";
 import tca from "../../assets/icons/thecollaborative-03.png";
+import "./header.css";
 
 function Header() {
   const [showBurger, setShowBurger] = useState(false);
@@ -19,14 +19,16 @@ function Header() {
 
   return (
     <header className="header">
-      <div className="header-left">
-        <div className="header-logo-box">
-          <img className="header-logo" src={logo} alt="TCA icon" />
+      <Link to="/">
+        <div className="header-left">
+          <div className="header-logo-box">
+            <img className="header-logo" src={logo} alt="TCA icon" />
+          </div>
+          <div className="header-tca-box">
+            <img className="header-tca" src={tca} alt="TCA icon" />
+          </div>
         </div>
-        <div className="header-tca-box">
-          <img className="header-tca" src={tca} alt="TCA icon" />
-        </div>
-      </div>
+      </Link>
       <div className="header-right">
         {showBurger ? (
           <RxHamburgerMenu
