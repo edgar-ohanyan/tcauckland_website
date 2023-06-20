@@ -1,34 +1,24 @@
-import "./App.css";
-import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
-import Header from "./components/Header";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
 import SubmitCV from "./components/SubmitCV";
+import Layout from "./components/Layout";
+
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider/LocalizationProvider";
-import React from "react";
 
+import "./App.css";
 function App() {
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <Router>
-        <div className="App">
-          <div className="sticky-header">
-            <Header/>
-          </div>
-
-          <Routes>
-            <Route exact path="/" element={<Home/>}/>
-            <Route path="/submit-cv" element={<SubmitCV/>}/>
-          </Routes>
-          <Footer/>
-        </div>
-      </Router>
-    </LocalizationProvider>
+    <BrowserRouter>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/submit-cv" element={<SubmitCV />} />
+          </Route>
+        </Routes>
+      </LocalizationProvider>
+    </BrowserRouter>
   );
 }
 
