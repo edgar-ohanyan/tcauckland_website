@@ -14,26 +14,26 @@ export default function Home() {
       </div>
       <div className="home-content">
         <div className="home-card">
-          <div className="card-title-box">
+          <div className="home-card-title-box">
             <h4 className="card-title">Apply To Study</h4>
           </div>
-          <div className="card-pic-box">
+          <div className="home-card-pic-box">
             <img className="card-pic" src={card_pic_1} alt="card_pic_1" />
           </div>
         </div>
         <div className="home-card">
-          <div className="card-title-box">
+          <div className="home-card-title-box">
             <h4 className="card-title">Find A Job</h4>
           </div>
-          <div className="card-pic-box">
+          <div className="home-card-pic-box">
             <img className="card-pic" src={card_pic_2} alt="card_pic_1" />
           </div>
         </div>
         <div className="home-card">
-          <div className="card-title-box">
+          <div className="home-card-title-box">
             <h4 className="card-title">Employer</h4>
           </div>
-          <div className="card-pic-box">
+          <div className="home-card-pic-box">
             <img className="card-pic" src={card_pic_3} alt="card_pic_1" />
           </div>
         </div>

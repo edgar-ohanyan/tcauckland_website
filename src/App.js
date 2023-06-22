@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import SubmitCV from "./components/SubmitCV";
+import ApplyForStudy from "./components/ApplyForStudy";
 import Layout from "./components/Layout";
 
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/submit-cv" element={<SubmitCV />} />
+            <Route path="/apply-for-study" element={<ApplyForStudy />} />
           </Route>
         </Routes>
       </LocalizationProvider>
