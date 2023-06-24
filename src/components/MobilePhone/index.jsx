@@ -9,7 +9,7 @@ const Input = (props) => {
     <>
       <PhoneInput
         specialLabel={''}
-        country={'th'}
+        country={'us'}
         inputStyle={{
           borderColor: (props.touched && props.error) && "red"
         }}
@@ -28,9 +28,7 @@ const index = (props) => {
       helperText={""}
       error={true}
       isSelect={false}
-      {...props.input}
-      {...props.meta}
-      {...props.custom}
+      {...props}
     />
   )
 }
