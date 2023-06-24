@@ -28,7 +28,6 @@
     justify-content: space-between;
     box-shadow: 0 24px 48px rgba(36, 36, 59, 0.4);
     transition: transform 0.3s, background-color 0.5s;
-
 }
 
 .home-card:hover {
@@ -41,14 +40,14 @@
     color: rgba(19, 19, 68, 0.5)
 }
 
-.card-title-box {
+.home-card-title-box {
     height: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.card-pic-box {
+.home-card-pic-box {
     width: 100%;
     height: 80%;
 }
