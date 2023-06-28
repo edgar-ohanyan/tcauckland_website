@@ -19,7 +19,7 @@
   
 .home-card {
     width: 340px;
-    min-height: 460px;
+    height: 460px;
     margin: 10px;
     background-color: rgba(239, 239, 239, 0.436);
     border-radius: 28px;
