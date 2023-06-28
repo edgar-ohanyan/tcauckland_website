@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import applyToStudy from "../../assets/pictures/bg_apply2study.jpeg";
 import studyWithUS_pic from "../../assets/pictures/studyWithUs.jpg";
@@ -6,7 +7,6 @@ import visasAndPermit_pic from "../../assets/pictures/visa&permit.jpeg";
 import englishProgrum from "../../assets/pictures/englishProgrum.jpg";
 import foundation from "../../assets/pictures/foundationPage.jpeg";
 import tutoring from "../../assets/pictures/tutoring.jpeg";
-
 
 import "./applyForStudy.css";
 
@@ -17,36 +17,50 @@ export default function ApplyForStudy() {
         <img src={applyToStudy} className="main-picture" alt="home_bg" />
       </div>
       <div className="card-list">
-        <div className="card">
-          <div className="card-title-box">
-            <h4 className="card-title">Study With Us</h4>
+        <Link to="/study-with-us" className="card-nav-link">
+          <div className="card">
+            <div className="card-title-box">
+              <h4 className="card-title">Study With Us</h4>
+            </div>
+            <div className="card-description">
+              <p className="card-description-text">
+                New Zealand is home to eight universities of the highest
+                quality. All are ranked in the top 3% (500) universities in the
+                world.
+              </p>
+            </div>
+            <div className="card-pic-box">
+              <img
+                className="card-pic"
+                src={studyWithUS_pic}
+                alt="card_pic_1"
+              />
+            </div>
           </div>
-          <div className="card-description">
-            <p className="card-description-text">
-              New Zealand is home to eight universities of the highest quality.
-              All are ranked in the top 3% (500) universities in the world.
-            </p>
+        </Link>
+        <Link to="/visas-and-permits" className="card-nav-link">
+          <div className="card">
+            <div className="card-title-box">
+              <h4 className="card-title">Visas & Permits</h4>
+            </div>
+            <div className="card-description">
+              <p className="card-description-text">
+                If you are an international student you are required by law to
+                hold a valid visa for the duration of your study in New Zealand
+                Universities. This page describes the applying process and the
+                documents you will need to supply with your visa application.
+              </p>
+            </div>
+            <div className="card-pic-box">
+              <img
+                className="card-pic"
+                src={visasAndPermit_pic}
+                alt="card_pic_1"
+              />
+            </div>
           </div>
-          <div className="card-pic-box">
-            <img className="card-pic" src={studyWithUS_pic} alt="card_pic_1" />
-          </div>
-        </div>
-        <div className="card">
-          <div className="card-title-box">
-            <h4 className="card-title">Visas & Permits</h4>
-          </div>
-          <div className="card-description">
-            <p className="card-description-text">
-              If you are an international student you are required by law to
-              hold a valid visa for the duration of your study in New Zealand
-              Universities. This page describes the applying process and the
-              documents you will need to supply with your visa application.
-            </p>
-          </div>
-          <div className="card-pic-box">
-            <img className="card-pic" src={visasAndPermit_pic} alt="card_pic_1" />
-          </div>
-        </div>
+        </Link>
+        <Link to="/english-programs"className="card-nav-link">
         <div className="card">
           <div className="card-title-box">
             <h4 className="card-title">English Programs</h4>
@@ -62,6 +76,8 @@ export default function ApplyForStudy() {
             <img className="card-pic" src={englishProgrum} alt="card_pic_1" />
           </div>
         </div>
+        </Link>
+        <Link to="/foundation-programs"className="card-nav-link">
         <div className="card">
           <div className="card-title-box">
             <h4 className="card-title">Foundation Programs</h4>
@@ -78,6 +94,8 @@ export default function ApplyForStudy() {
             <img className="card-pic" src={foundation} alt="card_pic_1" />
           </div>
         </div>
+        </Link>
+        <Link to="/tutoring"className="card-nav-link">
         <div className="card">
           <div className="card-title-box">
             <h4 className="card-title">Tutoring</h4>
@@ -96,6 +114,7 @@ export default function ApplyForStudy() {
             <img className="card-pic" src={tutoring} alt="card_pic_1" />
           </div>
         </div>
+        </Link>
       </div>
     </div>
   );
