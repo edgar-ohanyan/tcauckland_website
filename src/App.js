@@ -11,6 +11,7 @@ import StudyWithUs from "./components/StudyWithUs";
 import EnglishPrograms from "./components/EnglishPrograms";
 import FoundaationPrograms from "./components/FoundaationPrograms";
 import Tutoring from "./components/Tutoring";
+import ApplicationPage from "./components/ApplicationPage";
 
 import "./App.css";
 function App() {
@@ -30,6 +31,7 @@ function App() {
               element={<FoundaationPrograms />}
             />
             <Route path="/tutoring" element={<Tutoring />} />
+            <Route path="/student-application" element={<ApplicationPage />} />
           </Route>
         </Routes>
       </LocalizationProvider>
