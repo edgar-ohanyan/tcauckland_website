@@ -1,0 +1,53 @@
+.applicantForm {
+    background-color: #edf9ff;
+    display: flex;
+    justify-content: center;
+    padding: 83px 0px
+}
+
+.form {
+    padding: 30px;
+}
+
+.inputSectionTitle {
+    text-align: center;
+    color: rgba(19, 19, 68, 0.5);
+    padding: 30px;
+}
+
+.inputSectionTitleText {
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: 600;
+    color: rgba(19, 19, 68, 0.592);
+    padding: 0 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.formContainer {
+    width: 80%;
+    border-radius: 28px;
+    background-color: rgba(239, 239, 239, 0.436);
+    box-shadow: 0 24px 48px rgba(36, 36, 59, 0.4);
+}
+
+.inputSection {
+    padding: 10px 30px;
+}
+
+.inputSectionItem {
+    margin-bottom: 20px;
+}
+
+.inputSectionItemTitle {
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgba(19, 19, 68, 0.5);
+    font-weight: 600;
+}
+
+.policyCheckbox {
+    display: flex;
+    align-items: flex-start;
+}

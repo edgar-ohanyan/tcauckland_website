@@ -8,6 +8,7 @@ import tca from "../../assets/icons/thecollaborative-03.png";
 import "./header.css";
 import MenuButton from "./MenuButton";
 
+// To be deleted
 const navMenuItems = [
   {
     title: "Apply for Study",
@@ -72,14 +73,10 @@ function Header() {
           <nav className="header-nav">
             <ul className="header-nav-list">
               <li className="header-nav-item">
-                <a href="#">Submit CV</a>
+                <Link to="/submit-cv" className="card-nav-link">Submit CV</Link>
               </li>
               <li className="header-nav-item">
-                <MenuButton
-                  id="students-button"
-                  label="Students"
-                  menuItems={navMenuItems}
-                />
+                <Link to="/apply-for-study" className="card-nav-link">Students</Link>
               </li>
               <li className="header-nav-item">
                 <a href="#">Recruitment</a>
