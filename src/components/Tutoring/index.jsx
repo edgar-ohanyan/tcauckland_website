@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import tutoring from "../../assets/pictures/tutoring.jpeg";
 import Button from "@mui/material/Button";
 
-import "./tutoring.css";
+import styles from "./styles.module.css";
 
 export default function Tutoring() {
   const [requestBody, setRequestBody] = useState({});
@@ -23,8 +23,8 @@ export default function Tutoring() {
       <div className="main-picture-box">
         <img src={tutoring} className="main-picture" alt="home_bg" />
       </div>
-      <h1 className="tutoring-page-title">Tutoring</h1>
-      <div className="tutoring-page-content">
+      <h1 className={styles.tutoringPageTitle}>Tutoring</h1>
+      <div className={styles.tutoringPageContent}>
         <div className="tutoring-page-content-left">
           <p className="page-content-text">
             As an organization driven by a profound commitment to the success
@@ -53,9 +53,9 @@ export default function Tutoring() {
             specific needs.
           </p>
         </div>
-        <div className="midle-line"></div>
-        <div className="tutoring-page-content-right">
-          <h1 className="form-title">Find A Tutor</h1>
+        <div className={styles.midleLine}></div>
+        <div className={styles.tutoringPageContentRight}>
+          <h1 className={styles.formTitle}>Find A Tutor</h1>
           <form method="POST" id="contactForm" name="contactForm">
             <div className="row">
               <div className="col-md-12 mb-3">

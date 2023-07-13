@@ -2,7 +2,7 @@ import React from 'react';
 // import MuiPhoneNumber from 'material-ui-phone-number'
 
 import PhoneInput from 'react-phone-input-2';
-import './style.css';
+import './styles.module.css';
 
 const Input = (props) => {
   return (

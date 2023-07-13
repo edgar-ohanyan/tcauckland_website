@@ -6,43 +6,43 @@ import card_pic_1 from "../../assets/pictures/image_1.jpg";
 import card_pic_2 from "../../assets/pictures/image_2.jpg";
 import card_pic_3 from "../../assets/pictures/image_3.jpg";
 
-import "./home.css";
+import styles from "./styles.module.css";
 
 export default function Home() {
   return (
     <div>
-      <div className="main-picture-box">
-        <img src={home_bg} className="main-picture" alt="home_bg" />
+      <div className={styles.mainPictureBox}>
+        <img src={home_bg} className={styles.mainPicture} alt="home_bg" />
       </div>
-      <div className="home-content">
+      <div className={styles.homeContent}>
         <Link to="/apply-for-study" className="card-nav-link">
-          <div className="home-card">
-            <div className="home-card-title-box">
-              <h4 className="card-title">Apply To Study</h4>
+          <div className={styles.homeCard}>
+            <div className={styles.homeCardTitleBox}>
+              <h4 className={styles.cardTitle}>Apply To Study</h4>
             </div>
-            <div className="home-card-pic-box">
-              <img className="card-pic" src={card_pic_1} alt="card_pic_1" />
+            <div className={styles.homeCardPicBox}>
+              <img className={styles.cardPic} src={card_pic_1} alt="card_pic_1" />
             </div>
           </div>
         </Link>
         <Link to="/apply-for-study" className="card-nav-link">
-          <div className="home-card">
-            <div className="home-card-title-box">
-              <h4 className="card-title">Find A Job</h4>
+          <div className={styles.homeCard}>
+            <div className={styles.homeCardTitleBox}>
+              <h4 className={styles.cardTitle}>Find A Job</h4>
             </div>
-            <div className="home-card-pic-box">
-              <img className="card-pic" src={card_pic_2} alt="card_pic_1" />
+            <div className={styles.homeCardPicBox}>
+              <img className={styles.cardPic} src={card_pic_2} alt="card_pic_1" />
             </div>
           </div>
         </Link>
 
         <Link to="/apply-for-study" className="card-nav-link">
-          <div className="home-card">
-            <div className="home-card-title-box">
-              <h4 className="card-title">Employer</h4>
+          <div className={styles.homeCard}>
+            <div className={styles.homeCardTitleBox}>
+              <h4 className={styles.cardTitle}>Employer</h4>
             </div>
-            <div className="home-card-pic-box">
-              <img className="card-pic" src={card_pic_3} alt="card_pic_1" />
+            <div className={styles.homeCardPicBox}>
+              <img className={styles.cardPic} src={card_pic_3} alt="card_pic_1" />
             </div>
           </div>
         </Link>

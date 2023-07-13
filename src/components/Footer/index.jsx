@@ -1,5 +1,5 @@
 import React from "react";
-import "./footer.css";
+import styles from "./styles.module.css";
 import { SiGooglemaps } from "react-icons/si";
 import { ImPhone } from "react-icons/im";
 import { TbMailForward } from "react-icons/tb";
@@ -9,14 +9,14 @@ import tca_logo from "../../assets/icons/thecollaborative-01.svg";
 
 export default function Footer() {
   return (
-    <div className="footer bg-dark p-5">
-      <div className="footer-content">
+    <div className={`${styles.footer} bg-dark p-5`}>
+      <div className={styles.footerContent}>
         {/* Logo */}
-        <div className="footer-item footer-logo-box">
-          <img className="footer-logo" src={tca_logo} alt="tca_logo" />
+        <div className={`${styles.footerItem} ${styles.footerLogoBox}`}>
+          <img className={styles.footerLogo} src={tca_logo} alt="tca_logo" />
         </div>
         {/* About */}
-        <div className="footer-item p-3">
+        <div className={`${styles.footerItem} p-3`}>
           <p>
             The collaborative aims to help international students study at top
             New Zealand Universities, as well as placing qualified teachers in
@@ -27,43 +27,43 @@ export default function Footer() {
           </p>
         </div>
         {/* Contact */}
-        <div className="footer-item p-3">
+        <div className={`${styles.footerItem} p-3`}>
           <div className="d-flex">
-            <span className="icon-box">
+            <span className={styles.iconBox}>
               <SiGooglemaps size={25} style={{ color: "#67bde4" }} />
             </span>
-            <p className="text-left">
+            <p className={styles.textLeft}>
               203 Fake St. Mountain View, San Francisco, California, USA
             </p>
           </div>
-          <a className="phone-email" href="tel:+64 210 881 9197">
+          <a className={styles.phoneEmail} href="tel:+64 210 881 9197">
             <div className="d-flex">
-              <span className="icon-box">
+              <span className={styles.iconBox}>
                 <ImPhone size={25} style={{ color: "inherit" }} />
               </span>
               <p>+64 210 881 9197</p>
             </div>
           </a>
           <a
-            className="phone-email"
+            className={styles.phoneEmail}
             href="mailto: thecollaborativeauckland@gmail.com"
           >
             <div className="d-flex">
-              <span className="icon-box">
+              <span className={styles.iconBox}>
                 <TbMailForward size={28} style={{ color: "inherit" }} />
               </span>
-              <p className="footer-email">thecollaborativeaucklandco@gmail.com</p>
+              <p className={styles.footerEmail}>thecollaborativeaucklandco@gmail.com</p>
             </div>
           </a>
 
           <div className="d-flex">
-            <a href="https://twitter.com" className="social-button">
+            <a href="https://twitter.com" className={styles.socialButton}>
               <BsTwitter size={30} style={{ color: "#67bde4" }} />
             </a>
-            <a href="https://facebook.com" className="social-button">
+            <a href="https://facebook.com" className={styles.socialButton}>
               <BsFacebook size={30} style={{ color: "#67bde4" }} />
             </a>
-            <a href="https://instagram.com" className="social-button">
+            <a href="https://instagram.com" className={styles.socialButton}>
               <BsInstagram size={30} style={{ color: "#67bde4" }} />
             </a>
           </div>

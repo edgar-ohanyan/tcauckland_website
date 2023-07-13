@@ -5,7 +5,7 @@ import { Modal } from "@mui/material";
 
 import logo from "../../assets/icons/thecollaborative-02.png";
 import tca from "../../assets/icons/thecollaborative-03.png";
-import "./header.css";
+import styles from "./styles.module.css";
 import MenuButton from "./MenuButton";
 
 const navMenuItems = [
@@ -50,41 +50,41 @@ function Header() {
   });
 
   return (
-    <header className="header">
+    <header className={styles.header}>
       <Link to="/">
-        <div className="header-left">
-          <div className="header-logo-box">
-            <img className="header-logo" src={logo} alt="TCA icon" />
+        <div className={styles.headerLeft}>
+          <div className={styles.headerLogoBox}>
+            <img className={styles.headerLogo} src={logo} alt="TCA icon" />
           </div>
-          <div className="header-tca-box">
-            <img className="header-tca" src={tca} alt="TCA icon" />
+          <div className={styles.headerTcaBox}>
+            <img className={styles.headerTca} src={tca} alt="TCA icon" />
           </div>
         </div>
       </Link>
-      <div className="header-right">
+      <div className={styles.headerRight}>
         {showBurger ? (
           <RxHamburgerMenu
             size={40}
-            className="header-burger"
+            className={styles.headerBurger}
             onClick={() => setOpenBurger((o) => !o)}
           />
         ) : (
-          <nav className="header-nav">
-            <ul className="header-nav-list">
-              <li className="header-nav-item">
+          <nav>
+            <ul className={styles.headerNavList}>
+              <li className={styles.headerNavItem}>
                 <a href="#">Submit CV</a>
               </li>
-              <li className="header-nav-item">
+              <li className={styles.headerNavItem}>
                 <MenuButton
                   id="students-button"
                   label="Students"
                   menuItems={navMenuItems}
                 />
               </li>
-              <li className="header-nav-item">
+              <li className={styles.headerNavItem}>
                 <a href="#">Recruitment</a>
               </li>
-              <li className="header-nav-item">
+              <li className={styles.headerNavItem}>
                 <MenuButton
                   id="partnership-button"
                   label="Partnership"
@@ -97,20 +97,20 @@ function Header() {
       </div>
 
       {openBurger && (
-        <div className="header-nav-popup">
+        <div className={styles.headerNavPopup}>
           {/* Content of the popup */}
-          <nav className="header-nav">
-            <ul className="header-nav-list-popup">
-              <li className="header-nav-item-popup">
+          <nav>
+            <ul className={styles.headerNavListPopup}>
+              <li className={styles.headerNavItemPopup}>
                 <a href="#">Submit CV</a>
               </li>
-              <li className="header-nav-item-popup">
+              <li className={styles.headerNavItemPopup}>
                 <a href="#">Students</a>
               </li>
-              <li className="header-nav-item-popup">
+              <li className={styles.headerNavItemPopup}>
                 <a href="#">Recruitment</a>
               </li>
-              <li className="header-nav-item-popup">
+              <li className={styles.headerNavItemPopup}>
                 <a href="#">Partnership</a>
               </li>
             </ul>
@@ -124,20 +124,20 @@ function Header() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <div className="header-nav-popup">
+        <div className={styles.headerNavPopup}>
           {/* Content of the popup */}
           <nav className="header-nav">
-            <ul className="header-nav-list-popup">
-              <li className="header-nav-item-popup">
+            <ul className={styles.headerNavListPopup}>
+              <li className={styles.headerNavItemPopup}>
                 <a href="#">Submit CV</a>
               </li>
-              <li className="header-nav-item-popup">
+              <li className={styles.headerNavItemPopup}>
                 <a href="#">Students</a>
               </li>
-              <li className="header-nav-item-popup">
+              <li className={styles.headerNavItemPopup}>
                 <a href="#">Recruitment</a>
               </li>
-              <li className="header-nav-item-popup">
+              <li className={styles.headerNavItemPopup}>
                 <a href="#">Partnership</a>
               </li>
             </ul>

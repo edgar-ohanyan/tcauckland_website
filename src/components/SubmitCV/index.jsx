@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./style.css";
+import styles from "./styles.module.css";
 import home_bg from "../../assets/pictures/bg_home.jpg";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { FormControl, FormHelperText, InputLabel, MenuItem, Select } from '@mui/material';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker/DatePicker';
+// import { DatePicker } from '@mui/x-date-pickers/DatePicker/DatePicker';
 
 import MobilePhone from "../MobilePhone";
 import emailjs from '@emailjs/browser';
@@ -126,8 +126,8 @@ export default function SubmitCV() {
     <div>
       <div className="main-picture-box">
         <div className="img-overlay"></div>
-        <img src={home_bg} className="main-picture" alt="home_bg"/>
-        <h3 className="submit-text">Submit Your CV</h3>
+        <img src={home_bg} className={styles.mainPicture} alt="home_bg"/>
+        <h3 className={styles.submitText}>Submit Your CV</h3>
       </div>
 
       <div className="form-container">
@@ -149,22 +149,22 @@ export default function SubmitCV() {
             onChange={handleSave}
           />
 
-          <FormControl error={errors.dob}>
-            <DatePicker
-              label="Date Of Birth"
-              name="dob"
-              onChange={(e) => {
-                const dateStr = isNaN(e.$d) ? '' : `${e.$D}/${e.$M}/${e.$y}`;
-                handleSave({
-                  target: {
-                    name: "dob",
-                    value: dateStr,
-                  }
-                });
-              }}
-            />
-            <FormHelperText>{!!errors.dob ? "Select a date" : ""}</FormHelperText>
-          </FormControl>
+          {/*<FormControl error={errors.dob}>*/}
+          {/*  <DatePicker*/}
+          {/*    label="Date Of Birth"*/}
+          {/*    name="dob"*/}
+          {/*    onChange={(e) => {*/}
+          {/*      const dateStr = isNaN(e.$d) ? '' : `${e.$D}/${e.$M}/${e.$y}`;*/}
+          {/*      handleSave({*/}
+          {/*        target: {*/}
+          {/*          name: "dob",*/}
+          {/*          value: dateStr,*/}
+          {/*        }*/}
+          {/*      });*/}
+          {/*    }}*/}
+          {/*  />*/}
+          {/*  <FormHelperText>{!!errors.dob ? "Select a date" : ""}</FormHelperText>*/}
+          {/*</FormControl>*/}
 
           <MobilePhone
             name="phone"

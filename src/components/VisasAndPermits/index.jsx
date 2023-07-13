@@ -1,37 +1,37 @@
 import React from "react";
 import visasAndPermits from "../../assets/pictures/visa&permit.jpeg";
 
-import "./visasAndPermits.css";
+import styles from "./styles.module.css";
 
 export default function VisasAndPermits() {
   return (
-    <div className="visasAndPermits">
+    <div className={styles.visasAndPermits}>
       <div className="main-picture-box">
         <img src={visasAndPermits} className="main-picture" alt="home_bg" />
       </div>
       <div className="page-content">
         <h1 className="page-title">Student Visa</h1>
-        <p className="page-content-text-primary">
+        <p className={styles.pageContentTextPrimary}>
           As an international student aspiring to study at one of New Zealand's
           esteemed universities, it is essential to understand the{" "}
-          <span className="italic">visa requirements</span> mandated by the
+          <span className={styles.italic}>visa requirements</span> mandated by the
           country's immigration laws. These regulations stipulate that all
           international students must possess a valid visa for the entire
           duration of their studies in New Zealand. To commence the application
           process, prospective students must familiarize themselves with the
           visa application requirements and
-          <span className="italic"> gather the necessary documents.</span>
+          <span className={styles.italic}> gather the necessary documents.</span>
           The process can vary depending on factors such as the duration of
           study, the chosen university, and the student's country of origin.
           However, the following details provide a general overview of the
           application process and the key documents typically required:
         </p>
-        <div className="chapter-content-text">
-          <h2 className="chapter-title">Applying for your visa online:</h2>
-          <p className="chapter-content-text">
+        <div className={styles.chapterContentText}>
+          <h2 className={styles.chapterTitle}>Applying for your visa online:</h2>
+          <p className={styles.chapterContentText}>
             You need to apply for your student visa online through
             <a
-              className="italic"
+              className={styles.italic}
               href="https://www.immigration.govt.nz/"
               target="_blank"
               rel="noopener noreferrer"
@@ -45,7 +45,7 @@ export default function VisasAndPermits() {
           <p>
             You need to
             <a
-              className="italic"
+              className={styles.italic}
               href="https://www.immigration.govt.nz/secure/Login+Working+Holiday"
               target="_blank"
               rel="noopener noreferrer"
@@ -61,7 +61,7 @@ export default function VisasAndPermits() {
             Before applying, please check the visa checklist if you are applying
             for a student visa for the first time:{" "}
             <a
-              className="italic"
+              className={styles.italic}
               href="https://www.immigration.govt.nz/documents/checklists/first-time-student-visa-application-checklist.pdf?_ga=2.207157585.391740053.1574711835-288367170.1555281702"
               target="_blank"
               rel="noopener noreferrer"
@@ -76,7 +76,7 @@ export default function VisasAndPermits() {
               Police, medical, or x-ray certificates – you may need to supply
               these. Check the{" "}
               <a
-                className="italic"
+                className={styles.italic}
                 href="https://www.immigration.govt.nz/new-zealand-visas/preparing-a-visa-application/medical-info/when-you-need-an-x-ray-or-medical-examination"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -91,7 +91,7 @@ export default function VisasAndPermits() {
             <li>
               A debit or credit card to pay for your application online.{" "}
               <a
-                className="italic"
+                className={styles.italic}
                 href="https://www.immigration.govt.nz/new-zealand-visas/apply-for-a-visa/tools-and-information/fees"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -102,9 +102,9 @@ export default function VisasAndPermits() {
             </li>
           </ol>
         </div>
-        <div className="separateLine"></div>
-        <div className="chapter-content-text">
-          <h2 className="chapter-title">Documents you need to provide:</h2>
+        <div className={styles.separateLine}></div>
+        <div className={styles.chapterContentText}>
+          <h2 className={styles.chapterTitle}>Documents you need to provide:</h2>
           <p>
             In order to successfully complete your application, it is crucial
             that you carefully scan and save the following documents as Portable
@@ -112,7 +112,7 @@ export default function VisasAndPermits() {
             conveniently upload them to the designated platform or submit them
             electronically.
           </p>
-          <h2 className="chapter-title-secondary">For All Students:</h2>
+          <h2 className={styles.chapterTitleSecondary}>For All Students:</h2>
           <p>
             Kindly note that all students are required to upload the following
             documents along with their application. Additional documentation
@@ -173,7 +173,7 @@ export default function VisasAndPermits() {
               </li>
             </ul>
           </ol>
-          <h2 className="chapter-title-secondary">For Returning Students:</h2>
+          <h2 className={styles.chapterTitleSecondary}>For Returning Students:</h2>
           <p>
             If you are a returning student, please note that you need to include
             the following extra documents with your application:
@@ -198,7 +198,7 @@ export default function VisasAndPermits() {
               achieve better academic results this time.
             </li>
           </ol>
-          <h2 className="chapter-title-secondary">
+          <h2 className={styles.chapterTitleSecondary}>
             For Doctor of Philosophy (PhD) Students:
           </h2>
           <p>
@@ -224,9 +224,9 @@ export default function VisasAndPermits() {
             </li>
           </ol>
         </div>
-        <div className="separateLine"></div>
-        <div className="chapter-content-text">
-          <h2 className="chapter-title">After you apply:</h2>
+        <div className={styles.separateLine}></div>
+        <div className={styles.chapterContentText}>
+          <h2 className={styles.chapterTitle}>After you apply:</h2>
           <p>
             Once you submit your online application, the status will change to
             "submitted". You can log in to the application portal at any time to
@@ -250,9 +250,9 @@ export default function VisasAndPermits() {
             we can forward it to your university.
           </p>
         </div>
-        <div className="separateLine"></div>
-        <div className="chapter-content-text">
-          <h2 className="chapter-title">Why you need a valid student visa:</h2>
+        <div className={styles.separateLine}></div>
+        <div className={styles.chapterContentText}>
+          <h2 className={styles.chapterTitle}>Why you need a valid student visa:</h2>
           <p>
             The New Zealand Government requires all international students to
             hold a valid student visa for the duration of their academic study
@@ -274,9 +274,9 @@ export default function VisasAndPermits() {
           </p>
         </div>
 
-        <div className="separateLine"></div>
-        <div className="chapter-content-text">
-          <h2 className="chapter-title">Medical and travel insurance:</h2>
+        <div className={styles.separateLine}></div>
+        <div className={styles.chapterContentText}>
+          <h2 className={styles.chapterTitle}>Medical and travel insurance:</h2>
           <p>
             According to The Education (Pastoral Care of International Students)
             Code of Practice 2016, all international students enrolled at
@@ -320,9 +320,9 @@ export default function VisasAndPermits() {
           </p>
         </div>
 
-        <div className="separateLine"></div>
-        <div className="chapter-content-text">
-          <h2 className="chapter-title">As an international student:</h2>
+        <div className={styles.separateLine}></div>
+        <div className={styles.chapterContentText}>
+          <h2 className={styles.chapterTitle}>As an international student:</h2>
           <p>
             As an international student studying in New Zealand, it is mandatory
             to have appropriate medical and travel insurance that meets the
@@ -358,9 +358,9 @@ export default function VisasAndPermits() {
           </p>
         </div>
 
-        <div className="separateLine"></div>
-        <div className="chapter-content-text">
-          <h2 className="chapter-title">Arranging Studentsafe insurance:</h2>
+        <div className={styles.separateLine}></div>
+        <div className={styles.chapterContentText}>
+          <h2 className={styles.chapterTitle}>Arranging Studentsafe insurance:</h2>
           <p>
             AUT, which stands for Auckland University of Technology, has
             recently appointed Marsh Limited as the insurance brokers
@@ -410,7 +410,7 @@ export default function VisasAndPermits() {
             <li>
               Download a Family Application Form from the{" "}
               <a
-                className="italic"
+                className={styles.italic}
                 href="https://www.insurancesafenz.com/studentsafe/student-safe-inbound-university"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -465,7 +465,7 @@ export default function VisasAndPermits() {
             between semesters of enrollment.
             <br />{" "}
             <a
-              className="italic"
+              className={styles.italic}
               href="https://www.aut.ac.nz/__data/assets/pdf_file/0005/337055/SFUB.5.Studensafe_Inbound_Uni_DL_AUT_-_Web.pdf"
               target="_blank"
               rel="noopener noreferrer"
@@ -480,7 +480,7 @@ export default function VisasAndPermits() {
             You can fill in a Studentsafe claim form online.
             <br />{" "}
             <a
-              className="italic"
+              className={styles.italic}
               href="https://www.insurancesafenz.com/claimsportal"
               target="_blank"
               rel="noopener noreferrer"
@@ -504,7 +504,7 @@ export default function VisasAndPermits() {
             <li>
               You can visit the{" "}
               <a
-                className="italic"
+                className={styles.italic}
                 href="https://www.insurancesafenz.com/studentsafe/student-safe-inbound-university"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -518,7 +518,7 @@ export default function VisasAndPermits() {
           <ul>
             <li>
               <a
-                className="italic"
+                className={styles.italic}
                 href="https://www.insurancesafenz.com/files/PDF/SFUB.6._Studentsafe_Inbound_Uni_(WEB)_AUT.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -529,9 +529,9 @@ export default function VisasAndPermits() {
           </ul>
         </div>
 
-        <div className="separateLine"></div>
-        <div className="chapter-content-text">
-          <h2 className="chapter-title">
+        <div className={styles.separateLine}></div>
+        <div className={styles.chapterContentText}>
+          <h2 className={styles.chapterTitle}>
             Arranging insurance through other approved insurance providers:
           </h2>
           <p>

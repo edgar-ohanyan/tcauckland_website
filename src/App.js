@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider/LocalizationProvider";
+// import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+// import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider/LocalizationProvider";
 
 import Layout from "./components/Layout";
 import Home from "./components/Home";
@@ -13,11 +13,10 @@ import FoundaationPrograms from "./components/FoundaationPrograms";
 import Tutoring from "./components/Tutoring";
 import ApplicationPage from "./components/ApplicationPage";
 
-import "./App.css";
 function App() {
   return (
     <BrowserRouter>
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
+      {/*<LocalizationProvider dateAdapter={AdapterDayjs}>*/}
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -34,7 +33,7 @@ function App() {
             <Route path="/student-application" element={<ApplicationPage />} />
           </Route>
         </Routes>
-      </LocalizationProvider>
+      {/*</LocalizationProvider>*/}
     </BrowserRouter>
   );
 }

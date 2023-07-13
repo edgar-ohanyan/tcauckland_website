@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import graduate from "../../assets/pictures/graduate.jpg";
 import { Link } from "react-router-dom";
 
-import "./studyWithUs.css";
+import styles from "./styles.module.css";
 
 export default function StudyWithUs() {
   return (
@@ -11,9 +11,9 @@ export default function StudyWithUs() {
       <div className="main-picture-box">
         <img src={graduate} className="main-picture" alt="home_bg" />
       </div>
-      <div className="page-content">
-        <h1 className="page-title">Our University sector is Unique:</h1>
-        <p className="page-content-text">
+      <div className={styles.pageContent}>
+        <h1 className={styles.pageTitle}>Our University sector is Unique:</h1>
+        <p className={styles.pageContentText}>
           New Zealand, a country renowned for its stunning landscapes and
           vibrant culture, is home to eight universities that uphold the highest
           standards of education and research. Each of these universities holds
@@ -21,7 +21,7 @@ export default function StudyWithUs() {
           universities, which translates to being among the top 500 universities
           worldwide.
         </p>
-        <p className="page-content-text">
+        <p className={styles.pageContentText}>
           Moreover, New Zealand's universities have achieved significant
           recognition in various subject areas. In fact, they are consistently
           ranked within the top 50 universities globally in 22 different
@@ -31,7 +31,7 @@ export default function StudyWithUs() {
           subjects, further solidifying their commitment to academic excellence
           and innovation.
         </p>
-        <p className="page-content-text">
+        <p className={styles.pageContentText}>
           One of the remarkable aspects of New Zealand's higher education system
           is the outstanding graduate outcomes that students experience. New
           Zealand graduates enjoy some of the best graduate outcomes in the
@@ -43,7 +43,7 @@ export default function StudyWithUs() {
           are well-prepared for the workforce and have a competitive edge in the
           global job market.
         </p>
-        <p className="page-content-text">
+        <p className={styles.pageContentText}>
           While seven of the universities in New Zealand offer a wide range of
           subjects spanning arts, sciences, commerce, engineering, and health
           sciences, Lincoln University stands out as a specialist land-based
@@ -52,7 +52,7 @@ export default function StudyWithUs() {
           Lincoln University plays a crucial role in supporting New Zealand's
           agricultural and environmental sectors.
         </p>
-        <p className="page-content-text">
+        <p className={styles.pageContentText}>
           In conclusion, New Zealand's universities have garnered a
           well-deserved reputation for their exceptional quality and academic
           prowess. Their consistently high rankings, not only as institutions
@@ -67,7 +67,7 @@ export default function StudyWithUs() {
           education.
         </p>
       </div>
-      <div className="apply-study-button-box">
+      <div className={styles.applyStudyButtonBox}>
         <Link to="/student-application" className="card-nav-link">
           <Button
             variant="contained"
