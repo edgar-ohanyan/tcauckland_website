@@ -14,10 +14,6 @@ export default function Tutoring() {
     }));
   };
 
-  useEffect(() => {
-    console.log("requestBody: ", requestBody);
-  }, [requestBody]);
-
   return (
     <div>
       <div className="main-picture-box">
