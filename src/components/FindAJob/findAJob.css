@@ -1,0 +1,155 @@
+.job-list {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px;
+    background-color: #edf9ff;
+}
+
+.job {
+    width: 340px;
+    height: 470px;
+    margin: 10px;
+    padding: 0 10px;
+    background-color: rgba(239, 239, 239, 0.436);
+    border-radius: 28px;
+    justify-content: space-between;
+    box-shadow: 0 24px 48px rgba(36, 36, 59, 0.4);
+    text-decoration: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+}
+
+.jobTitleBox {
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+.jobTitle {
+    color: rgba(19, 19, 68, 0.708);
+    text-align: center;
+    padding: 0 25px
+}
+
+.jobFieldsBox {
+    padding: 0 10px;
+    /* background-color: beige; */
+    max-height: 60%;
+    overflow: hidden;
+}
+
+.jobField {
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+}
+.jobDescription {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.6;
+    
+    height: min-content;
+    /* position: relative; */
+    display: contents;
+}
+
+.readMore {
+    position: absolute;
+    bottom: 55px;
+    right: 20px;
+    cursor: pointer;
+    color: rgba(19, 19, 68, 0.5);
+}
+
+.jobDescriptionText {
+    overflow: hidden;
+}
+
+.MuiPaper-root {
+    max-height: 60vh !important;
+    text-align: center !important;
+    border-radius: 28px !important;
+    padding: 20px 0;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.MuiPaper-root::-webkit-scrollbar {
+    display: none;
+}
+
+.jobDescriptionDialog {
+    text-align: center;
+    margin: 20px;
+    height: 80%;
+}
+
+
+.jobDescriptionTitle {
+    color: rgba(19, 19, 68, 0.708);
+    text-align: center;
+    padding: 0 25px 20px;
+}
+
+.jobFieldTitle {
+    color: rgba(19, 19, 68, 0.5);
+}
+
+.jobFieldText {
+    color: rgba(19, 19, 68, 0.708);
+}
+
+.jobDescriptionText {
+    color: rgba(19, 19, 68, 0.708);
+
+}
+
+.applyForJobButtonBox {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    margin: auto auto 20px;
+}
+
+.submitBox {
+    display: flex;
+    justify-content: space-around;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.paginationButton {
+    margin: 20px !important;
+    background-color: #4daeda !important;
+}
+
+.locationSelect {
+    /* width: 340px; */
+    display: flex;
+    justify-content: center;
+}
+
+.locationSelectText {
+    color: rgba(19, 19, 68, 0.708);
+    margin-left: 20px;
+}
+
+.locationSelectTop{
+    background-color: #edf9ff;
+    padding: 30px;
+}

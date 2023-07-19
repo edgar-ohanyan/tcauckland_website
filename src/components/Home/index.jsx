@@ -25,7 +25,7 @@ export default function Home() {
             </div>
           </div>
         </Link>
-        <Link to="/apply-for-study" className="card-nav-link">
+        <Link to="/find-a-job" className="card-nav-link">
           <div className="home-card">
             <div className="home-card-title-box">
               <h4 className="card-title">Find A Job</h4>
