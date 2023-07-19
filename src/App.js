@@ -12,6 +12,7 @@ import EnglishPrograms from "./components/EnglishPrograms";
 import FoundaationPrograms from "./components/FoundaationPrograms";
 import Tutoring from "./components/Tutoring";
 import ApplicationPage from "./components/ApplicationPage";
+import FindAJob from "./components/FindAJob";
 
 import "./App.css";
 function App() {
@@ -32,6 +33,7 @@ function App() {
             />
             <Route path="/tutoring" element={<Tutoring />} />
             <Route path="/student-application" element={<ApplicationPage />} />
+            <Route path="/find-a-job" element={<FindAJob />} />
           </Route>
         </Routes>
       </LocalizationProvider>
