@@ -35,7 +35,6 @@ export default function Home() {
             </div>
           </div>
         </Link>
-
         <Link to="/apply-for-study" className="card-nav-link">
           <div className="home-card">
             <div className="home-card-title-box">
