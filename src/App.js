@@ -13,6 +13,18 @@ import FoundaationPrograms from "./components/FoundaationPrograms";
 import Tutoring from "./components/Tutoring";
 import ApplicationPage from "./components/ApplicationPage";
 import FindAJob from "./components/FindAJob";
+import CareerHub from "./components/CareerHub";
+import { ReasonsToTeachInternationally } from "./components/CareerHub/ReasonsToTeachInternationally";
+import { InternationalTeaching } from "./components/CareerHub/InternationalTeaching";
+import { TeachingAbroad } from "./components/CareerHub/TeachingAbroad";
+import { LinkedInProfile } from "./components/CareerHub/LinkedInProfile";
+import { Misconceptions } from "./components/CareerHub/Misconceptions";
+import { WorkInKuwait } from "./components/CareerHub/WorkInKuwait";
+import { GreatLeader } from "./components/CareerHub/GreatLeader";
+import CandiateJourney from "./components/CandiateJourney";
+import BecomePartner from "./components/BecomePartner";
+import LeaderPostion from "./components/LeaderPostion";
+import VirtualInterviews from "./components/VirtualInterviews";
 
 import "./App.css";
 function App() {
@@ -34,6 +46,24 @@ function App() {
             <Route path="/tutoring" element={<Tutoring />} />
             <Route path="/student-application" element={<ApplicationPage />} />
             <Route path="/find-a-job" element={<FindAJob />} />
+            <Route path="/career-hub" element={<CareerHub />} />
+            <Route
+              path="/reasons-to-teach-internationally"
+              element={<ReasonsToTeachInternationally />}
+            />
+            <Route
+              path="/international-teaching"
+              element={<InternationalTeaching />}
+            />
+            <Route path="/teaching-abroad" element={<TeachingAbroad />} />
+            <Route path="/linkedin-profile" element={<LinkedInProfile />} />
+            <Route path="/misconceptions" element={<Misconceptions />} />
+            <Route path="/work-in-kuwait" element={<WorkInKuwait />} />
+            <Route path="/great-leader" element={<GreatLeader />} />
+            <Route path="/candiate-journey" element={<CandiateJourney />} />
+            <Route path="/become-partner" element={<BecomePartner />} />
+            <Route path="/leader-postion" element={<LeaderPostion />} />
+            <Route path="/virtual-interviews" element={<VirtualInterviews />} />
           </Route>
         </Routes>
       </LocalizationProvider>

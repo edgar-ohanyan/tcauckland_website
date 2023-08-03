@@ -1,0 +1,36 @@
+
+.candidateJurneyContentBox {
+    padding: 60px;
+}
+
+.candidateJurneyContent {
+    padding: 0 40px;
+}
+
+.candidateJurneyContentItem {
+    height: 270px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 66px;
+}
+
+.candidateJurneyContentItemPicBox {
+    width: 45%;
+}
+
+.candidateJurneyContentItemPic {
+    width: 45%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.candidateJurneyContentItemTextBox {
+    width: 45%;
+    overflow: hidden;
+}
+
+.candidateJurneyContentItemText {
+    color: #4c626c;
+}
+

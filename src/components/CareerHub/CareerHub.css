@@ -1,0 +1,22 @@
+.reasonsToTeachInternationally {
+    position: relative;
+}
+
+.stickyNavButtonBox {
+    width: 80px;
+    height: 80px;
+    padding: 20px;
+    position: sticky;
+    top: 80px;
+    z-index: 999;
+}
+
+.stickyNavButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.careerArticleLink {
+    text-decoration: none;
+}
