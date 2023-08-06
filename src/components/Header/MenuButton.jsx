@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button, Menu, MenuItem } from "@mui/material";
 import "./header.css";
 
-
 function MenuButton({ id, label, menuItems }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -37,8 +36,11 @@ function MenuButton({ id, label, menuItems }) {
         }}
       >
         {menuItems.map((item, index) => (
-          <MenuItem key={index} onClick={handleClose}>
-            
+          <MenuItem
+            key={index}
+            onClick={handleClose}
+            className="headerMenuItem"
+          >
             <a href={item.path}>{item.title}</a>
           </MenuItem>
         ))}

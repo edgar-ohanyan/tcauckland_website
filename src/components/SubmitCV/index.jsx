@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import "./style.css";
 import home_bg from "../../assets/pictures/bg_home.jpg";
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import { FormControl, FormHelperText, InputLabel, MenuItem, Select } from '@mui/material';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker/DatePicker';
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import {
+  FormControl,
+  FormHelperText,
+  InputLabel,
+  MenuItem,
+  Select,
+} from "@mui/material";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker/DatePicker";
 
 import MobilePhone from "../MobilePhone";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import Joi from "joi-browser";
 
 import passportNationality from "../../assets/formData/passport-nationality";
@@ -92,18 +98,19 @@ export default function SubmitCV() {
     applicationData[name] = value;
     setApplication(applicationData);
     setErrors(errorData);
-  }
+  };
 
   const uploadFile = (event) => {
     let file = event.target.files[0];
 
     if (file) {
+      console.log("file: ", file);
       setFile(file);
       let applicationData = { ...application };
       applicationData["filename"] = file.name;
       setApplication(applicationData);
       let data = new FormData();
-      data.append('file', file);
+      data.append("file", file);
     }
   };
 
@@ -115,10 +122,15 @@ export default function SubmitCV() {
     }
     setErrors({});
     await sendEmail();
-  }
+  };
 
   const sendEmail = async () => {
-    const res = await emailjs.send('service_6t9d6i8', 'template_jbopcma', application, 'r9vcvEN8-TTCAFsPX');
+    const res = await emailjs.send(
+      "service_ndr6xcb",
+      "template_d8bnqxl",
+      application,
+      "hLkFnRomSneBkqCTP"
+    );
     console.log(res);
   };
 
@@ -126,7 +138,7 @@ export default function SubmitCV() {
     <div>
       <div className="main-picture-box">
         <div className="img-overlay"></div>
-        <img src={home_bg} className="main-picture" alt="home_bg"/>
+        <img src={home_bg} className="main-picture" alt="home_bg" />
         <h3 className="submit-text">Submit Your CV</h3>
       </div>
 
@@ -138,14 +150,14 @@ export default function SubmitCV() {
             name="name"
             onChange={handleSave}
             error={!!errors.name}
-            helperText={errors.name ? "Too long or empty name" : ''}
+            helperText={errors.name ? "Too long or empty name" : ""}
           />
           <TextField
             type="email"
             label="Email"
             name="email"
             error={!!errors.email}
-            helperText={errors.email ? "Invalid email" : ''}
+            helperText={errors.email ? "Invalid email" : ""}
             onChange={handleSave}
           />
 
@@ -154,16 +166,18 @@ export default function SubmitCV() {
               label="Date Of Birth"
               name="dob"
               onChange={(e) => {
-                const dateStr = isNaN(e.$d) ? '' : `${e.$D}/${e.$M}/${e.$y}`;
+                const dateStr = isNaN(e.$d) ? "" : `${e.$D}/${e.$M}/${e.$y}`;
                 handleSave({
                   target: {
                     name: "dob",
                     value: dateStr,
-                  }
+                  },
                 });
               }}
             />
-            <FormHelperText>{!!errors.dob ? "Select a date" : ""}</FormHelperText>
+            <FormHelperText>
+              {!!errors.dob ? "Select a date" : ""}
+            </FormHelperText>
           </FormControl>
 
           <MobilePhone
@@ -172,8 +186,8 @@ export default function SubmitCV() {
               handleSave({
                 target: {
                   name: "phone",
-                  value: e
-                }
+                  value: e,
+                },
               });
             }}
             type="text"
@@ -181,7 +195,9 @@ export default function SubmitCV() {
           />
 
           <FormControl error={!!errors.nationality}>
-            <InputLabel id="passport-nationality-label">Passport / Nationlity</InputLabel>
+            <InputLabel id="passport-nationality-label">
+              Passport / Nationlity
+            </InputLabel>
             <Select
               labelId="passport-nationality-label"
               id="passport-nationality"
@@ -191,19 +207,23 @@ export default function SubmitCV() {
                   target: {
                     name: "nationality",
                     value: e.target.value,
-                  }
-                })
+                  },
+                });
               }}
             >
-              {
-                passportNationality.map(e => <MenuItem value={e}>{e}</MenuItem>)
-              }
+              {passportNationality.map((e) => (
+                <MenuItem value={e}>{e}</MenuItem>
+              ))}
             </Select>
-            <FormHelperText>{!!errors.nationality ? "Select a value" : ""}</FormHelperText>
+            <FormHelperText>
+              {!!errors.nationality ? "Select a value" : ""}
+            </FormHelperText>
           </FormControl>
 
           <FormControl error={!!errors.countryOfResidence}>
-            <InputLabel id="country-of-residence-label">Country of Residence</InputLabel>
+            <InputLabel id="country-of-residence-label">
+              Country of Residence
+            </InputLabel>
             <Select
               labelId="country-of-residence-label"
               id="country-of-residence"
@@ -212,15 +232,17 @@ export default function SubmitCV() {
                   target: {
                     name: "countryOfResidence",
                     value: e.target.value,
-                  }
-                })
+                  },
+                });
               }}
             >
-              {
-                countriesOfResidence.map(e => <MenuItem value={e}>{e}</MenuItem>)
-              }
+              {countriesOfResidence.map((e) => (
+                <MenuItem value={e}>{e}</MenuItem>
+              ))}
             </Select>
-            <FormHelperText>{!!errors.nationality ? "Select a value" : ""}</FormHelperText>
+            <FormHelperText>
+              {!!errors.nationality ? "Select a value" : ""}
+            </FormHelperText>
           </FormControl>
 
           <FormControl error={!!errors.maritalStatus}>
@@ -233,19 +255,23 @@ export default function SubmitCV() {
                   target: {
                     name: "maritalStatus",
                     value: e.target.value,
-                  }
-                })
+                  },
+                });
               }}
             >
-              {
-                maritalStatus.map(e => <MenuItem value={e}>{e}</MenuItem>)
-              }
+              {maritalStatus.map((e) => (
+                <MenuItem value={e}>{e}</MenuItem>
+              ))}
             </Select>
-            <FormHelperText>{!!errors.nationality ? "Select a value" : ""}</FormHelperText>
+            <FormHelperText>
+              {!!errors.nationality ? "Select a value" : ""}
+            </FormHelperText>
           </FormControl>
 
           <FormControl error={!!errors.dependentChildren}>
-            <InputLabel id="dependent-children-label">Dependent Children</InputLabel>
+            <InputLabel id="dependent-children-label">
+              Dependent Children
+            </InputLabel>
             <Select
               labelId="dependent-children-label"
               id="dependent-children"
@@ -254,19 +280,23 @@ export default function SubmitCV() {
                   target: {
                     name: "dependentChildren",
                     value: e.target.value,
-                  }
-                })
+                  },
+                });
               }}
             >
-              {
-                dependentChildren.map(e => <MenuItem value={e}>{e}</MenuItem>)
-              }
+              {dependentChildren.map((e) => (
+                <MenuItem value={e}>{e}</MenuItem>
+              ))}
             </Select>
-            <FormHelperText>{!!errors.nationality ? "Select a value" : ""}</FormHelperText>
+            <FormHelperText>
+              {!!errors.nationality ? "Select a value" : ""}
+            </FormHelperText>
           </FormControl>
 
           <FormControl error={errors.teachingRegions}>
-            <InputLabel id="teaching-regions-label">Which region/s do you wish to teach in</InputLabel>
+            <InputLabel id="teaching-regions-label">
+              Which region/s do you wish to teach in
+            </InputLabel>
             <Select
               labelId="teaching-regions-label"
               id="teaching-regions"
@@ -275,19 +305,23 @@ export default function SubmitCV() {
                   target: {
                     name: "teachingRegions",
                     value: e.target.value,
-                  }
-                })
+                  },
+                });
               }}
             >
-              {
-                teachingRegions.map(e => <MenuItem value={e}>{e}</MenuItem>)
-              }
+              {teachingRegions.map((e) => (
+                <MenuItem value={e}>{e}</MenuItem>
+              ))}
             </Select>
-            <FormHelperText>{!!errors.nationality ? "Select a value" : ""}</FormHelperText>
+            <FormHelperText>
+              {!!errors.nationality ? "Select a value" : ""}
+            </FormHelperText>
           </FormControl>
 
           <FormControl error={errors.applicationSubject}>
-            <InputLabel id="application-subject-label">I am applying for</InputLabel>
+            <InputLabel id="application-subject-label">
+              I am applying for
+            </InputLabel>
             <Select
               labelId="application-subject-label"
               id="application-subject"
@@ -296,15 +330,17 @@ export default function SubmitCV() {
                   target: {
                     name: "applicationSubject",
                     value: e.target.value,
-                  }
-                })
+                  },
+                });
               }}
             >
-              {
-                applicationSubject.map(e => <MenuItem value={e}>{e}</MenuItem>)
-              }
+              {applicationSubject.map((e) => (
+                <MenuItem value={e}>{e}</MenuItem>
+              ))}
             </Select>
-            <FormHelperText>{!!errors.nationality ? "Select a value" : ""}</FormHelperText>
+            <FormHelperText>
+              {!!errors.nationality ? "Select a value" : ""}
+            </FormHelperText>
           </FormControl>
 
           <TextField
@@ -313,7 +349,9 @@ export default function SubmitCV() {
             name="qualifiedSubject"
             onChange={handleSave}
             error={!!errors.qualifiedSubject}
-            helperText={errors.qualifiedSubject ? "Invalid qualified subject" : ''}
+            helperText={
+              errors.qualifiedSubject ? "Invalid qualified subject" : ""
+            }
           />
           <TextField
             type="text"
@@ -321,25 +359,34 @@ export default function SubmitCV() {
             name="qualifiedSubject2"
             onChange={handleSave}
             error={!!errors.qualifiedSubject2}
-            helperText={errors.qualifiedSubject2 ? "Invalid qualified subject" : ''}
+            helperText={
+              errors.qualifiedSubject2 ? "Invalid qualified subject" : ""
+            }
           />
 
           <input
             accept="image/*"
             className="test"
-            style={{ display: 'none' }}
+            style={{ display: "none" }}
             id="raised-button-file"
             type="file"
             onChange={uploadFile}
           />
           {file ? file.name : ""}
           <label htmlFor="raised-button-file">
-            <Button variant="raised" component="span" className="test" fullWidth>
+            <Button
+              variant="raised"
+              component="span"
+              className="test"
+              fullWidth
+            >
               Upload CV
             </Button>
           </label>
 
-          <FormHelperText error color="red">{!!errors.filename ? "Upload a file" : ""}</FormHelperText>
+          <FormHelperText error color="red">
+            {!!errors.filename ? "Upload a file" : ""}
+          </FormHelperText>
           <Button onClick={submitForm}>Submit</Button>
         </FormControl>
       </div>
