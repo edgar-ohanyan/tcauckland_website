@@ -8,38 +8,6 @@ import tca from "../../assets/icons/thecollaborative-03.png";
 import "./header.css";
 import MenuButton from "./MenuButton";
 
-// To be deleted
-const navMenuItems = [
-  {
-    title: "Apply for Study",
-    path: "/apply-for-study"
-  },
-  {
-    title: "Study with us",
-    path: "/study-with-us"
-  },
-  {
-    title: "Visas & Permits",
-    path: "/visas-and-permits"
-  },
-  {
-    title: "English Programs",
-    path: "/english-programs"
-  },
-  {
-    title: "Foundation Programs",
-    path: "/foundation-programs"
-  },
-  {
-    title: "Tutoring",
-    path: "/Tutoring"
-  },
-  {
-    title: "Events and Functions",
-    path: "/events-and-functions"
-  },
-]
-
 function Header() {
   const [showBurger, setShowBurger] = useState(false);
   const [openBurger, setOpenBurger] = useState(false);
@@ -73,20 +41,40 @@ function Header() {
           <nav className="header-nav">
             <ul className="header-nav-list">
               <li className="header-nav-item">
-                <Link to="/submit-cv" className="card-nav-link">Submit CV</Link>
+                <Link to="/submit-cv" className="card-nav-link">
+                  Submit CV
+                </Link>
               </li>
               <li className="header-nav-item">
-                <Link to="/apply-for-study" className="card-nav-link">Students</Link>
-              </li>
-              <li className="header-nav-item">
-                <a href="#">Recruitment</a>
+                <Link to="/apply-for-study" className="card-nav-link">
+                  Students
+                </Link>
               </li>
               <li className="header-nav-item">
                 <MenuButton
-                  id="partnership-button"
-                  label="Partnership"
-                  menuItems={["Profile 2", "My account 2", "Logout 2"]}
+                  id="recruitment-button"
+                  label="Recruitment"
+                  menuItems={[
+                    {
+                      title: "Find A Job",
+                      path: "/find-a-job",
+                    },
+                    {
+                      title: "Career Hub",
+                      path: "/career-hub",
+                    },
+                    {
+                      title: "Candidate Journey",
+                      path: "/candiate-journey",
+                    },
+                  ]}
                 />
+              </li>
+              <li className="header-nav-item">
+                <a href="/become-partner">Partnership</a>
+              </li>
+              <li className="header-nav-item">
+                <a href="/become-partner">Contaact Us</a>
               </li>
             </ul>
           </nav>

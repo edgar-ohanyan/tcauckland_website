@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "@mui/material/Button";
 import foundationPage from "../../assets/pictures/foundationPage.jpeg";
+import { Link } from "react-router-dom";
 
 export default function FoundaationPrograms() {
   return (
@@ -63,12 +64,14 @@ export default function FoundaationPrograms() {
         </div>
       </div>
       <div className="apply-study-button-box">
-        <Button
-          variant="contained"
-          sx={{ backgroundColor: "#4daeda", width: 300, fontSize: 20 }}
-        >
-          Apply Now
-        </Button>
+        <Link to="/student-application" className="card-nav-link">
+          <Button
+            variant="contained"
+            sx={{ backgroundColor: "#4daeda", width: 300, fontSize: 20 }}
+          >
+            Apply Now
+          </Button>
+        </Link>
       </div>
     </div>
   );
