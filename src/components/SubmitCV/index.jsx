@@ -125,12 +125,7 @@ export default function SubmitCV() {
   };
 
   const sendEmail = async () => {
-    const res = await emailjs.send(
-      "service_ndr6xcb",
-      "template_d8bnqxl",
-      application,
-      "hLkFnRomSneBkqCTP"
-    );
+    const res = await emailjs.send('service_ndr6xcb', 'template_d8bnqxl', application, 'hLkFnRomSneBkqCTP');
     console.log(res);
   };
 
