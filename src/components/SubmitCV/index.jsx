@@ -13,9 +13,8 @@ import {
 import { DatePicker } from "@mui/x-date-pickers/DatePicker/DatePicker";
 
 import MobilePhone from "../MobilePhone";
-import emailjs from "@emailjs/browser";
 import Joi from "joi-browser";
-
+import axios from 'axios';
 import passportNationality from "../../assets/formData/passport-nationality";
 import countriesOfResidence from "../../assets/formData/countries-of-residence";
 import maritalStatus from "../../assets/formData/marital-status";
@@ -25,6 +24,8 @@ import applicationSubject from "../../assets/formData/application-subject";
 
 export default function SubmitCV() {
   const [file, setFile] = useState();
+  const [sentSuccessfully, setSentSuccessfully] = useState(false);
+  const [sentError, setSentError] = useState(false);
 
   const [application, setApplication] = useState({
     name: "",
@@ -39,7 +40,7 @@ export default function SubmitCV() {
     applicationSubject: "",
     qualifiedSubject: "",
     qualifiedSubject2: "",
-    filename: "",
+    file: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -56,7 +57,7 @@ export default function SubmitCV() {
     applicationSubject: Joi.string().required(),
     qualifiedSubject: Joi.string().min(1).max(30).required(),
     qualifiedSubject2: Joi.string().min(1).max(30).required(),
-    filename: Joi.string().required(),
+    file: Joi.object().required(),
   };
 
   const validateForm = () => {
@@ -105,16 +106,18 @@ export default function SubmitCV() {
 
     if (file) {
       console.log("file: ", file);
-      setFile(file);
+      // setFile(file);
       let applicationData = { ...application };
-      applicationData["filename"] = file.name;
+      applicationData["file"] = file;
       setApplication(applicationData);
-      let data = new FormData();
-      data.append("file", file);
+      // let data = new FormData();
+      // data.append("file", file);
     }
   };
 
   const submitForm = async () => {
+    setSentError(false);
+    setSentSuccessfully(false);
     const err = validateForm();
     if (err) {
       console.log(err);
@@ -125,8 +128,36 @@ export default function SubmitCV() {
   };
 
   const sendEmail = async () => {
-    const res = await emailjs.send('service_ndr6xcb', 'template_d8bnqxl', application, 'hLkFnRomSneBkqCTP');
-    console.log(res);
+    // const res = await emailjs.send('service_ndr6xcb', 'template_d8bnqxl', application, 'hLkFnRomSneBkqCTP');
+    // console.log(res);
+    const formData = new FormData();
+
+    for (const key in application) {
+      formData.append(key, application[key]);
+    }
+
+    try {
+      await axios.post(`${process.env.REACT_APP_API_URL}/sendEmail`, formData);
+      setSentSuccessfully(true);
+      setApplication({
+        name: "",
+        email: "",
+        phone: 0,
+        dob: "",
+        nationality: "",
+        countryOfResidence: "",
+        maritalStatus: "",
+        dependentChildren: "",
+        teachingRegions: "",
+        applicationSubject: "",
+        qualifiedSubject: "",
+        qualifiedSubject2: "",
+        file: "",
+      });
+    } catch (error) {
+      console.log(error);
+      setSentError(true);
+    }
   };
 
   return (
@@ -143,6 +174,7 @@ export default function SubmitCV() {
             type="text"
             label="Full Name"
             name="name"
+            value={application.name}
             onChange={handleSave}
             error={!!errors.name}
             helperText={errors.name ? "Too long or empty name" : ""}
@@ -151,6 +183,7 @@ export default function SubmitCV() {
             type="email"
             label="Email"
             name="email"
+            value={application.email}
             error={!!errors.email}
             helperText={errors.email ? "Invalid email" : ""}
             onChange={handleSave}
@@ -196,7 +229,7 @@ export default function SubmitCV() {
             <Select
               labelId="passport-nationality-label"
               id="passport-nationality"
-              defaultValue=""
+              value={application.nationality}
               onChange={(e) => {
                 handleSave({
                   target: {
@@ -222,6 +255,7 @@ export default function SubmitCV() {
             <Select
               labelId="country-of-residence-label"
               id="country-of-residence"
+              value={application.countryOfResidence}
               onChange={(e) => {
                 handleSave({
                   target: {
@@ -245,6 +279,7 @@ export default function SubmitCV() {
             <Select
               labelId="marital-status-label"
               id="marital-status"
+              value={application.maritalStatus}
               onChange={(e) => {
                 handleSave({
                   target: {
@@ -270,6 +305,7 @@ export default function SubmitCV() {
             <Select
               labelId="dependent-children-label"
               id="dependent-children"
+              value={application.dependentChildren}
               onChange={(e) => {
                 handleSave({
                   target: {
@@ -295,6 +331,7 @@ export default function SubmitCV() {
             <Select
               labelId="teaching-regions-label"
               id="teaching-regions"
+              value={application.teachingRegions}
               onChange={(e) => {
                 handleSave({
                   target: {
@@ -320,6 +357,7 @@ export default function SubmitCV() {
             <Select
               labelId="application-subject-label"
               id="application-subject"
+              value={application.applicationSubject}
               onChange={(e) => {
                 handleSave({
                   target: {
@@ -342,6 +380,7 @@ export default function SubmitCV() {
             type="text"
             label="Qualified Teaching Subject"
             name="qualifiedSubject"
+            value={application.qualifiedSubject}
             onChange={handleSave}
             error={!!errors.qualifiedSubject}
             helperText={
@@ -352,6 +391,7 @@ export default function SubmitCV() {
             type="text"
             label="Qualified Teaching Subject 2"
             name="qualifiedSubject2"
+            value={application.qualifiedSubject2}
             onChange={handleSave}
             error={!!errors.qualifiedSubject2}
             helperText={
@@ -367,7 +407,7 @@ export default function SubmitCV() {
             type="file"
             onChange={uploadFile}
           />
-          {file ? file.name : ""}
+          {application.file ? application.file.name : ""}
           <label htmlFor="raised-button-file">
             <Button
               variant="raised"
@@ -380,9 +420,16 @@ export default function SubmitCV() {
           </label>
 
           <FormHelperText error color="red">
-            {!!errors.filename ? "Upload a file" : ""}
+            {!!errors.file ? "Upload a file" : ""}
           </FormHelperText>
           <Button onClick={submitForm}>Submit</Button>
+          <FormHelperText success >
+            {sentSuccessfully ? "Email Sent Successfully" : ""}
+          </FormHelperText>
+          <FormHelperText error color="red">
+            {sentError ? "Email Sending error" : ""}
+          </FormHelperText>
+
         </FormControl>
       </div>
     </div>
