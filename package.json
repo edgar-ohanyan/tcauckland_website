@@ -13,11 +13,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.5.0",
     "bootstrap": "^5.3.0",
-<<<<<<< HEAD
     "contentful": "^10.5.1",
-=======
-    "contentful": "^10.5.0",
->>>>>>> 206a9e9e8fd9d5fb9f7a94513d8ca107abc01e84
     "dayjs": "^1.11.8",
     "dotenv": "^16.3.1",
     "joi-browser": "^13.4.0",
