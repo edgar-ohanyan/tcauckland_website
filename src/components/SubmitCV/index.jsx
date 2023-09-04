@@ -9,12 +9,13 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  Grid,
 } from "@mui/material";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker/DatePicker";
 
 import MobilePhone from "../MobilePhone";
 import Joi from "joi-browser";
-import axios from 'axios';
+import axios from "axios";
 import passportNationality from "../../assets/formData/passport-nationality";
 import countriesOfResidence from "../../assets/formData/countries-of-residence";
 import maritalStatus from "../../assets/formData/marital-status";
@@ -23,7 +24,6 @@ import teachingRegions from "../../assets/formData/teaching-regions";
 import applicationSubject from "../../assets/formData/application-subject";
 
 export default function SubmitCV() {
-  const [file, setFile] = useState();
   const [sentSuccessfully, setSentSuccessfully] = useState(false);
   const [sentError, setSentError] = useState(false);
 
@@ -68,7 +68,6 @@ export default function SubmitCV() {
     } else {
       const errorData = {};
       for (let item of error.details) {
-        console.log("item", item);
         const name = item.path[0];
         errorData[name] = item.message;
       }
@@ -105,13 +104,9 @@ export default function SubmitCV() {
     let file = event.target.files[0];
 
     if (file) {
-      console.log("file: ", file);
-      // setFile(file);
       let applicationData = { ...application };
       applicationData["file"] = file;
       setApplication(applicationData);
-      // let data = new FormData();
-      // data.append("file", file);
     }
   };
 
@@ -128,10 +123,7 @@ export default function SubmitCV() {
   };
 
   const sendEmail = async () => {
-    // const res = await emailjs.send('service_ndr6xcb', 'template_d8bnqxl', application, 'hLkFnRomSneBkqCTP');
-    // console.log(res);
     const formData = new FormData();
-
     for (const key in application) {
       formData.append(key, application[key]);
     }
@@ -165,272 +157,367 @@ export default function SubmitCV() {
       <div className="main-picture-box">
         <div className="img-overlay"></div>
         <img src={home_bg} className="main-picture" alt="home_bg" />
-        <h3 className="submit-text">Submit Your CV</h3>
       </div>
-
-      <div className="form-container">
-        <FormControl>
-          <TextField
-            type="text"
-            label="Full Name"
-            name="name"
-            value={application.name}
-            onChange={handleSave}
-            error={!!errors.name}
-            helperText={errors.name ? "Too long or empty name" : ""}
-          />
-          <TextField
-            type="email"
-            label="Email"
-            name="email"
-            value={application.email}
-            error={!!errors.email}
-            helperText={errors.email ? "Invalid email" : ""}
-            onChange={handleSave}
-          />
-
-          <FormControl error={errors.dob}>
-            <DatePicker
-              label="Date Of Birth"
-              name="dob"
-              onChange={(e) => {
-                const dateStr = isNaN(e.$d) ? "" : `${e.$D}/${e.$M}/${e.$y}`;
-                handleSave({
-                  target: {
-                    name: "dob",
-                    value: dateStr,
-                  },
-                });
-              }}
-            />
-            <FormHelperText>
-              {!!errors.dob ? "Select a date" : ""}
-            </FormHelperText>
-          </FormControl>
-
-          <MobilePhone
-            name="phone"
-            onChange={(e) => {
-              handleSave({
-                target: {
-                  name: "phone",
-                  value: e,
-                },
-              });
-            }}
-            type="text"
-            isValid={() => !errors.phone}
-          />
-
-          <FormControl error={!!errors.nationality}>
-            <InputLabel id="passport-nationality-label">
-              Passport / Nationlity
-            </InputLabel>
-            <Select
-              labelId="passport-nationality-label"
-              id="passport-nationality"
-              value={application.nationality}
-              onChange={(e) => {
-                handleSave({
-                  target: {
-                    name: "nationality",
-                    value: e.target.value,
-                  },
-                });
-              }}
-            >
-              {passportNationality.map((e) => (
-                <MenuItem value={e}>{e}</MenuItem>
-              ))}
-            </Select>
-            <FormHelperText>
-              {!!errors.nationality ? "Select a value" : ""}
-            </FormHelperText>
-          </FormControl>
-
-          <FormControl error={!!errors.countryOfResidence}>
-            <InputLabel id="country-of-residence-label">
-              Country of Residence
-            </InputLabel>
-            <Select
-              labelId="country-of-residence-label"
-              id="country-of-residence"
-              value={application.countryOfResidence}
-              onChange={(e) => {
-                handleSave({
-                  target: {
-                    name: "countryOfResidence",
-                    value: e.target.value,
-                  },
-                });
-              }}
-            >
-              {countriesOfResidence.map((e) => (
-                <MenuItem value={e}>{e}</MenuItem>
-              ))}
-            </Select>
-            <FormHelperText>
-              {!!errors.nationality ? "Select a value" : ""}
-            </FormHelperText>
-          </FormControl>
-
-          <FormControl error={!!errors.maritalStatus}>
-            <InputLabel id="marital-status-label">Marital Status</InputLabel>
-            <Select
-              labelId="marital-status-label"
-              id="marital-status"
-              value={application.maritalStatus}
-              onChange={(e) => {
-                handleSave({
-                  target: {
-                    name: "maritalStatus",
-                    value: e.target.value,
-                  },
-                });
-              }}
-            >
-              {maritalStatus.map((e) => (
-                <MenuItem value={e}>{e}</MenuItem>
-              ))}
-            </Select>
-            <FormHelperText>
-              {!!errors.nationality ? "Select a value" : ""}
-            </FormHelperText>
-          </FormControl>
-
-          <FormControl error={!!errors.dependentChildren}>
-            <InputLabel id="dependent-children-label">
-              Dependent Children
-            </InputLabel>
-            <Select
-              labelId="dependent-children-label"
-              id="dependent-children"
-              value={application.dependentChildren}
-              onChange={(e) => {
-                handleSave({
-                  target: {
-                    name: "dependentChildren",
-                    value: e.target.value,
-                  },
-                });
-              }}
-            >
-              {dependentChildren.map((e) => (
-                <MenuItem value={e}>{e}</MenuItem>
-              ))}
-            </Select>
-            <FormHelperText>
-              {!!errors.nationality ? "Select a value" : ""}
-            </FormHelperText>
-          </FormControl>
-
-          <FormControl error={errors.teachingRegions}>
-            <InputLabel id="teaching-regions-label">
-              Which region/s do you wish to teach in
-            </InputLabel>
-            <Select
-              labelId="teaching-regions-label"
-              id="teaching-regions"
-              value={application.teachingRegions}
-              onChange={(e) => {
-                handleSave({
-                  target: {
-                    name: "teachingRegions",
-                    value: e.target.value,
-                  },
-                });
-              }}
-            >
-              {teachingRegions.map((e) => (
-                <MenuItem value={e}>{e}</MenuItem>
-              ))}
-            </Select>
-            <FormHelperText>
-              {!!errors.nationality ? "Select a value" : ""}
-            </FormHelperText>
-          </FormControl>
-
-          <FormControl error={errors.applicationSubject}>
-            <InputLabel id="application-subject-label">
-              I am applying for
-            </InputLabel>
-            <Select
-              labelId="application-subject-label"
-              id="application-subject"
-              value={application.applicationSubject}
-              onChange={(e) => {
-                handleSave({
-                  target: {
-                    name: "applicationSubject",
-                    value: e.target.value,
-                  },
-                });
-              }}
-            >
-              {applicationSubject.map((e) => (
-                <MenuItem value={e}>{e}</MenuItem>
-              ))}
-            </Select>
-            <FormHelperText>
-              {!!errors.nationality ? "Select a value" : ""}
-            </FormHelperText>
-          </FormControl>
-
-          <TextField
-            type="text"
-            label="Qualified Teaching Subject"
-            name="qualifiedSubject"
-            value={application.qualifiedSubject}
-            onChange={handleSave}
-            error={!!errors.qualifiedSubject}
-            helperText={
-              errors.qualifiedSubject ? "Invalid qualified subject" : ""
-            }
-          />
-          <TextField
-            type="text"
-            label="Qualified Teaching Subject 2"
-            name="qualifiedSubject2"
-            value={application.qualifiedSubject2}
-            onChange={handleSave}
-            error={!!errors.qualifiedSubject2}
-            helperText={
-              errors.qualifiedSubject2 ? "Invalid qualified subject" : ""
-            }
-          />
-
-          <input
-            accept="image/*"
-            className="test"
-            style={{ display: "none" }}
-            id="raised-button-file"
-            type="file"
-            onChange={uploadFile}
-          />
-          {application.file ? application.file.name : ""}
-          <label htmlFor="raised-button-file">
-            <Button
-              variant="raised"
-              component="span"
-              className="test"
-              fullWidth
-            >
-              Upload CV
-            </Button>
-          </label>
-
-          <FormHelperText error color="red">
-            {!!errors.file ? "Upload a file" : ""}
-          </FormHelperText>
-          <Button onClick={submitForm}>Submit</Button>
-          <FormHelperText success >
-            {sentSuccessfully ? "Email Sent Successfully" : ""}
-          </FormHelperText>
-          <FormHelperText error color="red">
-            {sentError ? "Email Sending error" : ""}
-          </FormHelperText>
-
-        </FormControl>
+      <div className="applicantForm">
+        <div className="formContainer">
+          <form className="form">
+            <h1 className="inputSectionTitle">Submit Your CV</h1>
+            <div className="inputSection">
+              <div className="inputSectionItem" style={{ marginBottom: 40 }}>
+                {/* First Row */}
+                <Grid container spacing={2}>
+                  <Grid item xs={4} sm={4}>
+                    <TextField
+                      label="Full Name"
+                      name="name"
+                      type="text"
+                      variant="outlined"
+                      size="medium"
+                      fullWidth
+                      required
+                      value={application.name}
+                      error={!!errors.name}
+                      helperText={errors.name ? "Too long or empty name" : ""}
+                      onChange={handleSave}
+                    />
+                  </Grid>
+                  <Grid item xs={4} sm={4}>
+                    <TextField
+                      label="Email"
+                      name="email"
+                      variant="outlined"
+                      size="medium"
+                      type="email"
+                      fullWidth
+                      value={application.email}
+                      error={!!errors.email}
+                      helperText={errors.email ? "Invalid email" : ""}
+                      onChange={handleSave}
+                    />
+                  </Grid>
+                  <Grid item xs={4} sm={4}>
+                    <FormControl error={errors.dob} style={{ width: "100%" }}>
+                      <DatePicker
+                        label="Date Of Birth"
+                        name="dob"
+                        onChange={(e) => {
+                          const dateStr = isNaN(e.$d)
+                            ? ""
+                            : `${e.$D}/${e.$M}/${e.$y}`;
+                          handleSave({
+                            target: {
+                              name: "dob",
+                              value: dateStr,
+                            },
+                          });
+                        }}
+                      />
+                      <FormHelperText>
+                        {!!errors.dob ? "Select a date" : ""}
+                      </FormHelperText>
+                    </FormControl>
+                  </Grid>
+                </Grid>
+              </div>
+              <div className="inputSectionItem" style={{ marginBottom: 40 }}>
+                {/* Second Row */}
+                <Grid container spacing={2}>
+                  <Grid item xs={4} sm={4}>
+                    <MobilePhone
+                      name="phone"
+                      onChange={(e) => {
+                        handleSave({
+                          target: {
+                            name: "phone",
+                            value: e,
+                          },
+                        });
+                      }}
+                      type="text"
+                      isValid={() => !errors.phone}
+                    />
+                  </Grid>
+                  <Grid item xs={4} sm={4}>
+                    <FormControl
+                      error={!!errors.nationality}
+                      style={{ width: "100%" }}
+                    >
+                      <TextField
+                        label="Passport / Nationlity"
+                        id="passport-nationality"
+                        value={application.nationality}
+                        select
+                        onChange={(e) => {
+                          handleSave({
+                            target: {
+                              name: "nationality",
+                              value: e.target.value,
+                            },
+                          });
+                        }}
+                      >
+                        {passportNationality.map((e, i) => (
+                          <MenuItem key={i} value={e}>
+                            {e}
+                          </MenuItem>
+                        ))}
+                      </TextField>
+                      <FormHelperText>
+                        {!!errors.nationality ? "Select a value" : ""}
+                      </FormHelperText>
+                    </FormControl>
+                  </Grid>
+                  <Grid item xs={4} sm={4}>
+                    <FormControl
+                      error={!!errors.countryOfResidence}
+                      style={{ width: "100%" }}
+                    >
+                      <TextField
+                        id="country-of-residence"
+                        select
+                        label="Country of Residence"
+                        value={application.countryOfResidence}
+                        onChange={(e) => {
+                          handleSave({
+                            target: {
+                              name: "countryOfResidence",
+                              value: e.target.value,
+                            },
+                          });
+                        }}
+                      >
+                        {countriesOfResidence.map((e, index) => (
+                          <MenuItem key={index} value={e}>
+                            {e}
+                          </MenuItem>
+                        ))}
+                      </TextField>
+                      <FormHelperText>
+                        {!!errors.nationality ? "Select a value" : ""}
+                      </FormHelperText>
+                    </FormControl>
+                  </Grid>
+                </Grid>
+              </div>
+              <div className="inputSectionItem" style={{ marginBottom: 40 }}>
+                {/* Third Row */}
+                <Grid container spacing={2}>
+                  <Grid item xs={4} sm={4}>
+                    <FormControl
+                      error={!!errors.dependentChildren}
+                      style={{ width: "100%" }}
+                    >
+                      <TextField
+                        select
+                        label="Dependent Children"
+                        id="dependent-children"
+                        value={application.dependentChildren}
+                        onChange={(e) => {
+                          handleSave({
+                            target: {
+                              name: "dependentChildren",
+                              value: e.target.value,
+                            },
+                          });
+                        }}
+                      >
+                        {dependentChildren.map((e, i) => (
+                          <MenuItem key={i} value={e}>
+                            {e}
+                          </MenuItem>
+                        ))}
+                      </TextField>
+                      <FormHelperText>
+                        {!!errors.nationality ? "Select a value" : ""}
+                      </FormHelperText>
+                    </FormControl>
+                  </Grid>
+                  <Grid item xs={4} sm={4}>
+                    <FormControl
+                      error={errors.teachingRegions}
+                      style={{ width: "100%" }}
+                    >
+                      <TextField
+                        select
+                        label="Which region/s do you wish to teach in"
+                        id="teaching-regions"
+                        value={application.teachingRegions}
+                        onChange={(e) => {
+                          handleSave({
+                            target: {
+                              name: "teachingRegions",
+                              value: e.target.value,
+                            },
+                          });
+                        }}
+                      >
+                        {teachingRegions.map((e, i) => (
+                          <MenuItem key={i} value={e}>
+                            {e}
+                          </MenuItem>
+                        ))}
+                      </TextField>
+                      <FormHelperText>
+                        {!!errors.nationality ? "Select a value" : ""}
+                      </FormHelperText>
+                    </FormControl>
+                  </Grid>
+                  <Grid item xs={4} sm={4}>
+                    <FormControl
+                      error={errors.applicationSubject}
+                      style={{ width: "100%" }}
+                    >
+                      <TextField
+                        select
+                        label="I am applying for"
+                        id="application-subject"
+                        value={application.applicationSubject}
+                        onChange={(e) => {
+                          handleSave({
+                            target: {
+                              name: "applicationSubject",
+                              value: e.target.value,
+                            },
+                          });
+                        }}
+                      >
+                        {applicationSubject.map((e, i) => (
+                          <MenuItem key={i} value={e}>
+                            {e}
+                          </MenuItem>
+                        ))}
+                      </TextField>
+                      <FormHelperText>
+                        {!!errors.nationality ? "Select a value" : ""}
+                      </FormHelperText>
+                    </FormControl>
+                  </Grid>
+                </Grid>
+              </div>
+              <div className="inputSectionItem" style={{ marginBottom: 40 }}>
+                {/* Fourth Row */}
+                <Grid container spacing={2}>
+                  <Grid item xs={4} sm={4}>
+                    <FormControl
+                      error={!!errors.maritalStatus}
+                      style={{ width: "100%" }}
+                    >
+                      <TextField
+                        select
+                        label="Marital Status"
+                        id="marital-status"
+                        value={application.maritalStatus}
+                        onChange={(e) => {
+                          handleSave({
+                            target: {
+                              name: "maritalStatus",
+                              value: e.target.value,
+                            },
+                          });
+                        }}
+                      >
+                        {maritalStatus.map((e, i) => (
+                          <MenuItem key={i} value={e}>
+                            {e}
+                          </MenuItem>
+                        ))}
+                      </TextField>
+                      <FormHelperText>
+                        {!!errors.nationality ? "Select a value" : ""}
+                      </FormHelperText>
+                    </FormControl>
+                  </Grid>
+                  <Grid item xs={4} sm={4}>
+                    <TextField
+                      type="text"
+                      label="Qualified Teaching Subject"
+                      name="qualifiedSubject"
+                      style={{ width: "100%" }}
+                      value={application.qualifiedSubject}
+                      onChange={handleSave}
+                      error={!!errors.qualifiedSubject}
+                      helperText={
+                        errors.qualifiedSubject
+                          ? "Invalid qualified subject"
+                          : ""
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={4} sm={4}>
+                    <TextField
+                      type="text"
+                      label="Qualified Teaching Subject 2"
+                      name="qualifiedSubject2"
+                      style={{ width: "100%" }}
+                      value={application.qualifiedSubject2}
+                      onChange={handleSave}
+                      error={!!errors.qualifiedSubject2}
+                      helperText={
+                        errors.qualifiedSubject2
+                          ? "Invalid qualified subject"
+                          : ""
+                      }
+                    />
+                  </Grid>
+                </Grid>
+              </div>
+              <div className="inputSectionItem">
+                {/* Buttons Row */}
+                <Grid container spacing={2}>
+                  <Grid item xs={4} sm={4}>
+                    <input
+                      accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,
+                      text/plain, application/pdf, image/*"
+                      className="test"
+                      style={{ display: "none" }}
+                      id="raised-button-file"
+                      type="file"
+                      onChange={uploadFile}
+                    />
+                    <label htmlFor="raised-button-file">
+                      <Button
+                        variant="contained"
+                        sx={{
+                          backgroundColor: "#4daeda",
+                          width: "100%",
+                          fontSize: 20,
+                        }}
+                        component="span"
+                        className="test"
+                        fullWidth
+                      >
+                        Upload CV
+                      </Button>
+                    </label>
+                    {application.file ? application.file.name : ""}
+                    <FormHelperText error color="red">
+                      {!!errors.file ? "Upload a file" : ""}
+                    </FormHelperText>
+                  </Grid>
+                  <Grid item xs={4} sm={4}>
+                    <Button
+                      onClick={submitForm}
+                      variant="contained"
+                      sx={{
+                        backgroundColor: "#4daeda",
+                        width: "100%",
+                        fontSize: 20,
+                      }}
+                    >
+                      Submit
+                    </Button>
+                    <FormHelperText>
+                      {sentSuccessfully ? "Email Sent Successfully" : ""}
+                    </FormHelperText>
+                    <FormHelperText error color="red">
+                      {sentError ? "Email Sending error" : ""}
+                    </FormHelperText>
+                  </Grid>
+                </Grid>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
