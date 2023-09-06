@@ -129,10 +129,6 @@
     justify-content: space-around;
 }
 
-.pagination {
-    margin-top: 20px;
-}
-
 .paginationButton {
     margin: 20px !important;
     background-color: #4daeda !important;
@@ -152,4 +148,11 @@
 .locationSelectTop{
     background-color: #edf9ff;
     padding: 30px;
+}
+
+.paginationButtons {
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    background-color: #edf9ff;
 }
