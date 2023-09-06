@@ -5,8 +5,9 @@ import {
   Select,
   MenuItem,
   makeStyles,
+  TextField,
 } from "@material-ui/core";
-import { Button, FormHelperText } from "@mui/material";
+import { Button, FormHelperText, Grid } from "@mui/material";
 import { ReadMoreDialog } from "./Dialogs";
 import home_bg from "../../assets/pictures/bg_home.jpg";
 import { red } from "@mui/material/colors";
@@ -77,11 +78,11 @@ export default function FindAJob() {
   const handleClose = () => {
     setSelectedEntry(null);
   };
-  
+
   const handlePageChange = (change) => {
     setCurrentPage((prevPage) => prevPage + change);
   };
-  
+
   useEffect(() => {
     (async () => {
       try {
@@ -103,7 +104,6 @@ export default function FindAJob() {
     }
     setCurrentPage(1); // Reset to the first page when the country selection changes
   }, [entries, selectedCountry]);
-
 
   // Calculate pagination
   const indexOfLastEntry = currentPage * entriesPerPage;
@@ -147,26 +147,30 @@ export default function FindAJob() {
       <div className="locationSelectTop">
         <h1 className="page-title">Find A Job</h1>
         <div className="locationSelect">
-          <FormControl className={classes.formControl}>
-            <Select
-              labelId="demo-simple-select-helper-label"
-              id="demo-simple-select-helper"
-              value={selectedCountry}
-              label="Location"
-              onChange={handleCountrySelection}
-            >
-              {countries.map((country) => (
-                <MenuItem
-                  key={country}
-                  value={country}
-                  className="jobFieldTitle"
-                >
-                  {country}
-                </MenuItem>
-              ))}
-            </Select>
-            <FormHelperText>Choose Country</FormHelperText>
-          </FormControl>
+          <div className="inputSectionItem" style={{ marginBottom: 40 }}>
+            <FormControl className={classes.formControl}>
+              <TextField
+                select
+                variant="outlined"
+                size="medium"
+                labelId="demo-simple-select-helper-label"
+                id="demo-simple-select-helper"
+                value={selectedCountry}
+                onChange={handleCountrySelection}
+              >
+                {countries.map((country) => (
+                  <MenuItem
+                    key={country}
+                    value={country}
+                    className="jobFieldTitle"
+                  >
+                    {country}
+                  </MenuItem>
+                ))}
+              </TextField>
+              <FormHelperText>Choose Country</FormHelperText>
+            </FormControl>
+          </div>
           <div className="locationSelectText">
             <p className="jobCounter">{entriesToShow.length} Jobs Found</p>
           </div>
@@ -209,9 +213,9 @@ export default function FindAJob() {
             </div>
           </div>
         ))}
-        <div>{renderPaginationButtons()}</div>
       </div>
       {/* Render pagination buttons */}
+      <div className="paginationButtons">{renderPaginationButtons()}</div>
       {selectedEntry && (
         <ReadMoreDialog
           open={true}
