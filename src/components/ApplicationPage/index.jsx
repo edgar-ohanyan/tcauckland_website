@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import emailjs from "@emailjs/browser";
+import axios from "axios";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-
+import { SpinningCircles } from "react-loading-icons";
 import {
   TextField,
   Grid,
@@ -13,17 +12,71 @@ import {
   Checkbox,
   Button,
   FormControlLabel,
+  FormHelperText,
 } from "@mui/material";
 import BpRadio from "../CustomMUI/BpRadio";
+
 import "./applicantForm.css";
 
 const ApplicantForm = () => {
-  const [requestBody, setRequestBody] = useState({});
+  const [sentSuccessfully, setSentSuccessfully] = useState(false);
+  const [sentError, setSentError] = useState(false);
+  const [showSending, setShowSending] = useState(false);
+  const [requestBody, setRequestBody] = useState({
+    fName: "",
+    lName: "",
+    mName: "",
+    gender: "",
+    bDay: "",
+    nation: "",
+    birthCountry: "",
+    addressStr: "",
+    addressStrLine2: "",
+    city: "",
+    stateProvince: "",
+    postalZipCode: "",
+    country: "",
+    phone: "",
+    email: "",
+    emergContactName: "",
+    emergContactRelation: "",
+    emergContactAddr: "",
+    emergContactPhone: "",
+    intendedDegree: "",
+    sponsorName: "",
+    proposedStartDate: "",
+    scholarship: "",
+    secondaryEduName: "",
+    secondaryEduCountry: "",
+    secondaryEduDates: "",
+    eduQualifSubject: "",
+    eduQualifLevel: "",
+    eduQualifGrade: "",
+    eduQualifDate: "",
+    englishLangCertificate: "",
+    englishLangCertificateGrade: "",
+    englishLangCertificateDate: "",
+    applicationSupportStatement: "",
+    confirmationCheckbox: false,
+    certificationCheckbox: false,
+  });
+
+  useEffect(() => {
+    if (sentSuccessfully || sentError) {
+      setShowSending(prev => !prev)
+    }
+  }, [sentSuccessfully, sentError]);
+
   const onChange = (e) => {
-    console.log("e.target: ", e.target);
     setRequestBody((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
+    }));
+  };
+  const onCheckboxChange = (e) => {
+    setRequestBody((prev) => ({
+      ...prev,
+      [e.target.name]: !prev[e.target.name],
     }));
   };
 
@@ -33,56 +86,75 @@ const ApplicantForm = () => {
       bDay: String(e.$d).split(" ").slice(1, 4).join("."),
     }));
   };
-
-  // Dev process
-  const myData = {
-    addressStr: "Kievyan 7, 13",
-    addressStrLine2: "none",
-    bDay: "Jul.02.2023",
-    birthCountry: "Armenia",
-    city: "Yerevan",
-    country: "Armenia",
-    eduQualifDate: "12/22",
-    eduQualifGrade: "some grade",
-    eduQualifLevel: "some level",
-    eduQualifSubject: "Some subject",
-    email: "edgarohanyan1994@gmail.com",
-    emergContactAddr: "Za semi moryami",
-    emergContactName: "Hrashid",
-    emergContactPhone: "+000999888777",
-    emergContactRelation: "Axperapay",
-    englishLangCertificate: "Best Certificate ",
-    englishLangCertificateDate: "11/12",
-    englishLangCertificateGrade:
-      "You should state what your enquiry is about in details. For example, what are you concerned about? How much are the tuition fees, accommodation costs, life in New Zealand, visa rules and regulations etc.You should state what your enquiry is about in details. For example, what are you concerned about? How much are the tuition fees, accommodation costs, life in New Zealand, visa rules and regulations etc.You should state what your enquiry is about in details. For example, what are you concerned about? How much are the tuition fees, accommodation costs, life in New Zealand, visa rules and regulations etc.You should state what your enquiry is about in details. For example, what are you concerned about? How much are the tuition fees, accommodation costs, life in New Zealand, visa rules and regulations etc.",
-    fName: "Edgar",
-    gender: "male",
-    lName: "Ohanyan",
-    mName: "Riich",
-    nation: "Armenian",
-    phone: "+37443337000",
-    postalZipCode: "0012",
-    scholarship: "govScholar",
-    secondaryEduCountry: "Armenia",
-    secondaryEduName: "Hambarcum Galstyan",
-    sponsorName: "22/33",
-    stateProvince: "Yerevan",
+  const onChangeStartDate = (e) => {
+    setRequestBody((prev) => ({
+      ...prev,
+      proposedStartDate: String(e.$d).split(" ").slice(1, 4).join("."),
+    }));
   };
 
-  // Dev process
+  const submitForm = async () => {
+    setShowSending((prev) => !prev);
+    setSentError(false);
+    setSentSuccessfully(false);
+    await sendEmail();
+  };
+
   const sendEmail = async () => {
-    const res = await emailjs.send(
-      "service_ndr6xcb",
-      "template_d8bnqxl",
-      myData,
-      "hLkFnRomSneBkqCTP"
-    );
-    console.log(res);
-  };
+    const formData = new FormData();
+    for (const key in requestBody) {
+      formData.append(key, requestBody[key]);
+    }
 
-  useEffect(() => {
-    console.log("requestBody: ", requestBody);
-  }, [requestBody]);
+    try {
+      await axios.post(
+        `${process.env.REACT_APP_API_URL}/student-application`,
+        formData
+      );
+      setSentSuccessfully(true);
+      setRequestBody({
+        fName: "",
+        lName: "",
+        mName: "",
+        gender: "",
+        bDay: "",
+        nation: "",
+        birthCountry: "",
+        addressStr: "",
+        addressStrLine2: "",
+        city: "",
+        stateProvince: "",
+        postalZipCode: "",
+        country: "",
+        phone: "",
+        email: "",
+        emergContactName: "",
+        emergContactRelation: "",
+        emergContactAddr: "",
+        emergContactPhone: "",
+        intendedDegree: "",
+        sponsorName: "",
+        proposedStartDate: "",
+        scholarship: "",
+        secondaryEduName: "",
+        secondaryEduCountry: "",
+        secondaryEduDates: "",
+        eduQualifSubject: "",
+        eduQualifLevel: "",
+        eduQualifGrade: "",
+        eduQualifDate: "",
+        englishLangCertificate: "",
+        englishLangCertificateGrade: "",
+        englishLangCertificateDate: "",
+        applicationSupportStatement: "",
+        confirmationCheckbox: false,
+        certificationCheckbox: false,
+      });
+    } catch (error) {
+      console.log(error);
+      setSentError(true);
+    }
+  };
 
   return (
     <div className="applicantForm">
@@ -134,7 +206,6 @@ const ApplicantForm = () => {
                   <p className="inputSectionItemTitle">Gender</p>
                   <FormControl>
                     <RadioGroup
-                      defaultValue="female"
                       aria-labelledby="demo-customized-radios"
                       name="gender"
                       onChange={onChange}
@@ -323,7 +394,7 @@ const ApplicantForm = () => {
                   </p>
                   <TextField
                     onChange={onChange}
-                    name="fName"
+                    name="intendedDegree"
                     label="What is the intended degree?"
                     variant="outlined"
                     fullWidth
@@ -349,7 +420,7 @@ const ApplicantForm = () => {
                     <DatePicker
                       name="startDay"
                       size="small"
-                      onChange={onChangeBDate}
+                      onChange={onChangeStartDate}
                     />
                   </LocalizationProvider>
                 </Grid>
@@ -423,7 +494,7 @@ const ApplicantForm = () => {
                   <TextField
                     onChange={onChange}
                     label="Dates Attended From-To (mm/yy)"
-                    name="sponsorName"
+                    name="secondaryEduDates"
                     variant="outlined"
                     fullWidth
                     size="small"
@@ -539,7 +610,7 @@ const ApplicantForm = () => {
               <Grid container spacing={0}>
                 <TextField
                   onChange={onChange}
-                  name="englishLangCertificateGrade"
+                  name="applicationSupportStatement"
                   label="Type your answer here ..."
                   variant="outlined"
                   fullWidth
@@ -555,7 +626,10 @@ const ApplicantForm = () => {
           <div className="inputSection">
             <div className="inputSectionItem">
               <div className="policyCheckbox">
-                <Checkbox onChange={onChange} />
+                <Checkbox
+                  onChange={onCheckboxChange}
+                  name="confirmationCheckbox"
+                />
                 <p
                   className="inputSectionTitleText"
                   style={{ textAlign: "start" }}
@@ -566,7 +640,10 @@ const ApplicantForm = () => {
                 </p>
               </div>
               <div className="policyCheckbox">
-                <Checkbox onChange={onChange} />
+                <Checkbox
+                  onChange={onCheckboxChange}
+                  name="certificationCheckbox"
+                />
                 <p
                   className="inputSectionTitleText"
                   style={{ textAlign: "start" }}
@@ -578,14 +655,28 @@ const ApplicantForm = () => {
             </div>
           </div>
           <div className="apply-study-button-box">
-            <Link to="/student-application" className="card-nav-link">
+            {/* <Link to="/student-application" className="card-nav-link"> */}
+            <Grid item xs={4} sm={4}>
               <Button
                 variant="contained"
                 sx={{ backgroundColor: "#4daeda", width: 300, fontSize: 20 }}
+                onClick={submitForm}
               >
                 Submit
+                {showSending && (
+                  <span className="sendingIcon">
+                    <SpinningCircles scale={22} />
+                  </span>
+                )}
               </Button>
-            </Link>
+              <FormHelperText>
+                {sentSuccessfully ? "Your Application Sent Successfully" : ""}
+              </FormHelperText>
+              <FormHelperText error color="red">
+                {sentError ? "Application Sending error" : ""}
+              </FormHelperText>
+            </Grid>
+            {/* </Link> */}
           </div>
         </form>
       </div>

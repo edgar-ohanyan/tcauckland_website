@@ -3,14 +3,7 @@ import "./style.css";
 import home_bg from "../../assets/pictures/bg_home.jpg";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import {
-  FormControl,
-  FormHelperText,
-  InputLabel,
-  MenuItem,
-  Select,
-  Grid,
-} from "@mui/material";
+import { FormControl, FormHelperText, MenuItem, Grid } from "@mui/material";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker/DatePicker";
 
 import MobilePhone from "../MobilePhone";
@@ -129,7 +122,7 @@ export default function SubmitCV() {
     }
 
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL}/sendEmail`, formData);
+      await axios.post(`${process.env.REACT_APP_API_URL}/submit-cv`, formData);
       setSentSuccessfully(true);
       setApplication({
         name: "",
