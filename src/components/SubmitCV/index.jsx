@@ -1,24 +1,33 @@
-import React, { useState } from "react";
-import "./style.css";
-import home_bg from "../../assets/pictures/bg_home.jpg";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import { FormControl, FormHelperText, MenuItem, Grid } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import {
+  TextField,
+  FormControl,
+  FormHelperText,
+  MenuItem,
+  Grid,
+  Button,
+} from "@mui/material";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker/DatePicker";
-
-import MobilePhone from "../MobilePhone";
+import { SpinningCircles } from "react-loading-icons";
 import Joi from "joi-browser";
 import axios from "axios";
+
+import MobilePhone from "../MobilePhone";
 import passportNationality from "../../assets/formData/passport-nationality";
 import countriesOfResidence from "../../assets/formData/countries-of-residence";
 import maritalStatus from "../../assets/formData/marital-status";
 import dependentChildren from "../../assets/formData/dependent-children";
 import teachingRegions from "../../assets/formData/teaching-regions";
 import applicationSubject from "../../assets/formData/application-subject";
+import home_bg from "../../assets/pictures/bg_home.jpg";
+
+import "./style.css";
 
 export default function SubmitCV() {
   const [sentSuccessfully, setSentSuccessfully] = useState(false);
   const [sentError, setSentError] = useState(false);
+  const [showSending, setShowSending] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const [application, setApplication] = useState({
     name: "",
@@ -36,7 +45,6 @@ export default function SubmitCV() {
     file: "",
   });
 
-  const [errors, setErrors] = useState({});
   const schema = {
     name: Joi.string().min(1).max(20).required(),
     email: Joi.string().email().required(),
@@ -99,21 +107,35 @@ export default function SubmitCV() {
     if (file) {
       let applicationData = { ...application };
       applicationData["file"] = file;
+      console.log("errors: ", errors);
+      setErrors(prev => ({
+        ...prev,
+        file: "",
+      }))
       setApplication(applicationData);
     }
   };
 
   const submitForm = async () => {
+    setShowSending((prev) => !prev);
     setSentError(false);
     setSentSuccessfully(false);
     const err = validateForm();
     if (err) {
       console.log(err);
+      setShowSending((prev) => !prev);
+
       return;
     }
     setErrors({});
     await sendEmail();
   };
+
+  useEffect(() => {
+    if (sentSuccessfully || sentError) {
+      setShowSending((prev) => !prev);
+    }
+  }, [sentSuccessfully, sentError]);
 
   const sendEmail = async () => {
     const formData = new FormData();
@@ -189,7 +211,7 @@ export default function SubmitCV() {
                     />
                   </Grid>
                   <Grid item xs={4} sm={4}>
-                    <FormControl error={errors.dob} style={{ width: "100%" }}>
+                    <FormControl error={!!errors.dob} style={{ width: "100%" }}>
                       <DatePicker
                         label="Date Of Birth"
                         name="dob"
@@ -286,7 +308,7 @@ export default function SubmitCV() {
                         ))}
                       </TextField>
                       <FormHelperText>
-                        {!!errors.nationality ? "Select a value" : ""}
+                        {!!errors.countryOfResidence ? "Select a value" : ""}
                       </FormHelperText>
                     </FormControl>
                   </Grid>
@@ -321,13 +343,13 @@ export default function SubmitCV() {
                         ))}
                       </TextField>
                       <FormHelperText>
-                        {!!errors.nationality ? "Select a value" : ""}
+                        {!!errors.dependentChildren ? "Select a value" : ""}
                       </FormHelperText>
                     </FormControl>
                   </Grid>
                   <Grid item xs={4} sm={4}>
                     <FormControl
-                      error={errors.teachingRegions}
+                      error={!!errors.teachingRegions}
                       style={{ width: "100%" }}
                     >
                       <TextField
@@ -351,13 +373,13 @@ export default function SubmitCV() {
                         ))}
                       </TextField>
                       <FormHelperText>
-                        {!!errors.nationality ? "Select a value" : ""}
+                        {!!errors.teachingRegions ? "Select a value" : ""}
                       </FormHelperText>
                     </FormControl>
                   </Grid>
                   <Grid item xs={4} sm={4}>
                     <FormControl
-                      error={errors.applicationSubject}
+                      error={!!errors.applicationSubject}
                       style={{ width: "100%" }}
                     >
                       <TextField
@@ -381,7 +403,7 @@ export default function SubmitCV() {
                         ))}
                       </TextField>
                       <FormHelperText>
-                        {!!errors.nationality ? "Select a value" : ""}
+                        {!!errors.applicationSubject ? "Select a value" : ""}
                       </FormHelperText>
                     </FormControl>
                   </Grid>
@@ -416,7 +438,7 @@ export default function SubmitCV() {
                         ))}
                       </TextField>
                       <FormHelperText>
-                        {!!errors.nationality ? "Select a value" : ""}
+                        {!!errors.maritalStatus ? "Select a value" : ""}
                       </FormHelperText>
                     </FormControl>
                   </Grid>
@@ -498,6 +520,11 @@ export default function SubmitCV() {
                       }}
                     >
                       Submit
+                      {showSending && (
+                        <span className="sendingIcon">
+                          <SpinningCircles scale={22} />
+                        </span>
+                      )}
                     </Button>
                     <FormHelperText>
                       {sentSuccessfully ? "Email Sent Successfully" : ""}

@@ -147,7 +147,6 @@ export default function FindAJob() {
                 select
                 variant="outlined"
                 size="medium"
-                labelId="demo-simple-select-helper-label"
                 id="demo-simple-select-helper"
                 value={selectedCountry}
                 onChange={handleCountrySelection}
