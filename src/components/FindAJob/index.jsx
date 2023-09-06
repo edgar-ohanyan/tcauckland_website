@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { createClient } from "contentful";
 import {
   FormControl,
-  Select,
   MenuItem,
   makeStyles,
   TextField,
@@ -13,15 +12,10 @@ import home_bg from "../../assets/pictures/bg_home.jpg";
 import { red } from "@mui/material/colors";
 import "./findAJob.css";
 
-// Dev Process
-const space = "x0xr0mya0y9b";
-const environment = "master"; // defaults to 'master' if not set
-const accessToken = "8V5fYyXeV91c3FbAWLqpi2HzvJM4ObAT3E1sb9qrF2s";
-
 const client = createClient({
-  space,
-  environment,
-  accessToken,
+  space: process.env.REACT_APP_CONTENTFUL_SPACE,
+  environment: process.env.REACT_APP_CONTENTFUL_ENVIRONMENT,
+  accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
 });
 
 const useStyles = makeStyles((theme) => ({
@@ -153,7 +147,6 @@ export default function FindAJob() {
                 select
                 variant="outlined"
                 size="medium"
-                labelId="demo-simple-select-helper-label"
                 id="demo-simple-select-helper"
                 value={selectedCountry}
                 onChange={handleCountrySelection}

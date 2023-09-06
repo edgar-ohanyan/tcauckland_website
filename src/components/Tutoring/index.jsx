@@ -1,11 +1,26 @@
 import React, { useEffect, useState } from "react";
+import { FormHelperText, Grid, Button } from "@mui/material";
+import { SpinningCircles } from "react-loading-icons";
 import tutoring from "../../assets/pictures/tutoring.jpeg";
-import Button from "@mui/material/Button";
+import axios from "axios";
 
 import "./tutoring.css";
 
 export default function Tutoring() {
   const [requestBody, setRequestBody] = useState({});
+  const [sentSuccessfully, setSentSuccessfully] = useState(false);
+  const [sentError, setSentError] = useState(false);
+  const [showSending, setShowSending] = useState(false);
+  const [application, setApplication] = useState({
+    topic: "",
+    name: "",
+    edu: "",
+    timing: "",
+    area: "",
+    email: "",
+    phone: 0,
+    specReq: "",
+  });
 
   const onChange = (e) => {
     setRequestBody((prev) => ({
@@ -13,6 +28,51 @@ export default function Tutoring() {
       [e.target.id]: e.target.value,
     }));
   };
+
+  const submitForm = async () => {
+    setShowSending((prev) => !prev);
+    setSentError(false);
+    setSentSuccessfully(false);
+    await sendEmail();
+  };
+
+  const sendEmail = async () => {
+    const formData = new FormData();
+    for (const key in application) {
+      formData.append(key, application[key]);
+    }
+
+    try {
+      await axios.post(
+        `${process.env.REACT_APP_API_URL}/tutoring-req`,
+        formData
+      );
+      setSentSuccessfully(true);
+      setApplication({
+        topic: "",
+        name: "",
+        edu: "",
+        timing: "",
+        area: "",
+        email: "",
+        phone: 0,
+        specReq: "",
+      });
+    } catch (error) {
+      console.log(error);
+      setSentError(true);
+    }
+  };
+
+  useEffect(() => {
+    if (sentSuccessfully || sentError) {
+      setShowSending((prev) => !prev);
+    }
+  }, [sentSuccessfully, sentError]);
+
+  useEffect(() => {
+    console.log("requestBody: ", requestBody);
+  }, [requestBody]);
 
   return (
     <div>
@@ -56,7 +116,11 @@ export default function Tutoring() {
             <div className="row">
               <div className="col-md-12 mb-3">
                 <div className="form-group">
-                  <select className="form-control">
+                  <select
+                    className="form-control"
+                    id="topic"
+                    onChange={onChange}
+                  >
                     <option>Maths</option>
                     <option>English</option>
                     <option>Science</option>
@@ -70,7 +134,7 @@ export default function Tutoring() {
                     type="text"
                     className="form-control"
                     name="name"
-                    id="email"
+                    id="name"
                     placeholder="Name"
                   />
                 </div>
@@ -149,16 +213,30 @@ export default function Tutoring() {
               </div>
               <div className="col-md-12">
                 <div className="form-group">
-                  <Button
-                    variant="contained"
-                    sx={{
-                      backgroundColor: "#4daeda",
-                      width: "100%",
-                      fontSize: 20,
-                    }}
-                  >
-                    Request
-                  </Button>
+                  <Grid item xs={4} sm={4}>
+                    <Button
+                      onClick={submitForm}
+                      variant="contained"
+                      sx={{
+                        backgroundColor: "#4daeda",
+                        width: "100%",
+                        fontSize: 20,
+                      }}
+                    >
+                      Request
+                      {showSending && (
+                        <span className="sendingIcon">
+                          <SpinningCircles scale={22} />
+                        </span>
+                      )}
+                    </Button>
+                    <FormHelperText>
+                      {sentSuccessfully ? "Request Sent Successfully" : ""}
+                    </FormHelperText>
+                    <FormHelperText error color="red">
+                      {sentError ? "Request Sending error" : ""}
+                    </FormHelperText>
+                  </Grid>
                   <div className="submitting"></div>
                 </div>
               </div>
