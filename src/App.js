@@ -26,12 +26,14 @@ import BecomePartner from "./components/BecomePartner";
 import LeaderPostion from "./components/LeaderPostion";
 import VirtualInterviews from "./components/VirtualInterviews";
 import SubmitVacancy from "./components/SubmitVacancy";
+import ScrollToTop from "./assets/helperFunction/ScrollToTop";
 
 import "./App.css";
 function App() {
   return (
     <BrowserRouter>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />

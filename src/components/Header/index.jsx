@@ -95,7 +95,7 @@ function Header() {
                 />
               </li>
               <li className="header-nav-item">
-                <a href="/become-partner">Contaact Us</a>
+                <a href="/become-partner">Contact Us</a>
               </li>
             </ul>
           </nav>
