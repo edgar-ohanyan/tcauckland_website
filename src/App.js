@@ -25,6 +25,7 @@ import CandiateJourney from "./components/CandiateJourney";
 import BecomePartner from "./components/BecomePartner";
 import LeaderPostion from "./components/LeaderPostion";
 import VirtualInterviews from "./components/VirtualInterviews";
+import SubmitVacancy from "./components/SubmitVacancy";
 
 import "./App.css";
 function App() {
@@ -64,6 +65,7 @@ function App() {
             <Route path="/become-partner" element={<BecomePartner />} />
             <Route path="/leader-postion" element={<LeaderPostion />} />
             <Route path="/virtual-interviews" element={<VirtualInterviews />} />
+            <Route path="/submit-vacancy" element={<SubmitVacancy />} />
           </Route>
         </Routes>
       </LocalizationProvider>
