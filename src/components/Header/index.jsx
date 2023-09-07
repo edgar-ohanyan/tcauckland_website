@@ -71,7 +71,28 @@ function Header() {
                 />
               </li>
               <li className="header-nav-item">
-                <a href="/become-partner">Partnership</a>
+                <MenuButton
+                  id="recruitment-button"
+                  label="Partnership"
+                  menuItems={[
+                    {
+                      title: "Leadership Positions",
+                      path: "/leader-postion",
+                    },
+                    {
+                      title: "Submit A Vacancy",
+                      path: "/submit-vacancy",
+                    },
+                    {
+                      title: "Virtual interviews",
+                      path: "/virtual-interviews",
+                    },
+                    {
+                      title: "How To Become A Partner",
+                      path: "/become-partner",
+                    },
+                  ]}
+                />
               </li>
               <li className="header-nav-item">
                 <a href="/become-partner">Contaact Us</a>
