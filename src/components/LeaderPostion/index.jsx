@@ -16,7 +16,7 @@ export default function index() {
             <div className="candidateJurneyContentItemTextBox">
               <h2 className="chapter-title">Leadership appointments</h2>
               <p className="candidateJurneyContentItemText">
-                Teachanywhere has been recruiting and placing teachers, advisors
+                TheCollaborativeAuckland has been recruiting and placing teachers, advisors
                 and school leaders into international schools and organisations
                 since 2005. With offices around the world, including Thailand,
                 Dubai, the United Kingdom, Australia, New Zealand and North
@@ -58,7 +58,7 @@ export default function index() {
                 - Experienced worldwide recruiters supporting our Leadanywhere team  <br/>
                 - Professional online & offline marketing campaigns  <br/>
                 - Discreet and targeted headhunting (Domestic and international)  <br/>
-                - Referrals to Teachanywhere’s existing database of professionals <br/>
+                - Referrals to TheCollaborativeAuckland’s existing database of professionals <br/>
                 - Psychometric Testing (optional)  <br/>
                 - Building a professional recruitment attraction microsite (optional) <br/>
               </p>

@@ -19,7 +19,7 @@ export const LinkedInProfile = () => {
           networking site for professionals to one of the top social media
           platforms which is used to recruit, advertise market brands, post
           industry articles, or look for our dream jobs. It is certainly one
-          that Randstad and Teachanywhere use regularly when looking for
+          that Randstad and TheCollaborativeAuckland use regularly when looking for
           educators to fill our vacancies. So...whether you are actively looking
           for a new position or are simply open to hearing about new
           opportunities, it is always beneficial to have your profile ready.
@@ -132,7 +132,7 @@ export const LinkedInProfile = () => {
         </p>
         <h2 className="chapter-title-secondary">Connect with us</h2>
         <p>
-          Randstad UK and Teachanywhere have very active LinkedIn company pages,
+          Randstad UK and TheCollaborativeAuckland have very active LinkedIn company pages,
           where we post regular updates about available positions, current and
           informative articles as well as company news. Be sure to follow our
           pages to stay up-to-date on the information we share. Interacting with

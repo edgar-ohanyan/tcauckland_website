@@ -135,11 +135,11 @@ export const ReasonsToTeachInternationally = () => {
           life and politics. You’ll have the chance to really immerse yourself
           and learn about unique quirks and traditions from your local friends,
           which you’d never be exposed to on a vacation. What an experience! So
-          do you have 'itchy feet'? Why not speak to us at Teachanywhere and see
+          do you have 'itchy feet'? Why not speak to us at TheCollaborativeAuckland and see
           how we can help with this 'travel bug'?! We have been experts in this
           field since launching in 2004 to assist teachers of all levels and
           backgrounds find their ideal role in their dream location. Combining
-          Teachanywhere’s size, expertise, and local knowledge we are able to
+          TheCollaborativeAuckland’s size, expertise, and local knowledge we are able to
           advise teachers where in the world they are most likely to thrive
           professionally and as a person. Why wait?!
         </p>

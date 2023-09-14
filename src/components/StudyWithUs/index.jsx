@@ -73,7 +73,7 @@ export default function StudyWithUs() {
             variant="contained"
             sx={{ backgroundColor: "#4daeda", width: 300, fontSize: 20 }}
           >
-            Apply For Study
+            Apply to Study
           </Button>
         </Link>
       </div>

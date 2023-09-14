@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Button from "@mui/material/Button";
 
 import englishProgrum from "../../assets/pictures/englishProgrum.jpg";
 
@@ -108,6 +110,16 @@ export default function EnglishPrograms() {
             these industries.
           </p>
         </div>
+      </div>
+      <div className="apply-study-button-box">
+        <Link to="/student-application" className="card-nav-link">
+          <Button
+            variant="contained"
+            sx={{ backgroundColor: "#4daeda", width: 300, fontSize: 20 }}
+          >
+            Apply to Study
+          </Button>
+        </Link>
       </div>
     </div>
   );
