@@ -95,7 +95,7 @@ function Header() {
                 />
               </li>
               <li className="header-nav-item">
-                <a href="/become-partner">Contact Us</a>
+                <a href="/contact-us">Contact Us</a>
               </li>
             </ul>
           </nav>
@@ -135,10 +135,14 @@ function Header() {
           <nav className="header-nav">
             <ul className="header-nav-list-popup">
               <li className="header-nav-item-popup">
-                <a href="#">Submit CV</a>
+                <Link to="/submit-cv" className="card-nav-link">
+                  Submit CV
+                </Link>
               </li>
               <li className="header-nav-item-popup">
-                <a href="#">Students</a>
+                <Link to="/apply-for-study" className="card-nav-link">
+                  Students
+                </Link>
               </li>
               <li className="header-nav-item-popup">
                 <a href="#">Recruitment</a>

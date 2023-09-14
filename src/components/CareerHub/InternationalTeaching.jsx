@@ -39,7 +39,7 @@ export const InternationalTeaching = () => {
           How do I get an international job?
         </h2>
         <p>
-          Talk to Teachanywhere! We are experts in knowing what international
+          Talk to TheCollaborativeAuckland! We are experts in knowing what international
           schools look for and our lovely consultants will guide and support you
           through the entire process. We partner with the best international
           schools all over the world and have been doing so for years - we’ll
@@ -53,7 +53,7 @@ export const InternationalTeaching = () => {
           This can vary greatly depending on job, school and country but the
           bare minimum you need is to be a fully qualified teacher (PGCE, BEd or
           equivalent) - if you don’t meet this requirement you may want to look
-          into TEFL teaching, but that’s not something Teachanywhere currently
+          into TEFL teaching, but that’s not something TheCollaborativeAuckland currently
           helps with. If you are an NQT you should be aware that your options
           will be very limited until you have at least 2 years
           post-qualification experience. Also, the schools we work with are all
@@ -234,7 +234,7 @@ export const InternationalTeaching = () => {
         <h2 className="chapter-title-secondary">What happens next?</h2>
         <p>
           Simple, just get in touch with us - submit your CV by clicking here or
-          email any enquiries to teacher@teachanywhere.com and one of our team
+          email any enquiries to teacher@TheCollaborativeAuckland.com and one of our team
           will be in touch!
         </p>
       </div>

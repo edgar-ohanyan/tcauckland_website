@@ -655,7 +655,6 @@ const ApplicantForm = () => {
             </div>
           </div>
           <div className="apply-study-button-box">
-            {/* <Link to="/student-application" className="card-nav-link"> */}
             <Grid item xs={4} sm={4}>
               <Button
                 variant="contained"
@@ -676,7 +675,6 @@ const ApplicantForm = () => {
                 {sentError ? "Application Sending error" : ""}
               </FormHelperText>
             </Grid>
-            {/* </Link> */}
           </div>
         </form>
       </div>

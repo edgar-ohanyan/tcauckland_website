@@ -31,7 +31,7 @@ export default function index() {
             Discreet and targeted headhunting (Domestic and international)
           </li>
           <li>
-            Referrals to Teachanywhere’s existing database of professionals
+            Referrals to TheCollaborativeAuckland’s existing database of professionals
           </li>
           <li>Psychometric Testing (optional)</li>
           <li>
@@ -70,7 +70,7 @@ export default function index() {
             Discreet and targeted headhunting (Domestic and international)
           </li>
           <li>
-            Referrals to Teachanywhere’s existing database of professionals
+            Referrals to TheCollaborativeAuckland’s existing database of professionals
           </li>
           <li>Psychometric Testing (optional)</li>
           <li>

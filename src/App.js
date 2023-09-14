@@ -26,6 +26,7 @@ import BecomePartner from "./components/BecomePartner";
 import LeaderPostion from "./components/LeaderPostion";
 import VirtualInterviews from "./components/VirtualInterviews";
 import SubmitVacancy from "./components/SubmitVacancy";
+import ContactUs from "./components/ContactUs";
 import ScrollToTop from "./assets/helperFunction/ScrollToTop";
 
 import "./App.css";
@@ -68,6 +69,7 @@ function App() {
             <Route path="/leader-postion" element={<LeaderPostion />} />
             <Route path="/virtual-interviews" element={<VirtualInterviews />} />
             <Route path="/submit-vacancy" element={<SubmitVacancy />} />
+            <Route path="/contact-us" element={<ContactUs />} />
           </Route>
         </Routes>
       </LocalizationProvider>

@@ -1,15 +1,12 @@
 .job-list {
     min-height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 30px;
+    padding: 60px;
     background-color: #edf9ff;
 }
 
 .job {
-    width: 340px;
-    height: 470px;
+    /* width: 340px; */
+    height: 350px;
     margin: 10px;
     padding: 0 10px;
     background-color: rgba(239, 239, 239, 0.436);
@@ -42,8 +39,7 @@
 }
 
 .jobFieldsBox {
-    padding: 0 10px;
-    /* background-color: beige; */
+    padding: 0 40px;
     max-height: 60%;
     overflow: hidden;
 }
@@ -57,11 +53,13 @@
 .jobDescription {
     font-size: 18px;
     font-weight: 600;
-    line-height: 1.6;
-    
-    height: min-content;
-    /* position: relative; */
-    display: contents;
+    /* display: contents; */
+}
+
+.jobDescriptionText {
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
+    /* white-space: nowrap; */
 }
 
 .readMore {
@@ -70,10 +68,6 @@
     right: 20px;
     cursor: pointer;
     color: rgba(19, 19, 68, 0.5);
-}
-
-.jobDescriptionText {
-    overflow: hidden;
 }
 
 .MuiPaper-root {
@@ -121,7 +115,7 @@
     display: flex;
     justify-content: center;
     margin-top: auto;
-    margin: auto auto 20px;
+    margin: 20px auto;
 }
 
 .submitBox {

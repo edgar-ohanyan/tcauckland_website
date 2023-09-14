@@ -206,7 +206,7 @@ export const Misconceptions = () => {
           abroad offers the opportunity for teachers to learn, grow and refresh
           themselves in their profession whilst teaching motivated children in
           exciting locations. The journey abroad must start somewhere, and
-          reputable agencies such as Teachanywhere offer their services and
+          reputable agencies such as TheCollaborativeAuckland offer their services and
           advice free of charge to teachers, providing a great place to start in
           your plan to “Teach the world and live the dream”!
         </p>

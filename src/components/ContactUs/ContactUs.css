@@ -1,0 +1,11 @@
+.contactUsContainer {
+    margin: 20px 20vw;
+}
+
+.contactInfo {
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: 600;
+    color: #4c626c;
+    padding: 0 30px;
+}
