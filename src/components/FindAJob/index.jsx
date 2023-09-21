@@ -6,7 +6,7 @@ import {
   makeStyles,
   TextField,
 } from "@material-ui/core";
-import { Button, FormHelperText, Grid } from "@mui/material";
+import { Button, FormHelperText } from "@mui/material";
 import { ReadMoreDialog } from "./Dialogs";
 import home_bg from "../../assets/pictures/bg_home.jpg";
 import { red } from "@mui/material/colors";
