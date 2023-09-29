@@ -1,5 +1,5 @@
 import React from "react";
-import home_bg from "../../assets/pictures/bg_home.jpg";
+import home_bg from "../../assets/pictures/generalPhoto.jpg";
 import journey_clients from "../../assets/pictures/journey_clients.jpg";
 
 import "./BecomePartner.css";

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import home_bg from "../../assets/pictures/bg_home.jpg";
+import home_bg from "../../assets/pictures/generalPhoto.jpg";
 import studyWithUS_pic from "../../assets/pictures/studyWithUs.jpg";
 
 import "./CareerHub.css";

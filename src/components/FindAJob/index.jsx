@@ -6,9 +6,9 @@ import {
   makeStyles,
   TextField,
 } from "@material-ui/core";
-import { Button, FormHelperText, Grid } from "@mui/material";
+import { Button, FormHelperText } from "@mui/material";
 import { ReadMoreDialog } from "./Dialogs";
-import home_bg from "../../assets/pictures/bg_home.jpg";
+import home_bg from "../../assets/pictures/generalPhoto.jpg";
 import { red } from "@mui/material/colors";
 import "./findAJob.css";
 
@@ -22,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
   formControl: {
     color: red,
     minWidth: 240,
-    marginBottom: theme.spacing(2),
   },
   select: {
     padding: theme.spacing(1),
@@ -81,7 +80,8 @@ export default function FindAJob() {
     (async () => {
       try {
         const response = await client.getEntries();
-        setEntries(response.items);
+        const filteredResponce = response.items.filter(item => "type" in item.fields);
+        setEntries(filteredResponce);
       } catch (error) {
         console.error("Error fetching entries:", error);
       }
@@ -141,7 +141,7 @@ export default function FindAJob() {
       <div className="locationSelectTop">
         <h1 className="page-title">Find A Job</h1>
         <div className="locationSelect">
-          <div className="inputSectionItem" style={{ marginBottom: 40 }}>
+          <div className="inputSectionItem">
             <FormControl className={classes.formControl}>
               <TextField
                 select
@@ -173,16 +173,12 @@ export default function FindAJob() {
         {currentEntries.map((entry, index) => (
           <div className="job" key={index}>
             <div className="jobTitleBox">
-              <h4 className="jobTitle">{entry.fields.title}</h4>
+              <h5 className="jobTitle">{entry.fields.title}</h5>
             </div>
             <div className="jobFieldsBox">
               <div className="jobField">
                 <p className="jobFieldTitle">Location:&nbsp;</p>
                 <p className="jobFieldText">{entry.fields.location}</p>
-              </div>
-              <div className="jobField">
-                <p className="jobFieldTitle">Category:&nbsp;</p>
-                <p className="jobFieldText">{entry.fields.category}</p>
               </div>
               <div className="jobField">
                 <p className="jobFieldTitle">Type:&nbsp;</p>
@@ -191,7 +187,7 @@ export default function FindAJob() {
               <div className="jobDescription">
                 <p className="jobDescriptionText">
                   <span className="jobFieldTitle">Description:&nbsp;</span>
-                  {entry.fields.description}
+                  {entry.fields.shortDescription}
                 </p>
               </div>
             </div>
@@ -199,7 +195,7 @@ export default function FindAJob() {
               <Button
                 onClick={() => handleClickOpen(entry)}
                 variant="contained"
-                sx={{ backgroundColor: "#4daeda", width: 300, fontSize: 20 }}
+                sx={{ backgroundColor: "#4daeda", width: 250, fontSize: 16 }}
               >
                 Details
               </Button>

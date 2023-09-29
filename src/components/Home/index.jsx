@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import home_bg from "../../assets/pictures/Home_page.jpeg";
+import home_bg from "../../assets/pictures/generalPhoto.jpg";
 import card_pic_1 from "../../assets/pictures/image_1.jpg";
 import card_pic_2 from "../../assets/pictures/image_2.jpg";
 import card_pic_3 from "../../assets/pictures/image_3.jpg";

@@ -14,7 +14,7 @@ import {
 import axios from "axios";
 import { SpinningCircles } from "react-loading-icons";
 import curriculum from "../../assets/formData/curriculum";
-import home_bg from "../../assets/pictures/bg_home.jpg";
+import home_bg from "../../assets/pictures/generalPhoto.jpg";
 
 export default function SubmitVacancy() {
   const [errors, setErrors] = useState({});

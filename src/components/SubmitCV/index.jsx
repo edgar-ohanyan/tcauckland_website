@@ -19,7 +19,7 @@ import maritalStatus from "../../assets/formData/marital-status";
 import dependentChildren from "../../assets/formData/dependent-children";
 import teachingRegions from "../../assets/formData/teaching-regions";
 import applicationSubject from "../../assets/formData/application-subject";
-import home_bg from "../../assets/pictures/bg_home.jpg";
+import home_bg from "../../assets/pictures/generalPhoto.jpg";
 
 import "./style.css";
 
@@ -108,10 +108,10 @@ export default function SubmitCV() {
       let applicationData = { ...application };
       applicationData["file"] = file;
       console.log("errors: ", errors);
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
         file: "",
-      }))
+      }));
       setApplication(applicationData);
     }
   };
