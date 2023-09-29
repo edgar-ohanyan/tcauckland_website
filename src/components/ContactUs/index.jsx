@@ -121,28 +121,6 @@ export default function ContactUs() {
           Please contact us using the information listed bellow and we will be
           more than happy with any enquiries that you may have.
         </p>
-        <div className="contactInfo">
-          <p>
-            WhatsApp:{" "}
-            <span>
-              <a className="phone-email" href="tel:+64 210 819 8638">
-                +64 210 819 8638
-              </a>
-            </span>
-          </p>
-          <p>
-            Email:{" "}
-            <span>
-              {" "}
-              <a
-                className="phone-email"
-                href="mailto: salfadhli@tcauckland.com"
-              >
-                salfadhli@tcauckland.com{" "}
-              </a>
-            </span>
-          </p>
-        </div>
       </div>
       <Grid container spacing={2}>
         <Grid item xs={4} sm={6}>

@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import Radio, { RadioProps } from "@mui/material/Radio";
+import Radio from "@mui/material/Radio";
 
 const BpIcon = styled("span")(({ theme }) => ({
   borderRadius: "50%",

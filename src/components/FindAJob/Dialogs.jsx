@@ -64,12 +64,12 @@ export const ReadMoreDialog = (props) => {
 
   useEffect(() => {
     console.log("content: ", content);
-    setApplication(prev => ({
+    setApplication((prev) => ({
       ...prev,
       title: content.title,
       startDate: content.startDate,
-    }))
-  }, [content])
+    }));
+  }, [content]);
 
   const handleClose = () => {
     onClose(selectedValue);
@@ -193,7 +193,7 @@ export const ReadMoreDialog = (props) => {
                       Upload CV
                     </Button>
                   </label>
-                  {application.file ? application.file.name : ""}
+                  {application.file ? <p className="fileName">{application.file.name}</p> : ""}
                   <FormHelperText error color="red">
                     {!!errors.file ? "Upload your CV" : ""}
                   </FormHelperText>

@@ -5,7 +5,7 @@
 }
 
 .job {
-  margin: 10px;
+  margin: 17px;
   padding: 0 10px;
   background-color: rgba(239, 239, 239, 0.436);
   border-radius: 28px;
@@ -43,12 +43,12 @@
 
 .jobField {
   display: flex;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 1;
 }
 .jobDescription {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
   text-align: initial;
 }
@@ -56,6 +56,7 @@
 .jobDescriptionText {
   overflow: hidden;
   color: rgba(19, 19, 68, 0.708);
+  margin-bottom: 0;
 }
 
 .readMore {
@@ -81,7 +82,11 @@
   display: none;
 }
 
-.dialog {
+.fileName {
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(19, 19, 68, 0.708);
 }
 
 .MuiDialog-paperWidthSm {
@@ -114,7 +119,6 @@
 
 .jobDescriptionChTitle {
   color: rgba(19, 19, 68, 0.5);
-  /* margin-bottom: 5px; */
   font-size: 23px;
 }
 
@@ -126,7 +130,7 @@
   display: flex;
   justify-content: center;
   margin-top: auto;
-  margin: 20px auto;
+  margin: 10px auto;
 }
 
 .submitBox {

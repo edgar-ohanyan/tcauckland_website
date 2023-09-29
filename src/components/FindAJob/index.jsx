@@ -8,7 +8,7 @@ import {
 } from "@material-ui/core";
 import { Button, FormHelperText } from "@mui/material";
 import { ReadMoreDialog } from "./Dialogs";
-import home_bg from "../../assets/pictures/bg_home.jpg";
+import home_bg from "../../assets/pictures/generalPhoto.jpg";
 import { red } from "@mui/material/colors";
 import "./findAJob.css";
 
@@ -173,7 +173,7 @@ export default function FindAJob() {
         {currentEntries.map((entry, index) => (
           <div className="job" key={index}>
             <div className="jobTitleBox">
-              <h4 className="jobTitle">{entry.fields.title}</h4>
+              <h5 className="jobTitle">{entry.fields.title}</h5>
             </div>
             <div className="jobFieldsBox">
               <div className="jobField">
@@ -195,7 +195,7 @@ export default function FindAJob() {
               <Button
                 onClick={() => handleClickOpen(entry)}
                 variant="contained"
-                sx={{ backgroundColor: "#4daeda", width: 300, fontSize: 20 }}
+                sx={{ backgroundColor: "#4daeda", width: 250, fontSize: 16 }}
               >
                 Details
               </Button>
