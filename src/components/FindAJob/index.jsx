@@ -136,7 +136,6 @@ export default function FindAJob() {
         <img src={home_bg} className="main-picture" alt="home_bg" />
       </div>
       <div className="locationSelectTop">
-        <h1 className="page-title">Find A Job</h1>
         <div className="locationSelect">
           <div className="inputSectionItem">
             <FormControl className={classes.formControl}>
@@ -158,9 +157,9 @@ export default function FindAJob() {
                   <MenuItem
                     key={country}
                     value={country}
-                    className="jobFieldTitle"
+                    className="jobSelectItem"
                   >
-                    {country}
+                    <span className="jobSelectItem">{country}</span>
                   </MenuItem>
                 ))}
               </Select>
@@ -180,6 +179,16 @@ export default function FindAJob() {
               <h5 className="jobTitle">{entry.fields.title}</h5>
             </div>
             <div className="jobFieldsBox">
+              <div className="jobDescription">
+                <p className="jobDescriptionText">
+                  <span className="jobFieldTitle">Description:&nbsp;</span>
+                  {entry.fields.shortDescription}
+                </p>
+              </div>
+              <div className="jobField">
+                <p className="jobFieldTitle">Salary:&nbsp;</p>
+                <p className="jobFieldText">{entry.fields.salary}</p>
+              </div>
               <div className="jobField">
                 <p className="jobFieldTitle">Location:&nbsp;</p>
                 <p className="jobFieldText">{entry.fields.location}</p>
@@ -187,12 +196,6 @@ export default function FindAJob() {
               <div className="jobField">
                 <p className="jobFieldTitle">Type:&nbsp;</p>
                 <p className="jobFieldText">{entry.fields.type}</p>
-              </div>
-              <div className="jobDescription">
-                <p className="jobDescriptionText">
-                  <span className="jobFieldTitle">Description:&nbsp;</span>
-                  {entry.fields.shortDescription}
-                </p>
               </div>
             </div>
             <div className="applyForJobButtonBox">
@@ -207,7 +210,6 @@ export default function FindAJob() {
           </div>
         ))}
       </div>
-      {/* Render pagination buttons */}
       <div className="paginationButtons">{renderPaginationButtons()}</div>
       {selectedEntry && (
         <ReadMoreDialog

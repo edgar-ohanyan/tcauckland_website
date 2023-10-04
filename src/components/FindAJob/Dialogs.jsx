@@ -193,7 +193,11 @@ export const ReadMoreDialog = (props) => {
                       Upload CV
                     </Button>
                   </label>
-                  {application.file ? <p className="fileName">{application.file.name}</p> : ""}
+                  {application.file ? (
+                    <p className="fileName">{application.file.name}</p>
+                  ) : (
+                    ""
+                  )}
                   <FormHelperText error color="red">
                     {!!errors.file ? "Upload your CV" : ""}
                   </FormHelperText>
