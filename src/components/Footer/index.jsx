@@ -48,15 +48,12 @@ export default function Footer() {
               <p>(+64) 210 819 8638</p>
             </div>
           </a>
-          <a
-            className="phone-email"
-            href="mailto: thecollaborativeauckland@gmail.com"
-          >
+          <a className="phone-email" href="mailto: team@tcarecruitment.com">
             <div className="d-flex">
               <span className="icon-box">
                 <TbMailForward size={28} style={{ color: "inherit" }} />
               </span>
-              <p className="footer-email">thecollaborativeauckland@gmail.com</p>
+              <p className="footer-email">Team@tcarecruitment.com</p>
             </div>
           </a>
 

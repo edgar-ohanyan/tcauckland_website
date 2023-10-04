@@ -83,10 +83,10 @@
 }
 
 .fileName {
-    margin: 10px;
-    font-size: 18px;
-    font-weight: 500;
-    color: rgba(19, 19, 68, 0.708);
+  margin: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(19, 19, 68, 0.708);
 }
 
 .MuiDialog-paperWidthSm {
@@ -143,9 +143,25 @@
   background-color: #4daeda !important;
 }
 
+.locationSelectTop {
+  background-color: #edf9ff;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .locationSelect {
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 30vw;
+  height: 150px;
+  margin: 17px;
+  padding: 0 10px;
+  border-radius: 10px;
+  background-color: rgba(239, 239, 239, 0.436);
+  box-shadow: 0 0 30px rgba(36, 36, 59, 0.4);
 }
 
 .locationSelectText {
@@ -153,9 +169,16 @@
   margin-left: 20px;
 }
 
-.locationSelectTop {
-  background-color: #edf9ff;
-  padding: 30px;
+.jobCounter {
+  font-size: 45px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.jobCounterText {
+  font-size: 0.75rem;
+  margin-top: 3px;
+  margin-bottom: 32px;
 }
 
 .paginationButtons {

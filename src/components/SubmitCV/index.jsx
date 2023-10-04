@@ -19,7 +19,8 @@ import maritalStatus from "../../assets/formData/marital-status";
 import dependentChildren from "../../assets/formData/dependent-children";
 import teachingRegions from "../../assets/formData/teaching-regions";
 import applicationSubject from "../../assets/formData/application-subject";
-import home_bg from "../../assets/pictures/generalPhoto.jpg";
+import completeProfile from "../../assets/photos/Complete your profile.jpg";
+
 
 import "./style.css";
 
@@ -171,7 +172,7 @@ export default function SubmitCV() {
     <div>
       <div className="main-picture-box">
         <div className="img-overlay"></div>
-        <img src={home_bg} className="main-picture" alt="home_bg" />
+        <img src={completeProfile} className="main-picture" alt="Complete your profile" />
       </div>
       <div className="applicantForm">
         <div className="formContainer">
