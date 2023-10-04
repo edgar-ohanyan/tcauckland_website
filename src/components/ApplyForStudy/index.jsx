@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import applyToStudy from "../../assets/pictures/generalPhoto.jpg";
+import applyToStudy from "../../assets/photos/Our commitment.jpg";
 import studyWithUS_pic from "../../assets/pictures/studyWithUs.jpg";
 import visasAndPermit_pic from "../../assets/pictures/visa&permit.jpeg";
 import englishProgrum from "../../assets/pictures/englishProgrum.jpg";

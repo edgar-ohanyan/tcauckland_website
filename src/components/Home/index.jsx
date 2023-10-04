@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import home_bg from "../../assets/pictures/generalPhoto.jpg";
-import card_pic_1 from "../../assets/pictures/image_1.jpg";
-import card_pic_2 from "../../assets/pictures/image_2.jpg";
-import card_pic_3 from "../../assets/pictures/image_3.jpg";
+import applyToStud from "../../assets/photos/Apply to study.jpg";
+import employee from "../../assets/photos/Employee.jpg";
+import findAJob from "../../assets/photos/Find a Job.jpg";
 
 import "./home.css";
 
@@ -21,7 +20,11 @@ export default function Home() {
               <h4 className="card-title">Apply To Study</h4>
             </div>
             <div className="home-card-pic-box">
-              <img className="card-pic" src={card_pic_1} alt="card_pic_1" />
+              <img
+                className="card-pic"
+                src={applyToStud}
+                alt="Apply to study"
+              />
             </div>
           </div>
         </Link>
@@ -31,7 +34,7 @@ export default function Home() {
               <h4 className="card-title">Find A Job</h4>
             </div>
             <div className="home-card-pic-box">
-              <img className="card-pic" src={card_pic_2} alt="card_pic_1" />
+              <img className="card-pic" src={employee} alt="Employee" />
             </div>
           </div>
         </Link>
@@ -41,7 +44,7 @@ export default function Home() {
               <h4 className="card-title">Employer</h4>
             </div>
             <div className="home-card-pic-box">
-              <img className="card-pic" src={card_pic_3} alt="card_pic_1" />
+              <img className="card-pic" src={findAJob} alt="Find a Job" />
             </div>
           </div>
         </Link>

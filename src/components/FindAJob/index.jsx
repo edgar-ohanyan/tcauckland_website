@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { createClient } from "contentful";
-import {
-  FormControl,
-  MenuItem,
-  makeStyles,
-  TextField,
-} from "@material-ui/core";
+import { FormControl, MenuItem, makeStyles, Select } from "@material-ui/core";
 import { Button, FormHelperText } from "@mui/material";
 import { ReadMoreDialog } from "./Dialogs";
-import home_bg from "../../assets/pictures/generalPhoto.jpg";
+import home_bg from "../../assets/photos/Prepare for new job.jpg";
 import { red } from "@mui/material/colors";
 import "./findAJob.css";
 
@@ -80,7 +75,9 @@ export default function FindAJob() {
     (async () => {
       try {
         const response = await client.getEntries();
-        const filteredResponce = response.items.filter(item => "type" in item.fields);
+        const filteredResponce = response.items.filter(
+          (item) => "type" in item.fields
+        );
         setEntries(filteredResponce);
       } catch (error) {
         console.error("Error fetching entries:", error);
@@ -143,8 +140,14 @@ export default function FindAJob() {
         <div className="locationSelect">
           <div className="inputSectionItem">
             <FormControl className={classes.formControl}>
-              <TextField
-                select
+              <Select
+                MenuProps={{
+                  anchorOrigin: {
+                    vertical: "bottom",
+                    horizontal: "left",
+                  },
+                  getContentAnchorEl: null,
+                }}
                 variant="outlined"
                 size="medium"
                 id="demo-simple-select-helper"
@@ -160,12 +163,13 @@ export default function FindAJob() {
                     {country}
                   </MenuItem>
                 ))}
-              </TextField>
+              </Select>
               <FormHelperText>Choose Country</FormHelperText>
             </FormControl>
           </div>
           <div className="locationSelectText">
-            <p className="jobCounter">{entriesToShow.length} Jobs Found</p>
+            <p className="jobCounter">{entriesToShow.length}</p>
+            <p className="jobCounterText">Jobs Found</p>
           </div>
         </div>
       </div>
