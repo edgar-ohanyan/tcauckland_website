@@ -1,4 +1,4 @@
-export default [
+const list = [
   "Afghanistan",
   "Albania",
   "Algeria",
@@ -203,4 +203,6 @@ export default [
   "Yemen",
   "Zambia",
   "Zimbabwe",
-]
+];
+
+export default list;

@@ -108,16 +108,16 @@ function Header() {
           <nav className="header-nav">
             <ul className="header-nav-list-popup">
               <li className="header-nav-item-popup">
-                <a href="#">Submit CV</a>
+                <a href="/submit-cv">Submit CV</a>
               </li>
               <li className="header-nav-item-popup">
-                <a href="#">Students</a>
+                <a href="/apply-for-study">Students</a>
               </li>
               <li className="header-nav-item-popup">
-                <a href="#">Recruitment</a>
+                <a href="/find-a-job">Recruitment</a>
               </li>
               <li className="header-nav-item-popup">
-                <a href="#">Partnership</a>
+                <a href="/become-partner">Partnership</a>
               </li>
             </ul>
           </nav>
@@ -145,10 +145,10 @@ function Header() {
                 </Link>
               </li>
               <li className="header-nav-item-popup">
-                <a href="#">Recruitment</a>
+                <a href="/find-a-job">Recruitment</a>
               </li>
               <li className="header-nav-item-popup">
-                <a href="#">Partnership</a>
+                <a href="/become-partner">Partnership</a>
               </li>
             </ul>
           </nav>

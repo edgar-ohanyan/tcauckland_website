@@ -1,4 +1,4 @@
-export default [
+const list = [
   "Arabic",
   "Art ",
   "Biology",
@@ -31,4 +31,6 @@ export default [
   "Music",
   "MYP Coordiantor",
   "Other",
-]
+];
+
+export default list;
