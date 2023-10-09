@@ -1,4 +1,4 @@
-export default [
+const list = [
   "Australia",
   "Canada",
   "EU",
@@ -8,4 +8,6 @@ export default [
   "South",
   "UK",
   "USA",
-]
+];
+
+export default list;
