@@ -1,14 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
-import englishProgrum from "../../assets/pictures/englishProgrum.jpg";
+import englishProgrum from "../../assets/background/englishProgrum.jpg";
 
 export default function EnglishPrograms() {
   return (
     <div className="englishPrograms">
       <div className="main-picture-box">
-        <img src={englishProgrum} className="main-picture" alt="home_bg" />
+        <LazyLoadImage
+          src={englishProgrum}
+          className="main-picture"
+          alt="home_bg"
+        />
       </div>
       <div className="page-content">
         <h1 className="page-title">Learning English in New Zealand is easy</h1>

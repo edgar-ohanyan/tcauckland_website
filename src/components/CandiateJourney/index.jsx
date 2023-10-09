@@ -1,15 +1,14 @@
 import React from "react";
-import GetInTouch from "../../assets/photos/Get in touch.jpg";
-import CompliteYourProfile from "../../assets/photos/Complete your profile.jpg";
-import Interview from "../../assets/photos/Interview.jpg";
-import ConsiderJobOffer from "../../assets/photos/Consider job offer.jpg";
-import PrepearToJob from "../../assets/photos/Prepare for new job.jpg";
-import SpeakToUs from "../../assets/photos/teach the world.jpg";
-import TeachTheWorld from "../../assets/photos/8 reasons to teach internationally.jpg";
-import Commitment from "../../assets/photos/Our commitment.jpg";
-
-import home_bg from "../../assets/pictures/generalPhoto.jpg";
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import Jurney from "../../assets/background/Consider job offer.jpg";
+import GetInTouch from "../../assets/article_pic/Get in touch.jpg";
+import SpeakToUs from "../../assets/article_pic/teach the world.jpg";
+import CompliteYourProfile from "../../assets/article_pic/Complete your profile.jpg";
+import ApplyToJobs from "../../assets/article_pic/Our commitment.jpg";
+import Interview from "../../assets/article_pic/Interview.jpg";
+import ConsiderJobOffer from "../../assets/article_pic/Consider job offer.jpg";
+import PrepearToJob from "../../assets/article_pic/Prepare for new job.jpg";
+import TeachTheWorld from "../../assets/article_pic/world picture.jpg";
 
 import "./CandiateJourney.css";
 
@@ -17,13 +16,16 @@ export default function index() {
   return (
     <div>
       <div className="main-picture-box">
-        <img src={home_bg} className="main-picture" alt="home_bg" />
+        <LazyLoadImage src={Jurney} className="main-picture" alt="home_bg" />
       </div>
       <div className="candidateJurneyContentBox">
         <div className="candidateJurneyContent">
           <div className="candidateJurneyContentItem">
             <div className="candidateJurneyContentItemPicBox">
-              <img src={GetInTouch} className="candidateJurneyContentItemPic" />
+              <LazyLoadImage
+                src={GetInTouch}
+                className="candidateJurneyContentItemPic"
+              />
             </div>
             <div className="candidateJurneyContentItemTextBox">
               <h2 className="chapter-title">Step 1: Get in touch</h2>
@@ -53,12 +55,18 @@ export default function index() {
               </p>
             </div>
             <div className="candidateJurneyContentItemPicBox">
-              <img src={SpeakToUs} className="candidateJurneyContentItemPic" />
+              <LazyLoadImage
+                src={SpeakToUs}
+                className="candidateJurneyContentItemPic"
+              />
             </div>
           </div>
           <div className="candidateJurneyContentItem">
             <div className="candidateJurneyContentItemPicBox">
-              <img src={CompliteYourProfile} className="candidateJurneyContentItemPic" />
+              <LazyLoadImage
+                src={CompliteYourProfile}
+                className="candidateJurneyContentItemPic"
+              />
             </div>
             <div className="candidateJurneyContentItemTextBox">
               <h2 className="chapter-title">Step 3: Complete your profile</h2>
@@ -88,12 +96,18 @@ export default function index() {
               </p>
             </div>
             <div className="candidateJurneyContentItemPicBox">
-              <img src={Commitment} className="candidateJurneyContentItemPic" />
+              <LazyLoadImage
+                src={ApplyToJobs}
+                className="candidateJurneyContentItemPic"
+              />
             </div>
           </div>
           <div className="candidateJurneyContentItem">
             <div className="candidateJurneyContentItemPicBox">
-              <img src={Interview} className="candidateJurneyContentItemPic" />
+              <LazyLoadImage
+                src={Interview}
+                className="candidateJurneyContentItemPic"
+              />
             </div>
             <div className="candidateJurneyContentItemTextBox">
               <h2 className="chapter-title">Step 5: Interview</h2>
@@ -127,12 +141,18 @@ export default function index() {
               </p>
             </div>
             <div className="candidateJurneyContentItemPicBox">
-              <img src={ConsiderJobOffer} className="candidateJurneyContentItemPic" />
+              <LazyLoadImage
+                src={ConsiderJobOffer}
+                className="candidateJurneyContentItemPic"
+              />
             </div>
           </div>
           <div className="candidateJurneyContentItem">
             <div className="candidateJurneyContentItemPicBox">
-              <img src={PrepearToJob} className="candidateJurneyContentItemPic" />
+              <LazyLoadImage
+                src={PrepearToJob}
+                className="candidateJurneyContentItemPic"
+              />
             </div>
             <div className="candidateJurneyContentItemTextBox">
               <h2 className="chapter-title">
@@ -171,7 +191,10 @@ export default function index() {
               </p>
             </div>
             <div className="candidateJurneyContentItemPicBox">
-              <img src={TeachTheWorld} className="candidateJurneyContentItemPic" />
+              <LazyLoadImage
+                src={TeachTheWorld}
+                className="candidateJurneyContentItemPic"
+              />
             </div>
           </div>
         </div>

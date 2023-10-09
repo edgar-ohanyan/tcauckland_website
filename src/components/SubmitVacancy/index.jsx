@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Joi from "joi-browser";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import {
   TextField,
   FormControl,
@@ -14,7 +15,7 @@ import {
 import axios from "axios";
 import { SpinningCircles } from "react-loading-icons";
 import curriculum from "../../assets/formData/curriculum";
-import home_bg from "../../assets/pictures/generalPhoto.jpg";
+import home_bg from "../../assets/background/submitVacancy.jpg";
 
 export default function SubmitVacancy() {
   const [errors, setErrors] = useState({});
@@ -167,7 +168,7 @@ export default function SubmitVacancy() {
     <div>
       <div className="main-picture-box">
         <div className="img-overlay"></div>
-        <img src={home_bg} className="main-picture" alt="home_bg" />
+        <LazyLoadImage src={home_bg} className="main-picture" alt="home_bg" />
       </div>
       <div className="applicantForm">
         <div className="formContainer">

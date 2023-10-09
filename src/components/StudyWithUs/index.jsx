@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import graduate from "../../assets/pictures/studyWithUs.jpg";
-
+import graduate from "../../assets/background/studyWithUs.jpg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 
 import "./studyWithUs.css";
@@ -10,7 +10,7 @@ export default function StudyWithUs() {
   return (
     <div>
       <div className="main-picture-box">
-        <img src={graduate} className="main-picture" alt="home_bg" />
+        <LazyLoadImage src={graduate} className="main-picture" alt="home_bg" />
       </div>
       <div className="page-content">
         <h1 className="page-title">Our University sector is Unique:</h1>

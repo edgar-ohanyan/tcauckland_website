@@ -1,18 +1,24 @@
 import React from "react";
-import home_bg from "../../assets/pictures/generalPhoto.jpg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import home_bg from "../../assets/background/leadershipPosition.jpg";
+
+import leaderApointment from "../../assets/article_pic/Leadership appointment.jpg";
+import searchAndSelection from "../../assets/article_pic/search and Selection.jpg";
+import leadanywhere from "../../assets/article_pic/the leadanywhere service provider.jpg";
+import acountManager from "../../assets/article_pic/Your dedicated account manager.jpg";
 
 export default function index() {
   return (
     <div>
       <div className="main-picture-box">
-        <img src={home_bg} className="main-picture" alt="home_bg" />
+        <LazyLoadImage src={home_bg} className="main-picture" alt="home_bg" />
       </div>
       <div className="candidateJurneyContentBox">
         <div className="candidateJurneyContent">
           <div className="candidateJurneyContentItem">
             <div className="candidateJurneyContentItemPicBox">
-              <img
-                src={home_bg}
+              <LazyLoadImage
+                src={leaderApointment}
                 className="candidateJurneyContentItemPic"
                 alt=""
               />
@@ -46,8 +52,8 @@ export default function index() {
               </p>
             </div>
             <div className="candidateJurneyContentItemPicBox">
-              <img
-                src={home_bg}
+              <LazyLoadImage
+                src={searchAndSelection}
                 className="candidateJurneyContentItemPic"
                 alt=""
               />
@@ -55,8 +61,8 @@ export default function index() {
           </div>
           <div className="candidateJurneyContentItem">
             <div className="candidateJurneyContentItemPicBox">
-              <img
-                src={home_bg}
+              <LazyLoadImage
+                src={leadanywhere}
                 className="candidateJurneyContentItemPic"
                 alt=""
               />
@@ -70,8 +76,8 @@ export default function index() {
                 <br />
                 - Experienced worldwide recruiters supporting our Leadanywhere
                 team <br />
-                - Professional online & offline marketing campaigns <br />
-                - Discreet and targeted headhunting (Domestic and international){" "}
+                - Professional online & offline marketing campaigns <br />-
+                Discreet and targeted headhunting (Domestic and international){" "}
                 <br />
                 - Referrals to TheCollaborativeAuckland’s existing database of
                 professionals <br />
@@ -95,8 +101,8 @@ export default function index() {
               </p>
             </div>
             <div className="candidateJurneyContentItemPicBox">
-              <img
-                src={home_bg}
+              <LazyLoadImage
+                src={acountManager}
                 className="candidateJurneyContentItemPic"
                 alt=""
               />

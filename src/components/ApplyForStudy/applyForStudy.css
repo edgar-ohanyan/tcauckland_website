@@ -1,89 +1,91 @@
 .main-picture-box {
-    width: 100vw;
-    height: 70vh;
+  width: 100vw;
+  height: 70vh;
 }
 
 .main-picture {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .card-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 30px;
-    background-color: #edf9ff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px;
+  background-color: #edf9ff;
 }
 
 .card-nav-link {
-    text-decoration: none;
+  text-decoration: none;
 }
-  
+
 .card {
-    width: 340px;
-    height: 460px;
-    margin: 10px;
-    background-color: rgba(239, 239, 239, 0.436);
-    border-radius: 28px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 24px 48px rgba(36, 36, 59, 0.4);
-    transition: transform 0.3s, background-color 0.5s;
-    text-decoration: none;
-    border: none;
+  width: 340px;
+  height: 480px;
+  margin: 10px;
+  background-color: rgba(239, 239, 239, 0.436);
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 24px 48px rgba(36, 36, 59, 0.4);
+  transition: transform 0.3s, background-color 0.5s;
+  text-decoration: none;
+  border: none;
 }
 
 .card:hover {
-    transform: scale(1.04);
-    box-shadow: 0 24px 88px rgba(36, 36, 59, 0.4);
+  transform: scale(1.04);
+  box-shadow: 0 24px 88px rgba(36, 36, 59, 0.4);
 }
 
 .card-title {
-    color: rgba(19, 19, 68, 0.5);
-    text-align: center;
+  padding: 0px 20px;
+  color: #4daeda;
+  text-align: center;
 }
 
 .card-title-box {
-    height: 15%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 20px;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
 }
 
 .card-description {
-    padding: 0 20px;
-    height: 30%;
-    overflow: hidden;
+  padding: 20px 20px;
+  height: 30%;
+  overflow: hidden;
 }
 
 .card-description-text {
-    font-size: 18px;
-    line-height: 1.8;
-    max-width: 400px;
-    text-align: center;
-    font-weight: 500;
-    color: rgb(19 19 68 / 60%);
+  max-width: 400px;
+  margin-bottom: 0;
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: center;
+  font-weight: 500;
+  color: rgb(19 19 68 / 60%);
 }
 
 .card-pic-box {
-    width: 100%;
-    height: 55%;
-    padding-top: 10px;
+  width: 100%;
+  height: 55%;
+  padding-top: 10px;
 }
 
 .card-pic {
-    border-radius: 0 0 28px 28px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  border-radius: 0 0 28px 28px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-  
+
 @media screen and (max-width: 768px) {
-    .home-card {
-        width: 90%;
-    }
+  .home-card {
+    width: 90%;
+  }
 }

@@ -1,16 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import home_bg from "../../assets/pictures/generalPhoto.jpg";
-import studyWithUS_pic from "../../assets/pictures/studyWithUs.jpg";
-import Misconceptions from "../../assets/pictures/pexels-buro-millennial-1438072.jpg";
-import Leader from "../../assets/pictures/EMPLOYER-HOMEPAGE.jpeg";
-
-import Reasons8 from "../../assets/photos/8 reasons to teach internationally.jpg";
-import InternationalTeach from "../../assets/photos/international teaching.jpg";
-import WhyAbroadBest from "../../assets/photos/why teaching abroad was the best decision of my life.jpg";
-import LDProfile from "../../assets/photos/how to create linkedn profile.jpg";
-import Kuwait from "../../assets/photos/10 reasons to work in Kuwait.jpg";
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import careerHub from "../../assets/background/Home.jpg";
+import worldAndPlane from "../../assets/card_size_pic/World&Plane.jpg";
+import internationalTeach from "../../assets/card_size_pic/international teaching.jpg";
+import whyAbroadBest from "../../assets/card_size_pic/whyTeachingAbroad.jpg";
+import LDProfile from "../../assets/card_size_pic/how to linkedn.jpg";
+import misconceptions from "../../assets/card_size_pic/studentsSeatOut.jpg";
+import kuwait from "../../assets/card_size_pic/work Kuwait reasons.jpg";
+import leader from "../../assets/card_size_pic/employer.jpeg";
 
 import "./CareerHub.css";
 
@@ -18,7 +16,7 @@ export default function CareerHub() {
   return (
     <div>
       <div className="main-picture-box">
-        <img src={home_bg} className="main-picture" alt="home_bg" />
+        <LazyLoadImage src={careerHub} className="main-picture" alt="home_bg" />
       </div>
       <div className="card-list">
         <Link
@@ -38,9 +36,9 @@ export default function CareerHub() {
               </p>
             </div>
             <div className="card-pic-box">
-              <img
+              <LazyLoadImage
                 className="card-pic"
-                src={Reasons8}
+                src={worldAndPlane}
                 alt="card_pic_1"
               />
             </div>
@@ -61,9 +59,9 @@ export default function CareerHub() {
               </p>
             </div>
             <div className="card-pic-box">
-              <img
+              <LazyLoadImage
                 className="card-pic"
-                src={InternationalTeach}
+                src={internationalTeach}
                 alt="card_pic_1"
               />
             </div>
@@ -84,9 +82,9 @@ export default function CareerHub() {
               </p>
             </div>
             <div className="card-pic-box">
-              <img
+              <LazyLoadImage
                 className="card-pic"
-                src={WhyAbroadBest}
+                src={whyAbroadBest}
                 alt="card_pic_1"
               />
             </div>
@@ -109,7 +107,7 @@ export default function CareerHub() {
               </p>
             </div>
             <div className="card-pic-box">
-              <img
+              <LazyLoadImage
                 className="card-pic"
                 src={LDProfile}
                 alt="card_pic_1"
@@ -132,9 +130,9 @@ export default function CareerHub() {
               </p>
             </div>
             <div className="card-pic-box">
-              <img
+              <LazyLoadImage
                 className="card-pic"
-                src={Misconceptions}
+                src={misconceptions}
                 alt="card_pic_1"
               />
             </div>
@@ -154,9 +152,9 @@ export default function CareerHub() {
               </p>
             </div>
             <div className="card-pic-box">
-              <img
+              <LazyLoadImage
                 className="card-pic"
-                src={Kuwait}
+                src={kuwait}
                 alt="card_pic_1"
               />
             </div>
@@ -175,9 +173,9 @@ export default function CareerHub() {
               </p>
             </div>
             <div className="card-pic-box">
-              <img
+              <LazyLoadImage
                 className="card-pic"
-                src={Leader}
+                src={leader}
                 alt="card_pic_1"
               />
             </div>

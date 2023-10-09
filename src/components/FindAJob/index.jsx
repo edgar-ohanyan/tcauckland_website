@@ -5,7 +5,7 @@ import { Button, FormHelperText } from "@mui/material";
 import { red } from "@mui/material/colors";
 import { ReadMoreDialog } from "./Dialogs";
 import { titleCase } from "../../assets/helperFunction/TitleCase";
-import employee from "../../assets/photos/Employee.jpg";
+import findAJob from "../../assets/background/Find a Job.jpg";
 
 import "./findAJob.css";
 
@@ -139,7 +139,7 @@ export default function FindAJob() {
   return (
     <div>
       <div className="main-picture-box">
-        <img src={employee} className="main-picture" alt="home_bg" />
+        <img src={findAJob} className="main-picture" alt="home_bg" />
       </div>
       <div className="locationSelectTop">
         <div className="locationSelect">
