@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { FormHelperText, Grid, Button } from "@mui/material";
 import { SpinningCircles } from "react-loading-icons";
-import tutoring from "../../assets/pictures/tutoring.jpeg";
-import axios from "axios";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import tutoring from "../../assets/background/tutoring.jpg";
 
 import "./tutoring.css";
 
@@ -77,7 +78,7 @@ export default function Tutoring() {
   return (
     <div>
       <div className="main-picture-box">
-        <img src={tutoring} className="main-picture" alt="home_bg" />
+        <LazyLoadImage src={tutoring} className="main-picture" alt="home_bg" />
       </div>
       <h1 className="tutoring-page-title">Tutoring</h1>
       <div className="tutoring-page-content">

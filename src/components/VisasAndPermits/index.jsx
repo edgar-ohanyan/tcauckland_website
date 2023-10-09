@@ -1,5 +1,6 @@
 import React from "react";
-import visasAndPermits from "../../assets/pictures/visa&permit.jpeg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import visasAndPermit_pic from "../../assets/background/World&Plane.jpg";
 
 import "./visasAndPermits.css";
 
@@ -7,7 +8,11 @@ export default function VisasAndPermits() {
   return (
     <div className="visasAndPermits">
       <div className="main-picture-box">
-        <img src={visasAndPermits} className="main-picture" alt="home_bg" />
+        <LazyLoadImage
+          src={visasAndPermit_pic}
+          className="main-picture"
+          alt="home_bg"
+        />
       </div>
       <div className="page-content">
         <h1 className="page-title">Student Visa</h1>

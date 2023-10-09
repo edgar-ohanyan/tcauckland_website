@@ -3,6 +3,10 @@ import Joi from "joi-browser";
 import axios from "axios";
 import { FormHelperText, Dialog, Grid, Button } from "@mui/material";
 import { SpinningCircles } from "react-loading-icons";
+import {
+  titleCase,
+  upperCaseSentence,
+} from "../../assets/helperFunction/TitleCase";
 
 import "./findAJob.css";
 
@@ -31,13 +35,19 @@ export const ReadMoreDialog = (props) => {
     setSentSuccessfully(false);
     const err = validateForm();
     if (err) {
-      console.log(err);
+      console.error(err);
       setShowSending((prev) => !prev);
-
       return;
     }
     setErrors({});
-    await sendEmail();
+    try {
+      await sendEmail();
+      setTimeout(() => {
+        handleClose();
+      }, 5000);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const validateForm = () => {
@@ -63,13 +73,12 @@ export const ReadMoreDialog = (props) => {
   }, [sentSuccessfully, sentError]);
 
   useEffect(() => {
-    console.log("content: ", content);
     setApplication((prev) => ({
       ...prev,
       title: content.title,
       startDate: content.startDate,
     }));
-  }, [content]);
+  }, []);
 
   const handleClose = () => {
     onClose(selectedValue);
@@ -114,10 +123,10 @@ export const ReadMoreDialog = (props) => {
       setApplication({
         title: "",
         startDate: "",
-        file: "",
+        file: {},
       });
     } catch (error) {
-      console.log(error);
+      console.error(error);
       setSentError(true);
     }
   };
@@ -126,47 +135,49 @@ export const ReadMoreDialog = (props) => {
     <Dialog onClose={handleClose} open={open} className="dialog">
       <div className="jobDescriptionDialog">
         <div>
-          <h1 className="jobDescriptionTitle">{props.content.title}</h1>
+          <h1 className="jobDescriptionTitle">
+            {content ? titleCase(content.title) : ""}
+          </h1>
         </div>
         <div className="jobDescriptionDialogText">
-          <div className="jobFieldsBox">
+          <div className="descriptionJobFieldsBox">
             <div className="jobField">
               <p className="jobFieldTitle">Location:&nbsp;</p>
-              <p className="jobFieldText">{content.location}</p>
+              <p className="jobFieldText">{titleCase(content.location)}</p>
             </div>
             <div className="jobField">
               <p className="jobFieldTitle">Category:&nbsp;</p>
-              <p className="jobFieldText">{content.jobCategory}</p>
+              <p className="jobFieldText">{titleCase(content.jobCategory)}</p>
             </div>
             <div className="jobField">
               <p className="jobFieldTitle">Type:&nbsp;</p>
-              <p className="jobFieldText">{content.type}</p>
+              <p className="jobFieldText">{titleCase(content.type)}</p>
             </div>
-            {content.experience && (
+            {content.Experience && (
               <div className="jobField">
                 <p className="jobFieldTitle">Experience:&nbsp;</p>
-                <p className="jobFieldText">{content.experience}</p>
+                <p className="jobFieldText">{content.Experience}</p>
               </div>
             )}
-            {content.experience && (
+            {content.salary && (
               <div className="jobField">
                 <p className="jobFieldTitle">Salary:&nbsp;</p>
                 <p className="jobFieldText">{content.salary}</p>
               </div>
             )}
-            {content.experience && (
+            {content.schoolCurriculum && (
               <div className="jobField">
                 <p className="jobFieldTitle">Curriculum:&nbsp;</p>
                 <p className="jobFieldText">{content.schoolCurriculum}</p>
               </div>
             )}
-            {content.experience && (
+            {content.startDate && (
               <div className="jobField">
                 <p className="jobFieldTitle">Start Date:&nbsp;</p>
-                <p className="jobFieldText">{content.startDate}</p>
+                <p className="jobFieldText">{titleCase(content.startDate)}</p>
               </div>
             )}
-            <div className="inputSectionItem">
+            <div className="dialogButtonsBox">
               {/* Buttons Row */}
               <Grid container spacing={2}>
                 <Grid item xs={1} sm={2}>
@@ -193,7 +204,11 @@ export const ReadMoreDialog = (props) => {
                       Upload CV
                     </Button>
                   </label>
-                  {application.file ? <p className="fileName">{application.file.name}</p> : ""}
+                  {application.file ? (
+                    <p className="fileName">{application.file.name}</p>
+                  ) : (
+                    ""
+                  )}
                   <FormHelperText error color="red">
                     {!!errors.file ? "Upload your CV" : ""}
                   </FormHelperText>
@@ -224,29 +239,44 @@ export const ReadMoreDialog = (props) => {
                 </Grid>
               </Grid>
             </div>
-            {content.descriptionChapter.map((ch, i) => (
-              <div key={i} className="jobDescription">
-                <p className="jobDescriptionChTitle">{ch.fields.title}&nbsp;</p>
-                <div className="jobDescriptionChText">
-                  {ch.fields.text1 && <p>{ch.fields.text1}</p>}
-                  {ch.fields.list1 && (
+            {content.descriptionChapter ? (
+              content.descriptionChapter.map((ch, i) => (
+                <div key={i} className="jobDescription">
+                  {!!ch.fields.title ? (
+                    <p className="jobDescriptionChTitle">
+                      {titleCase(ch.fields.title)}&nbsp;
+                    </p>
+                  ) : null}
+                  {ch.fields.longText ? (
+                    <p className="jobDescriptionChText">
+                      {upperCaseSentence(ch.fields.longText)}&nbsp;
+                    </p>
+                  ) : null}
+                  <div className="jobDescriptionChText">
+                    <p>
+                      {ch.fields.text1
+                        ? upperCaseSentence(ch.fields.text1)
+                        : ""}
+                    </p>
                     <ul>
-                      {ch.fields.list1.map((li, i) => (
-                        <li key={i}>{li}</li>
-                      ))}
+                      {ch.fields && ch.fields.list1
+                        ? ch.fields.list1.map((li, i) => (
+                            <li key={i}>{upperCaseSentence(li)}</li>
+                          ))
+                        : []}
                     </ul>
-                  )}
-                  {ch.fields.text2 && <p>{ch.fields.text2}</p>}
-                  {ch.fields.list2 && (
+                    <p>{ch.fields ? ch.fields.text2 : ""}</p>
                     <ul>
-                      {ch.fields.list2.map((li, i) => (
-                        <li key={i}>{li}</li>
-                      ))}
+                      {ch.fields && ch.fields.list2
+                        ? ch.fields.list2.map((li, i) => <li key={i}>{li}</li>)
+                        : []}
                     </ul>
-                  )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+            ) : (
+              <></>
+            )}
           </div>
         </div>
       </div>

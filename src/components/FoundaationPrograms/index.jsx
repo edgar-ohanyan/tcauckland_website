@@ -1,13 +1,19 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import foundationPage from "../../assets/pictures/foundationPage.jpeg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import foundationPage from "../../assets/background/studentsSeatOut.jpg";
+
 import { Link } from "react-router-dom";
 
 export default function FoundaationPrograms() {
   return (
     <div>
       <div className="main-picture-box">
-        <img src={foundationPage} className="main-picture" alt="home_bg" />
+        <LazyLoadImage
+          src={foundationPage}
+          className="main-picture"
+          alt="home_bg"
+        />
       </div>{" "}
       <div className="page-content">
         <h1 className="page-title">What is a foundation course?</h1>

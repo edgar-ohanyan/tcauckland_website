@@ -11,7 +11,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker/DatePicker";
 import { SpinningCircles } from "react-loading-icons";
 import Joi from "joi-browser";
 import axios from "axios";
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import MobilePhone from "../MobilePhone";
 import passportNationality from "../../assets/formData/passport-nationality";
 import countriesOfResidence from "../../assets/formData/countries-of-residence";
@@ -19,8 +19,8 @@ import maritalStatus from "../../assets/formData/marital-status";
 import dependentChildren from "../../assets/formData/dependent-children";
 import teachingRegions from "../../assets/formData/teaching-regions";
 import applicationSubject from "../../assets/formData/application-subject";
-import completeProfile from "../../assets/photos/Complete your profile.jpg";
 
+import submitCV from "../../assets/background/Submit CV.jpg";
 
 import "./style.css";
 
@@ -171,8 +171,12 @@ export default function SubmitCV() {
   return (
     <div>
       <div className="main-picture-box">
-        <div className="img-overlay"></div>
-        <img src={completeProfile} className="main-picture" alt="Complete your profile" />
+        <div className="LazyLoadImage-overlay"></div>
+        <LazyLoadImage
+          src={submitCV}
+          className="main-picture"
+          alt="Complete your profile"
+        />
       </div>
       <div className="applicantForm">
         <div className="formContainer">

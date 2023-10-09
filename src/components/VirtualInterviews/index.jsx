@@ -1,11 +1,16 @@
 import React from "react";
-import visasAndPermits from "../../assets/pictures/generalPhoto.jpg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import virtualInterviews from "../../assets/background/virtualInterviews.jpg";
 
 export default function index() {
   return (
     <div>
       <div className="main-picture-box">
-        <img src={visasAndPermits} className="main-picture" alt="home_bg" />
+        <LazyLoadImage
+          src={virtualInterviews}
+          className="main-picture"
+          alt="home_bg"
+        />
       </div>
       <div className="page-content">
         <h1 className="page-title">Virtual Interviews</h1>
