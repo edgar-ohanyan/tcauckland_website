@@ -2,6 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import home_bg from "../../assets/pictures/generalPhoto.jpg";
 import studyWithUS_pic from "../../assets/pictures/studyWithUs.jpg";
+import Misconceptions from "../../assets/pictures/pexels-buro-millennial-1438072.jpg";
+import Leader from "../../assets/pictures/EMPLOYER-HOMEPAGE.jpeg";
+
+import Reasons8 from "../../assets/photos/8 reasons to teach internationally.jpg";
+import InternationalTeach from "../../assets/photos/international teaching.jpg";
+import WhyAbroadBest from "../../assets/photos/why teaching abroad was the best decision of my life.jpg";
+import LDProfile from "../../assets/photos/how to create linkedn profile.jpg";
+import Kuwait from "../../assets/photos/10 reasons to work in Kuwait.jpg";
+
 
 import "./CareerHub.css";
 
@@ -31,7 +40,7 @@ export default function CareerHub() {
             <div className="card-pic-box">
               <img
                 className="card-pic"
-                src={studyWithUS_pic}
+                src={Reasons8}
                 alt="card_pic_1"
               />
             </div>
@@ -54,7 +63,7 @@ export default function CareerHub() {
             <div className="card-pic-box">
               <img
                 className="card-pic"
-                src={studyWithUS_pic}
+                src={InternationalTeach}
                 alt="card_pic_1"
               />
             </div>
@@ -77,7 +86,7 @@ export default function CareerHub() {
             <div className="card-pic-box">
               <img
                 className="card-pic"
-                src={studyWithUS_pic}
+                src={WhyAbroadBest}
                 alt="card_pic_1"
               />
             </div>
@@ -102,7 +111,7 @@ export default function CareerHub() {
             <div className="card-pic-box">
               <img
                 className="card-pic"
-                src={studyWithUS_pic}
+                src={LDProfile}
                 alt="card_pic_1"
               />
             </div>
@@ -125,7 +134,7 @@ export default function CareerHub() {
             <div className="card-pic-box">
               <img
                 className="card-pic"
-                src={studyWithUS_pic}
+                src={Misconceptions}
                 alt="card_pic_1"
               />
             </div>
@@ -147,7 +156,7 @@ export default function CareerHub() {
             <div className="card-pic-box">
               <img
                 className="card-pic"
-                src={studyWithUS_pic}
+                src={Kuwait}
                 alt="card_pic_1"
               />
             </div>
@@ -168,7 +177,7 @@ export default function CareerHub() {
             <div className="card-pic-box">
               <img
                 className="card-pic"
-                src={studyWithUS_pic}
+                src={Leader}
                 alt="card_pic_1"
               />
             </div>

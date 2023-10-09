@@ -1,5 +1,15 @@
 import React from "react";
+import GetInTouch from "../../assets/photos/Get in touch.jpg";
+import CompliteYourProfile from "../../assets/photos/Complete your profile.jpg";
+import Interview from "../../assets/photos/Interview.jpg";
+import ConsiderJobOffer from "../../assets/photos/Consider job offer.jpg";
+import PrepearToJob from "../../assets/photos/Prepare for new job.jpg";
+import SpeakToUs from "../../assets/photos/teach the world.jpg";
+import TeachTheWorld from "../../assets/photos/8 reasons to teach internationally.jpg";
+import Commitment from "../../assets/photos/Our commitment.jpg";
+
 import home_bg from "../../assets/pictures/generalPhoto.jpg";
+
 
 import "./CandiateJourney.css";
 
@@ -13,7 +23,7 @@ export default function index() {
         <div className="candidateJurneyContent">
           <div className="candidateJurneyContentItem">
             <div className="candidateJurneyContentItemPicBox">
-              <img src={home_bg} className="candidateJurneyContentItemPic" />
+              <img src={GetInTouch} className="candidateJurneyContentItemPic" />
             </div>
             <div className="candidateJurneyContentItemTextBox">
               <h2 className="chapter-title">Step 1: Get in touch</h2>
@@ -43,12 +53,12 @@ export default function index() {
               </p>
             </div>
             <div className="candidateJurneyContentItemPicBox">
-              <img src={home_bg} className="candidateJurneyContentItemPic" />
+              <img src={SpeakToUs} className="candidateJurneyContentItemPic" />
             </div>
           </div>
           <div className="candidateJurneyContentItem">
             <div className="candidateJurneyContentItemPicBox">
-              <img src={home_bg} className="candidateJurneyContentItemPic" />
+              <img src={CompliteYourProfile} className="candidateJurneyContentItemPic" />
             </div>
             <div className="candidateJurneyContentItemTextBox">
               <h2 className="chapter-title">Step 3: Complete your profile</h2>
@@ -78,12 +88,12 @@ export default function index() {
               </p>
             </div>
             <div className="candidateJurneyContentItemPicBox">
-              <img src={home_bg} className="candidateJurneyContentItemPic" />
+              <img src={Commitment} className="candidateJurneyContentItemPic" />
             </div>
           </div>
           <div className="candidateJurneyContentItem">
             <div className="candidateJurneyContentItemPicBox">
-              <img src={home_bg} className="candidateJurneyContentItemPic" />
+              <img src={Interview} className="candidateJurneyContentItemPic" />
             </div>
             <div className="candidateJurneyContentItemTextBox">
               <h2 className="chapter-title">Step 5: Interview</h2>
@@ -117,12 +127,12 @@ export default function index() {
               </p>
             </div>
             <div className="candidateJurneyContentItemPicBox">
-              <img src={home_bg} className="candidateJurneyContentItemPic" />
+              <img src={ConsiderJobOffer} className="candidateJurneyContentItemPic" />
             </div>
           </div>
           <div className="candidateJurneyContentItem">
             <div className="candidateJurneyContentItemPicBox">
-              <img src={home_bg} className="candidateJurneyContentItemPic" />
+              <img src={PrepearToJob} className="candidateJurneyContentItemPic" />
             </div>
             <div className="candidateJurneyContentItemTextBox">
               <h2 className="chapter-title">
@@ -161,7 +171,7 @@ export default function index() {
               </p>
             </div>
             <div className="candidateJurneyContentItemPicBox">
-              <img src={home_bg} className="candidateJurneyContentItemPic" />
+              <img src={TeachTheWorld} className="candidateJurneyContentItemPic" />
             </div>
           </div>
         </div>

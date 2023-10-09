@@ -1,5 +1,6 @@
 import React from "react";
-import home_bg from "../../assets/pictures/generalPhoto.jpg";
+import home_bg from "../../assets/photos/Find a Job.jpg";
+
 import journey_clients from "../../assets/pictures/journey_clients.jpg";
 
 import "./BecomePartner.css";

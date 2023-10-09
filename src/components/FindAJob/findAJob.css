@@ -43,7 +43,14 @@
   overflow: hidden;
 }
 
+.descriptionJobFieldsBox {
+  padding: 4px 40px;
+  max-height: 60%;
+  overflow: hidden;
+}
+
 .jobField {
+  padding-left: 10px;
   display: flex;
   align-items: center;
   font-size: 20px;
@@ -52,6 +59,7 @@
 }
 
 .jobDescription {
+  padding-left: 10px;
   font-size: 20px;
   font-weight: 300;
   text-align: initial;
@@ -104,9 +112,11 @@
 }
 
 .jobDescriptionTitle {
-  color: rgba(19, 19, 68, 0.708);
+  color: #4daeda;
+  font-size: 30px;
+  font-weight: 400;
   text-align: center;
-  padding: 10px 25px 20px;
+  padding: 10px 25px 30px 25px;
 }
 
 .jobFieldTitle {
@@ -119,13 +129,12 @@
   color: rgba(19, 19, 68, 0.708);
 }
 
-.jobDescriptionTitle {
-  color: rgba(19, 19, 68, 0.708);
-}
-
 .jobDescriptionChTitle {
   color: rgba(19, 19, 68, 0.5);
-  font-size: 23px;
+  margin-bottom: 0;
+  font-weight: 300;
+  color: #4daeda;
+  font-size: 25px;
 }
 
 .jobDescriptionChText {
@@ -165,7 +174,7 @@
   height: 120px;
   margin: 17px;
   padding: 0 10px;
-  padding-top: 25px;
+  padding-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -196,7 +205,7 @@
 .jobCounterText {
   font-size: 0.75rem;
   margin-top: 3px;
-  margin-bottom: 32px;
+  margin-bottom: 33px;
 }
 
 .paginationButtons {
@@ -209,4 +218,9 @@
 .MuiSelect-select:focus {
   background-color: transparent !important;
   border-color: #4daeda !important;
+}
+
+.dialogButtonsBox {
+  padding-top: 20px;
+  margin-bottom: 25px;
 }

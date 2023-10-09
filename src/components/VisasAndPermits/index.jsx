@@ -1,5 +1,5 @@
 import React from "react";
-import visasAndPermits from "../../assets/pictures/visa&permit.jpeg";
+import visasAndPermit_pic from "../../assets/photos/8 reasons to teach internationally.jpg";
 
 import "./visasAndPermits.css";
 
@@ -7,7 +7,7 @@ export default function VisasAndPermits() {
   return (
     <div className="visasAndPermits">
       <div className="main-picture-box">
-        <img src={visasAndPermits} className="main-picture" alt="home_bg" />
+        <img src={visasAndPermit_pic} className="main-picture" alt="home_bg" />
       </div>
       <div className="page-content">
         <h1 className="page-title">Student Visa</h1>

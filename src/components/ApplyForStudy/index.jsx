@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-import applyToStudy from "../../assets/photos/Our commitment.jpg";
 import studyWithUS_pic from "../../assets/pictures/studyWithUs.jpg";
-import visasAndPermit_pic from "../../assets/pictures/visa&permit.jpeg";
+import visasAndPermit_pic from "../../assets/photos/8 reasons to teach internationally.jpg"; 
+import applyToStud from "../../assets/photos/Apply to study.jpg";
+
 import englishProgrum from "../../assets/pictures/englishProgrum.jpg";
-import foundation from "../../assets/pictures/foundationPage.jpeg";
-import tutoring from "../../assets/pictures/tutoring.jpeg";
+import foundation from "../../assets/pictures/pexels-buro-millennial-1438072.jpg";
+import tutoring from "../../assets/photos/why teaching abroad was the best decision of my life.jpg";
 
 import "./applyForStudy.css";
 
@@ -14,7 +14,7 @@ export default function ApplyForStudy() {
   return (
     <div>
       <div className="main-picture-box">
-        <img src={applyToStudy} className="main-picture" alt="home_bg" />
+        <img src={applyToStud} className="main-picture" alt="home_bg" />
       </div>
       <div className="card-list">
         <Link to="/study-with-us" className="card-nav-link">

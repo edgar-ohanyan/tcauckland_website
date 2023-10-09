@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FormHelperText, Grid, Button } from "@mui/material";
 import { SpinningCircles } from "react-loading-icons";
-import tutoring from "../../assets/pictures/tutoring.jpeg";
 import axios from "axios";
+import tutoring from "../../assets/photos/why teaching abroad was the best decision of my life.jpg";
 
 import "./tutoring.css";
 

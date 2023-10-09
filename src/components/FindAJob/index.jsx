@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { createClient } from "contentful";
 import { FormControl, MenuItem, makeStyles, Select } from "@material-ui/core";
 import { Button, FormHelperText } from "@mui/material";
-import { ReadMoreDialog } from "./Dialogs";
-import home_bg from "../../assets/photos/Prepare for new job.jpg";
 import { red } from "@mui/material/colors";
+import { ReadMoreDialog } from "./Dialogs";
+import { titleCase } from "../../assets/helperFunction/TitleCase";
+import employee from "../../assets/photos/Employee.jpg";
+
 import "./findAJob.css";
 
 const client = createClient({
@@ -35,6 +37,7 @@ const countries = [
   "All Locations",
   "UAE",
   "Dubai",
+  "Abu Dhabi",
   "Kuwait",
   "Qatar",
   "Saudi Arabia",
@@ -44,7 +47,7 @@ const countries = [
   "New Zealand",
 ];
 
-const entriesPerPage = 6; // Number of entries to show per page
+const entriesPerPage = 5; // Number of entries to show per page
 
 export default function FindAJob() {
   const classes = useStyles();
@@ -54,47 +57,6 @@ export default function FindAJob() {
   const [selectedEntry, setSelectedEntry] = useState(null);
   const [selectedCountry, setSelectedCountry] = useState("All Locations");
   const [currentPage, setCurrentPage] = useState(1);
-
-  const handleCountrySelection = (event) => {
-    setSelectedCountry(event.target.value);
-  };
-
-  const handleClickOpen = (entry) => {
-    setSelectedEntry(entry);
-  };
-
-  const handleClose = () => {
-    setSelectedEntry(null);
-  };
-
-  const handlePageChange = (change) => {
-    setCurrentPage((prevPage) => prevPage + change);
-  };
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const response = await client.getEntries();
-        const filteredResponce = response.items.filter(
-          (item) => "type" in item.fields
-        );
-        setEntries(filteredResponce);
-      } catch (error) {
-        console.error("Error fetching entries:", error);
-      }
-    })();
-  }, []);
-
-  useEffect(() => {
-    if (selectedCountry !== "All Locations") {
-      setEntriesToShow(
-        entries.filter((e) => e.fields.location === selectedCountry)
-      );
-    } else {
-      setEntriesToShow(entries);
-    }
-    setCurrentPage(1); // Reset to the first page when the country selection changes
-  }, [entries, selectedCountry]);
 
   // Calculate pagination
   const indexOfLastEntry = currentPage * entriesPerPage;
@@ -130,10 +92,54 @@ export default function FindAJob() {
     );
   };
 
+  const handleCountrySelection = (event) => {
+    setSelectedCountry(event.target.value);
+  };
+
+  const handleClickOpen = (entry) => {
+    setSelectedEntry(entry);
+  };
+
+  const handleClose = () => {
+    setSelectedEntry(null);
+  };
+
+  const handlePageChange = (change) => {
+    setCurrentPage((prevPage) => prevPage + change);
+  };
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await client.getEntries();
+        const filteredResponce = response.items.filter(
+          (item) => "type" in item.fields
+        );
+        setEntries(filteredResponce);
+      } catch (error) {
+        console.error("Error fetching entries:", error);
+      }
+    })();
+  }, []);
+
+  useEffect(() => {
+    if (selectedCountry !== "All Locations") {
+      setEntriesToShow(
+        entries.filter(
+          (e) =>
+            e.fields.location.toLowerCase() === selectedCountry.toLowerCase()
+        )
+      );
+    } else {
+      setEntriesToShow(entries);
+    }
+    setCurrentPage(1); // Reset to the first page when the country selection changes
+  }, [entries, selectedCountry]);
+
   return (
     <div>
       <div className="main-picture-box">
-        <img src={home_bg} className="main-picture" alt="home_bg" />
+        <img src={employee} className="main-picture" alt="home_bg" />
       </div>
       <div className="locationSelectTop">
         <div className="locationSelect">
@@ -176,7 +182,7 @@ export default function FindAJob() {
         {currentEntries.map((entry, index) => (
           <div className="job" key={index}>
             <div className="jobTitleBox">
-              <h5 className="jobTitle">{entry.fields.title}</h5>
+              <h5 className="jobTitle">{titleCase(entry.fields.title)}</h5>
             </div>
             <div className="jobFieldsBox">
               <div className="jobDescription">
@@ -191,11 +197,13 @@ export default function FindAJob() {
               </div>
               <div className="jobField">
                 <p className="jobFieldTitle">Location:&nbsp;</p>
-                <p className="jobFieldText">{entry.fields.location}</p>
+                <p className="jobFieldText">
+                  {titleCase(entry.fields.location)}
+                </p>
               </div>
               <div className="jobField">
                 <p className="jobFieldTitle">Type:&nbsp;</p>
-                <p className="jobFieldText">{entry.fields.type}</p>
+                <p className="jobFieldText">{titleCase(entry.fields.type)}</p>
               </div>
             </div>
             <div className="applyForJobButtonBox">

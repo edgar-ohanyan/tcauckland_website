@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import graduate from "../../assets/pictures/graduate.jpg";
+import graduate from "../../assets/pictures/studyWithUs.jpg";
+
 import { Link } from "react-router-dom";
 
 import "./studyWithUs.css";

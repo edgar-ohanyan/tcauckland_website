@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import foundationPage from "../../assets/pictures/foundationPage.jpeg";
+import foundationPage from "../../assets/pictures/pexels-buro-millennial-1438072.jpg";
+
 import { Link } from "react-router-dom";
 
 export default function FoundaationPrograms() {
