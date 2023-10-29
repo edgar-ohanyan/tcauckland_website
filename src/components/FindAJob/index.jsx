@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { createClient } from "contentful";
-import { FormControl, MenuItem, makeStyles, Select } from "@material-ui/core";
-import { Button, FormHelperText } from "@mui/material";
-import { red } from "@mui/material/colors";
+import {
+  Button,
+  FormHelperText,
+  FormControl,
+  MenuItem,
+  Select,
+} from "@mui/material";
 import { ReadMoreDialog } from "./Dialogs";
 import { titleCase } from "../../assets/helperFunction/TitleCase";
 import findAJob from "../../assets/background/Find a Job.jpg";
@@ -14,23 +18,6 @@ const client = createClient({
   environment: process.env.REACT_APP_CONTENTFUL_ENVIRONMENT,
   accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
 });
-
-const useStyles = makeStyles((theme) => ({
-  formControl: {
-    color: red,
-    minWidth: 240,
-  },
-  select: {
-    padding: theme.spacing(1),
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: theme.palette.common.white,
-  },
-  inputLabel: {
-    backgroundColor: theme.palette.common.white,
-    paddingLeft: theme.spacing(1),
-    paddingRight: theme.spacing(1),
-  },
-}));
 
 // Dev Process
 const countries = [
@@ -50,8 +37,6 @@ const countries = [
 const entriesPerPage = 5; // Number of entries to show per page
 
 export default function FindAJob() {
-  const classes = useStyles();
-
   const [entries, setEntries] = useState([]);
   const [entriesToShow, setEntriesToShow] = useState([]);
   const [selectedEntry, setSelectedEntry] = useState(null);
@@ -144,7 +129,7 @@ export default function FindAJob() {
       <div className="locationSelectTop">
         <div className="locationSelect">
           <div className="inputSectionItem">
-            <FormControl className={classes.formControl}>
+            <FormControl className="formControl">
               <Select
                 MenuProps={{
                   anchorOrigin: {
