@@ -183,6 +183,10 @@
   box-shadow: 0 0 30px rgba(36, 36, 59, 0.4);
 }
 
+.formControl {
+  min-width: 240px !important;
+}
+
 .jobSelectItem {
   color: #4daeda;
   font-size: 20px;
