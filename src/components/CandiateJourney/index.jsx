@@ -156,7 +156,46 @@ export default function index() {
             </div>
             <div className="candidateJurneyContentItemTextBox">
               <h2 className="chapter-title">
-                Step 7: Prepare for your new job
+                Step 7: Due diligence & Attestation
+              </h2>
+              <p className="candidateJurneyContentItemText">
+              Our specialised team conducts rigorous school acquisition due diligence to empower our clients with comprehensive insights before making pivotal decisions. From financial performance evaluations and legal compliance assessments to in-depth reviews of academic standards and operational efficiency, our thorough process leaves no stone unturned. We delve into the intricacies of enrolment trends, faculty qualifications, curriculum offerings, and contractual agreements, ensuring a holistic understanding of the target school. Our meticulous examination extends to legal documentation, infrastructure evaluations, technological capabilities, and the school’s overall reputation. By entrusting us with your school acquisition due diligence, you gain a strategic partner dedicated to mitigating risks, uncovering potential challenges, and aligning your acquisition with long-term success.
+
+              </p>
+            </div>
+          </div>
+          <div className="candidateJurneyContentItem">
+            <div className="candidateJurneyContentItemTextBox">
+              <h2 className="chapter-title">
+                Step 8: Attestation
+              </h2>
+              <p className="candidateJurneyContentItemText">
+              International Certificate Attestation
+Stress-free service – let us handle the complexities so you don’t have to.
+MOFA Attestation | Degree, Birth, Marriage Certificate Attestation | Apostille Services | Commercial Documents Attestation
+Feeling overwhelmed by the attestation process?
+You're not alone.
+At The Collaborative International, we understand the worries of ensuring your documents are legally recognised abroad. Our expert team with 15+ years of experience & offices in Europe, Asia, and Africa is here to make the process seamless and worry-free.
+
+              </p>
+            </div>
+            <div className="candidateJurneyContentItemPicBox">
+              <LazyLoadImage
+                src={TeachTheWorld}
+                className="candidateJurneyContentItemPic"
+              />
+            </div>
+          </div>
+          <div className="candidateJurneyContentItem">
+            <div className="candidateJurneyContentItemPicBox">
+              <LazyLoadImage
+                src={PrepearToJob}
+                className="candidateJurneyContentItemPic"
+              />
+            </div>
+            <div className="candidateJurneyContentItemTextBox">
+              <h2 className="chapter-title">
+                Step 9: Prepare for your new job
               </h2>
               <p className="candidateJurneyContentItemText">
                 Once you have accepted a role we hand over to your new school,
@@ -174,7 +213,7 @@ export default function index() {
           <div className="candidateJurneyContentItem">
             <div className="candidateJurneyContentItemTextBox">
               <h2 className="chapter-title">
-                Step 8: Teach the world, live the dream
+                Step 10: Teach the world, live the dream
               </h2>
               <p className="candidateJurneyContentItemText">
                 The last step of our candidate journey is the first step of your

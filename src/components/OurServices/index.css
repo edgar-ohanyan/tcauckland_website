@@ -1,0 +1,127 @@
+/* General Styles */
+
+.services-page {
+  padding: 10px;
+  margin: 0 auto;
+}
+
+h3 {
+  text-align: left;
+  color: #4daeda;
+  font-size: 2.5rem;
+}
+
+/* Service List Styles */
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 20px;
+}
+
+/* Service Card Styles */
+.service-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  height: 280px; /* Fixed height */
+  overflow: hidden; /* Prevent text overflow */
+  max-width: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Service Card Title */
+.service-card h5 {
+  color: #2980b9;
+}
+
+/* Service Card Description with Medium Font Size and Truncation */
+.service-card p {
+  line-height: 1.4;                 /* Slightly increased line-height for better readability */
+  color: #555;                      /* Keeps the text color as is */
+  text-align: left;              /* Keeps justified text alignment */
+  overflow: hidden;                 /* Ensures overflowing content is hidden */
+  display: -webkit-box;             /* Required for multi-line ellipsis in WebKit-based browsers */
+  -webkit-box-orient: vertical;     /* Specifies vertical layout */
+  -webkit-line-clamp: 5;            /* Limits the text to 5 lines and adds ellipsis */
+  max-height: 300px;                /* Keeps the height constraint */
+  text-overflow: ellipsis;  
+  max-width: 100%;        /* Adds ellipsis if the text is truncated */
+}
+
+/* "Read More" Link */
+.read-more-link {
+  font-size: 18px;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: right;
+}
+
+.read-more-link:hover {
+  text-decoration: underline;
+}
+
+.service-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  margin-bottom: 20px;
+  max-width: 100%; /* Default for larger screens */
+}
+
+@media (max-width: 768px) { /* Mobile screens */
+  .service-card-link {
+    max-width: 90%; /* Apply 90% max-width on mobile */
+  }
+  .service-card {
+    max-width: 90%;
+  }
+}
+@media (max-width: 480px) { /* For small mobile screens */
+  .service-card-link {
+    max-width: 90%; /* Apply 85% max-width on small mobile screens */
+  }
+}
+@media (max-width: 320px) and (max-height: 546px) { /* For 320x546 screens */
+  .service-card-link {
+    max-width: 90%; /* Apply 80% max-width for 320x546 screens */
+  }
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  .service-card {
+    padding: 20px;
+  }
+
+  .read-more-link {
+    font-size: 14px;
+  }
+}
+
+.service-card:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.read-more {
+  display: flex;
+justify-content: end;
+  margin-top: 10px;
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: underline;
+}

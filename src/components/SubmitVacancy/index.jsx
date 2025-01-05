@@ -340,7 +340,7 @@ export default function SubmitVacancy() {
               <div className="inputSectionItem" style={{ marginBottom: 40 }}>
                 {/* Fourth Row */}
                 <Grid container spacing={2}>
-                  <Grid item xs={4} sm={4}>
+                  <Grid item xs={12} sm={4}>
                     <FormControl
                       error={!!errors.curriculum}
                       style={{ width: "100%" }}
@@ -410,7 +410,7 @@ export default function SubmitVacancy() {
               <div className="inputSectionItem" style={{ marginBottom: 40 }}>
                 {/* Fourth Row */}
                 <Grid container spacing={2}>
-                  <Grid item xs={4} sm={12}>
+                  <Grid item xs={12} sm={12}>
                     <TextField
                       label="No of Vacancies"
                       name="noOfVaccanies"

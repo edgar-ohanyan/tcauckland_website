@@ -1,0 +1,82 @@
+
+.professional-development {
+    font-family: 'Arial', sans-serif;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: white !important;
+    
+  }
+  
+  
+  .professional-development h1 {
+    font-size: 2.5rem;
+    color: #2980b9;
+    text-align: left;
+   
+  }
+  
+  .professional-development h2 {
+    font-size: 2rem;
+    color: #2980b9;
+  
+  }
+  
+  .professional-development h3 {
+    font-size: 1.8rem;
+    color: #2980b9;
+    margin-bottom: 10px;
+  }
+  
+  .professional-development p,
+  .professional-development ul {
+    font-size: 1.1rem;
+    color: #34495e;
+    
+ 
+  }
+  
+  .professional-development ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .professional-development ul li {
+    margin-bottom: 15px;
+  }
+  
+  .professional-development section {
+
+    padding: 15px;
+    padding-bottom: 0px !important;
+    background-color: white;
+    border-radius: 8px;
+    
+  }
+  
+  .professional-development section:last-child {
+    margin-bottom: 0;
+  }
+  
+  .professional-development section h3 {
+    margin-top: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .professional-development h1 {
+      font-size: 2rem;
+    }
+  
+    .professional-development h2,
+    .professional-development h3 {
+      font-size: 1.5rem;
+    }
+  
+    .professional-development p {
+      font-size: 1rem;
+    }
+  
+    .professional-development {
+      padding: 10px;
+    }
+  }
+  

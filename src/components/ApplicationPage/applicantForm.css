@@ -55,8 +55,77 @@
 .sendingIcon svg {
   height: 100%;
 }
+
 .sendingIcon {
   position: absolute;
   right: 45px;
   height: 38px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .formContainer {
+    width: 90%; /* Slightly smaller width for mobile */
+  }
+
+  .inputSection {
+    padding: 10px;
+  }
+
+  .inputSectionItem {
+    margin-bottom: 15px; /* Reduce space between input fields */
+  }
+
+  .inputSectionItemTitle {
+    font-size: 16px; /* Adjust font size for mobile screens */
+  }
+
+  .inputSectionTitleText {
+    font-size: 16px; /* Adjust title text size */
+    padding: 0 20px;
+  }
+
+  .applicantForm {
+    padding: 50px 0; /* Reduce padding on mobile screens */
+  }
+
+  /* Adjust button width */
+  .MuiButton-root {
+    width: 100%;
+    padding: 12px; /* Add padding for a more mobile-friendly button */
+  }
+
+  /* Adjust the sending icon position */
+  .sendingIcon {
+    position: absolute;
+    right: 20px;
+  }
+}
+
+/* Small Screens (Below 480px) */
+@media (max-width: 480px) {
+  .formContainer {
+    width: 100%; /* Full width for smaller screens */
+  }
+
+  .inputSectionTitleText {
+    font-size: 14px; /* Reduce font size for very small screens */
+  }
+
+  .inputSectionItemTitle {
+    font-size: 14px; /* Smaller label text */
+  }
+
+  .inputSection {
+    padding: 15px;
+  }
+
+  .applicantForm {
+    padding: 40px 0; /* Reduce form padding for very small screens */
+  }
+
+  .MuiButton-root {
+    font-size: 14px; /* Adjust button text size */
+    padding: 10px;
+  }
 }

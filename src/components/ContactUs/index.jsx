@@ -119,11 +119,11 @@ export default function ContactUs() {
           style={{ fontSize: 22, marginBottom: 35 }}
         >
           Please contact us using the information listed bellow and we will be
-          more than happy with any enquiries that you may have.
+          more than happy to help with any enquiries that you may have.
         </p>
       </div>
       <Grid container spacing={2}>
-        <Grid item xs={4} sm={6}>
+        <Grid item xs={6} sm={6}>
           <TextField
             label="Full Name"
             name="name"
@@ -140,7 +140,7 @@ export default function ContactUs() {
             onChange={handleSave}
           />
         </Grid>
-        <Grid item xs={4} sm={6}>
+        <Grid item xs={6} sm={6}>
           <TextField
             label="Email"
             name="email"
@@ -157,7 +157,7 @@ export default function ContactUs() {
         </Grid>
       </Grid>
       <Grid container spacing={2} style={{ marginTop: 10 }}>
-        <Grid item xs={4} sm={12}>
+        <Grid item xs={12} sm={12}>
           <TextField
             label="Phone Number (optional)"
             name="phone"
@@ -173,7 +173,7 @@ export default function ContactUs() {
         </Grid>
       </Grid>
       <Grid container spacing={2} style={{ marginTop: 10 }}>
-        <Grid item xs={4} sm={12}>
+        <Grid item xs={12} sm={12}>
           <TextField
             label="Your Message"
             name="message"
@@ -195,7 +195,7 @@ export default function ContactUs() {
         </Grid>
       </Grid>
       <div className="apply-study-button-box">
-        <Grid item xs={4} sm={4}>
+        <Grid item xs={6} sm={4}>
           <Button
             variant="contained"
             sx={{
