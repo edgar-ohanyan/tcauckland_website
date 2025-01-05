@@ -1,6 +1,21 @@
 .contactUsContainer {
     margin: 20px 20vw;
 }
+@media (max-width: 768px) {
+    .contactUsContainer {
+        margin: 0px;
+        padding: 10px;
+    }
+    .page-content {
+        padding: 5px;
+    }
+    .page-content-text-primary{
+        padding: 0 10px;
+        
+    }
+}
+
+
 
 .contactInfo {
     font-size: 18px;

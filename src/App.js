@@ -5,6 +5,13 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider/L
 import Layout from "./components/Layout";
 import Home from "./components/Home";
 import SubmitCV from "./components/SubmitCV";
+import AboutUs from "./components/AboutUs";
+import SchoolPartnerships from "./components/OurServices/SchoolPartnerships";
+import ProfessionalDevelopment  from "./components/OurServices/ProfessionalDevelopment";
+import SchoolImprovement from "./components/OurServices/SchoolImprovement";
+import AssessmentFeedback from "./components/OurServices/AssessmentFeedback";
+import WorkplaceTraining from "./components/OurServices/WorkplaceTraining";
+import OurServicesPage from "./components/OurServices";
 import ApplyForStudy from "./components/ApplyForStudy";
 import VisasAndPermits from "./components/VisasAndPermits";
 import StudyWithUs from "./components/StudyWithUs";
@@ -38,6 +45,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/new-schools-and-school-acquisitions" element={<SchoolPartnerships />} />
+            <Route path="/leadership-training" element={<ProfessionalDevelopment  />} />
+            <Route path="/school-improvement-evaluation/" element={<SchoolImprovement  />} />
+            <Route path="/assessment-and-feedback" element={<AssessmentFeedback />} />
+            <Route path="/services" element={<OurServicesPage  />} />
+            <Route path="/workplace-training" element={<WorkplaceTraining  />} />
             <Route path="/submit-cv" element={<SubmitCV />} />
             <Route path="/apply-for-study" element={<ApplyForStudy />} />
             <Route path="/study-with-us" element={<StudyWithUs />} />
@@ -64,9 +78,9 @@ function App() {
             <Route path="/misconceptions" element={<Misconceptions />} />
             <Route path="/work-in-kuwait" element={<WorkInKuwait />} />
             <Route path="/great-leader" element={<GreatLeader />} />
-            <Route path="/candiate-journey" element={<CandiateJourney />} />
+            <Route path="/candidate-journey" element={<CandiateJourney />} />
             <Route path="/become-partner" element={<BecomePartner />} />
-            <Route path="/leader-postion" element={<LeaderPostion />} />
+            <Route path="/leader-position" element={<LeaderPostion />} />
             <Route path="/virtual-interviews" element={<VirtualInterviews />} />
             <Route path="/submit-vacancy" element={<SubmitVacancy />} />
             <Route path="/contact-us" element={<ContactUs />} />
