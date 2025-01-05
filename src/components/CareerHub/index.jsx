@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import careerHub from "../../assets/background/Home.jpg";
+import careerHub from "../../assets/background/Home3.jpg";
 import worldAndPlane from "../../assets/card_size_pic/World&Plane.jpg";
 import internationalTeach from "../../assets/card_size_pic/international teaching.jpg";
 import whyAbroadBest from "../../assets/card_size_pic/whyTeachingAbroad.jpg";
@@ -67,7 +67,7 @@ export default function CareerHub() {
             </div>
           </div>
         </Link>
-        <Link to="/teaching-abroad" className="careerArticleLink">
+        {/* <Link to="/teaching-abroad" className="careerArticleLink">
           <div className="card">
             <div className="card-title-box">
               <h4 className="card-title">
@@ -89,7 +89,7 @@ export default function CareerHub() {
               />
             </div>
           </div>
-        </Link>
+        </Link> */}
         <Link to="/linkedin-profile" className="careerArticleLink">
           <div className="card">
             <div className="card-title-box">
@@ -141,14 +141,12 @@ export default function CareerHub() {
         <Link to="/work-in-kuwait" className="careerArticleLink">
           <div className="card">
             <div className="card-title-box">
-              <h4 className="card-title">Top 10 reasons to work in Kuwait.</h4>
+              <h4 className="card-title">The Benefits of Working in the Gulf</h4>
             </div>
             <div className="card-description">
               <p className="card-description-text">
-                Kuwait. A country bursting full of market bazaars, gleaming
-                skyscrapers and glistening coastlines. It’s an oil-rich state
-                that offers the opportunity for travellers and workers to wander
-                around mosques
+              The glittering skylines, vibrant cultures, and thriving economies of the Gulf Cooperation Council (GCC) nations – Bahrain, Kuwait, Oman, Qatar, Saudi Arabia, and the United Arab Emirates (UAE) – have become a magnet for ambitious expats worldwide. But what exactly makes the Gulf such a compelling destination for professionals seeking a rewarding career move? This blog explores the numerous benefits of working in the Gulf, from tax-free havens and lucrative salaries to exciting career opportunities and a cosmopolitan lifestyle.
+
               </p>
             </div>
             <div className="card-pic-box">

@@ -335,11 +335,11 @@ export default function VisasAndPermits() {
             the entire duration of your study, including your travel to and from
             New Zealand.
           </p>
-          <p>
+          {/* <p>
             To ensure that you are adequately protected, AUT offers the
             Studentsafe Inbound University policy wording, which provides
             comprehensive insurance coverage during your study period.
-          </p>
+          </p> */}
           <p>
             The insurance policy offers protection for various medical expenses,
             including consultations, hospitalization, emergency medical
@@ -349,22 +349,22 @@ export default function VisasAndPermits() {
             or interruption, lost or stolen baggage, personal liability, and
             emergency assistance services.
           </p>
-          <p>
+          {/* <p>
             Full-year students are required to pay an annual premium, while
             part-year students pay a proportionate amount of the annual premium.
             The premium payment is made to AUT, and it is important to note that
             the premium amount may vary from year to year.
-          </p>
+          </p> */}
           <p>
-            By maintaining this appropriate medical and travel insurance, you
+            By maintaining appropriate medical and travel insurance, you
             can have peace of mind knowing that you are safeguarded throughout
             your academic journey in New Zealand, with comprehensive coverage
             for any unforeseen medical or travel-related circumstances.
           </p>
         </div>
 
-        <div className="separateLine"></div>
-        <div className="chapter-content-text">
+        {/* <div className="separateLine"></div> */}
+        {/* <div className="chapter-content-text">
           <h2 className="chapter-title">Arranging Studentsafe insurance:</h2>
           <p>
             AUT, which stands for Auckland University of Technology, has
@@ -532,7 +532,7 @@ export default function VisasAndPermits() {
               </a>
             </li>
           </ul>
-        </div>
+        </div> */}
 
         <div className="separateLine"></div>
         <div className="chapter-content-text">
@@ -540,7 +540,7 @@ export default function VisasAndPermits() {
             Arranging insurance through other approved insurance providers:
           </h2>
           <p>
-            If you purchase an alternative insurance policy from a provider on
+            If you purchase an insurance policy from a provider on
             the approved list, ensure that the insurance cover meets the
             following requirements:
           </p>
@@ -553,12 +553,12 @@ export default function VisasAndPermits() {
               The insurance should cover your time studying in New Zealand, as
               well as your travel to and from the country.
             </li>
-            <li>
+            {/* <li>
               Proof of your alternative approved insurance policy (English
               translation only) must be provided by emailing
               studenthub@aut.ac.nz no later than the Friday before you start
               your study at AUT.
-            </li>
+            </li> */}
           </ul>
 
           <h2>Approved Medical and Travel Insurance Providers:</h2>

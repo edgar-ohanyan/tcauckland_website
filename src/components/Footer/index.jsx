@@ -21,8 +21,8 @@ export default function Footer() {
           <p className="descriptionTitle">
             Elevate Your Educational Journey with Us!
           </p>
-          <p>
-            Welcome to The Collaborative Auckland recruitment platform, where
+          <p className="left-text">
+            Welcome to The Collaborative  recruitment platform, where
             opportunities meet talent. We connect educators and institutions,
             fostering a brighter future for learners everywhere. Join us in
             shaping the next generation of leaders, thinkers, and innovators.
@@ -37,7 +37,7 @@ export default function Footer() {
               <SiGooglemaps size={25} style={{ color: "#67bde4" }} />
             </span>
             <p className="text-left">
-              15 Auburn St. Takapuna Auckland, New Zealand.
+              15 Auburn St. Takapuna, Auckland, New Zealand.
             </p>
           </div>
           <a className="phone-email" href="tel:+64 210 819 8638">
@@ -45,7 +45,7 @@ export default function Footer() {
               <span className="icon-box">
                 <ImPhone size={25} style={{ color: "inherit" }} />
               </span>
-              <p>(+64) 210 819 8638</p>
+              <p>(+64) 27 510 6636</p>
             </div>
           </a>
           <a className="phone-email" href="mailto: team@tcarecruitment.com">

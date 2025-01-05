@@ -36,7 +36,7 @@ export default function index() {
             Discreet and targeted headhunting (Domestic and international)
           </li>
           <li>
-            Referrals to TheCollaborativeAuckland’s existing database of
+            Referrals to TheCollaborative’s existing database of
             professionals
           </li>
           <li>Psychometric Testing (optional)</li>
@@ -56,7 +56,7 @@ export default function index() {
           provided to you to review.
         </p>
         <p>
-          At Randstad, we already use video interviewing to support our clients
+          At The Collaborative, we already use video interviewing to support our clients
           in the recruitment process. For example, we have provided a diverse
           range of international and UK based candidate asynchronous interviews
           to clients for review. Some of these were part of our commercial
@@ -69,14 +69,14 @@ export default function index() {
         <ul>
           <li>Dedicated account manager to work exclusively on your vacancy</li>
           <li>
-            Experienced worldwide recruiters supporting our Leadanywhere team
+            Experienced worldwide recruiters supporting our team
           </li>
           <li>Professional online & offline marketing campaigns</li>
           <li>
             Discreet and targeted headhunting (Domestic and international)
           </li>
           <li>
-            Referrals to TheCollaborativeAuckland’s existing database of
+            Referrals to TheCollaborative’s existing database of
             professionals
           </li>
           <li>Psychometric Testing (optional)</li>

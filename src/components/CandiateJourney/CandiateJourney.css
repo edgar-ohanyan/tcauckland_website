@@ -1,6 +1,6 @@
 
 .candidateJurneyContentBox {
-    padding: 60px;
+    padding-top: 60px;
 }
 
 .candidateJurneyContent {
@@ -8,7 +8,7 @@
 }
 
 .candidateJurneyContentItem {
-    height: 270px;
+    height: fit-content;
     display: flex;
     justify-content: space-around;
     margin-bottom: 66px;
@@ -19,8 +19,7 @@
 }
 
 .candidateJurneyContentItemPic {
-    width: 45%;
-    height: 100%;
+    height: 250px;
     width: 100%;
     object-fit: cover;
 }
@@ -33,4 +32,3 @@
 .candidateJurneyContentItemText {
     color: #4c626c;
 }
-

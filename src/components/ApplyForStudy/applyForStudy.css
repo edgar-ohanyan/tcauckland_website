@@ -84,8 +84,3 @@
   object-fit: cover;
 }
 
-@media screen and (max-width: 768px) {
-  .home-card {
-    width: 90%;
-  }
-}
