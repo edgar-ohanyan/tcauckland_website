@@ -180,7 +180,7 @@ export default function SubmitCV() {
       </div>
       <div className="applicantForm">
         <div className="formContainer">
-          <form className="form">
+          <form >
             <h1 className="inputSectionTitle">Submit Your CV</h1>
             <div className="inputSection">
               <div className="inputSectionItem" style={{ marginBottom: 40 }}>
@@ -484,7 +484,7 @@ export default function SubmitCV() {
               <div className="inputSectionItem">
                 {/* Buttons Row */}
                 <Grid container spacing={2}>
-                  <Grid item xs={4} sm={4}>
+                  <Grid item xs={6} sm={2}>
                     <input
                       accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,
                       text/plain, application/pdf, image/*"
@@ -514,7 +514,7 @@ export default function SubmitCV() {
                       {!!errors.file ? "Upload a file" : ""}
                     </FormHelperText>
                   </Grid>
-                  <Grid item xs={4} sm={4}>
+                  <Grid item xs={6} sm={2}>
                     <Button
                       onClick={submitForm}
                       variant="contained"

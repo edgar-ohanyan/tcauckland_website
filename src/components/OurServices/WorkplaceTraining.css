@@ -1,0 +1,65 @@
+.workplace-training {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    color: #333;
+    background-color: white;
+  }
+  
+  .heading {
+    font-size: 2rem;
+    color: #2980b9;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .intro {
+    margin-bottom: 30px;
+  }
+  
+  .intro p {
+    line-height: 1.6;
+  }
+  
+  .approach {
+    margin-top: 40px;
+  }
+  
+  .approach h2 {
+    font-size: 1.8rem;
+    color: #2980b9;
+    margin-bottom: 20px;
+  }
+  
+  .section {
+    margin-bottom: 30px;
+  }
+  
+  .section h3 {
+    font-size: 1.5rem;
+    color: #2980b9;
+    margin-bottom: 10px;
+  }
+  
+  .section p {
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .heading {
+      font-size: 1.5rem;
+    }
+  
+    .approach h2 {
+      font-size: 1.5rem;
+    }
+  
+    .section h3 {
+      font-size: 1.2rem;
+    }
+  
+    .section p {
+      font-size: 0.95rem;
+    }
+  }
+  

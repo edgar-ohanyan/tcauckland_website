@@ -1,0 +1,44 @@
+.container1 {
+  
+    padding: 10px;
+    font-family: 'Arial, sans-serif';
+    color: #333;
+    background-color: white;
+    
+  }
+  
+  .title {
+    font-size: 2em;
+    text-align: center;
+    color: #4f77ba;
+    margin-bottom: 20px;
+  }
+  
+  .intro {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .section-title {
+    font-size: 1.5em;
+    color: #4f77ba;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  
+  .benefits-list {
+    list-style-type: disc;
+    margin-left: 20px;
+    line-height: 1.6;
+  }
+  
+  .benefits-list li {
+    margin-bottom: 15px;
+  }
+  
+  .paragraph {
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+  
