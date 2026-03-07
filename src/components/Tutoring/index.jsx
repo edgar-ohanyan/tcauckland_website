@@ -8,7 +8,6 @@ import tutoring from "../../assets/background/tutoring.jpg";
 import "./tutoring.css";
 
 export default function Tutoring() {
-  const [requestBody, setRequestBody] = useState({});
   const [sentSuccessfully, setSentSuccessfully] = useState(false);
   const [sentError, setSentError] = useState(false);
   const [showSending, setShowSending] = useState(false);
@@ -19,18 +18,19 @@ export default function Tutoring() {
     timing: "",
     area: "",
     email: "",
-    phone: 0,
+    phone: "",
     specReq: "",
   });
 
   const onChange = (e) => {
-    setRequestBody((prev) => ({
+    setApplication((prev) => ({
       ...prev,
       [e.target.id]: e.target.value,
     }));
   };
 
-  const submitForm = async () => {
+  const submitForm = async (e) => {
+    if (e) e.preventDefault();
     setShowSending((prev) => !prev);
     setSentError(false);
     setSentSuccessfully(false);
@@ -38,16 +38,18 @@ export default function Tutoring() {
   };
 
   const sendEmail = async () => {
-    const formData = new FormData();
-    for (const key in application) {
-      formData.append(key, application[key]);
-    }
-
     try {
+      Console.log(Submitting application:",application;
+        
       await axios.post(
         `${process.env.REACT_APP_API_URL}/tutoring-req`,
-        formData
-      );
+        application,
+        {
+          headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
       setSentSuccessfully(true);
       setApplication({
         topic: "",
@@ -56,11 +58,12 @@ export default function Tutoring() {
         timing: "",
         area: "",
         email: "",
-        phone: 0,
+        phone: "",
         specReq: "",
       });
     } catch (error) {
-      console.log(error);
+      console.log("Submit error:", error);
+      console.log(Server response:", error.response?.data);
       setSentError(true);
     }
   };
@@ -136,6 +139,7 @@ export default function Tutoring() {
                     className="form-control"
                     name="name"
                     id="name"
+                    value={application.name}
                     placeholder="Name"
                   />
                 </div>
@@ -148,6 +152,7 @@ export default function Tutoring() {
                     className="form-control"
                     name="edu"
                     id="edu"
+                    value={application.name}
                     placeholder="Education Level"
                   />
                 </div>
@@ -160,6 +165,7 @@ export default function Tutoring() {
                     className="form-control"
                     name="timing"
                     id="timing"
+                    value={application.name}
                     placeholder="Select Timing"
                   />
                 </div>
@@ -172,6 +178,7 @@ export default function Tutoring() {
                     className="form-control"
                     name="area"
                     id="area"
+                    value={application.name}
                     placeholder="Area"
                   />
                 </div>
@@ -184,6 +191,7 @@ export default function Tutoring() {
                     className="form-control"
                     name="email"
                     id="email"
+                    value={application.name}
                     placeholder="Email"
                   />
                 </div>
@@ -194,8 +202,8 @@ export default function Tutoring() {
                     onChange={(e) => onChange(e)}
                     type="text"
                     className="form-control"
-                    name="ph"
-                    id="ph"
+                    name="phone"
+                    id="phone"
                     placeholder="Phone Number"
                   />
                 </div>
